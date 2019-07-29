@@ -1,0 +1,1262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<!-- 启用极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="KeyWords" content="茶与生活">
+<meta name="description" content="茶与生活">
+<title>茶与生活</title>
+<link rel="shortcut icon" type="image/x-icon" href="img/upimages/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="full-screen" content="yes">
+<!-- SEO友好提示 -->
+<meta name="applicable-device" content="pc,mobile">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/comm/html5shiv.js"></script>
+<script type="text/javascript" src="/js/comm/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="茶与生活_files/jquery_002.js"></script>
+<script type="text/javascript" src="茶与生活_files/jquery.js"></script>
+<script type="text/javascript" src="茶与生活_files/jquery_003.js"></script>
+<script type="text/javascript" src="茶与生活_files/ubox.js" charset="utf-8"></script>
+<meta id="headScreen" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+</head>
+<body style="width: auto;">
+<div style="display: none; z-index: 2147483640; top: 0px; left: 0px; position: fixed; height: 100%; width: 100%;"></div>
+<div id="idBox" class="lightbox" style="display: none; z-index: 2147483647;">	<div id="boxMain">		<div id="boxTopTitle">			<span id="boxName">显示框</span>			<span id="boxClose" title="关闭" onclick="box.Close();">×</span>		</div>		<div id="boxContent">			<iframe id="showiframe" src="" style="width:100%;" name="bookConfirm" frameborder="0"></iframe>		</div>	</div></div>
+<script type="text/javascript" src="茶与生活_files/wow.js" charset="utf-8"></script>
+<script type="text/javascript" src="茶与生活_files/alert.js" charset="utf-8"></script>
+<script type="text/javascript" src="茶与生活_files/02686943.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="茶与生活_files/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="茶与生活_files/animate.css">
+<link rel="stylesheet" type="text/css" href="茶与生活_files/box.css">
+<link rel="stylesheet" type="text/css" href="茶与生活_files/alert.css">
+<link rel="stylesheet" type="text/css" href="茶与生活_files/02686943.css">
+<!-- <script src="bootstrap-3.3.7-dist/js/jquery-3.4.1.min.js" type="text/javascript"></script> -->
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+<script>
+    
+	var batchArr = [];
+	var checkLoad = 0;//判断是否是回调完成的
+</script>
+<script>
+    var isOpenMobie = 2;
+    var isOpenPad = 2;
+    if(isOpenMobie == 1){
+        if(isOpenPad == 1){
+            $("body").css("width","auto");
+        }else{
+            //是否手机端判断
+            var ua = navigator.userAgent;
+            var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+                isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+                isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+                isMobile = isIphone || isAndroid;
+            if(isMobile){
+                $("body").css("width","1280px");
+            }else{
+                $("body").css("width","auto");
+            }
+        }
+    }else{
+        $("body").css("width","auto");
+        $("head").append("<meta id='headScreen' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />");
+    }
+
+    //手机屏幕尺寸兼容 purewinter 2019-03-26
+    $(window).load(function(){
+        bodyScale();
+    });
+    function bodyScale(){
+        var windowWidth = $(window).width();
+        $("#bodyScale").remove();
+        if(windowWidth < 680){
+            var scale = windowWidth / 375;
+            $("#headScreen").remove();
+            $("head").append("<meta id='headScreen' content='width=375, initial-scale="+scale+", maximum-scale="+scale+", user-scalable=no' name='viewport' />");
+        }else if(windowWidth < 960){
+            var scale = windowWidth / 960;
+            $("#headScreen").remove();
+            $("head").append("<meta id='headScreen' content='width=960, initial-scale="+scale+", maximum-scale="+scale+", user-scalable=no' name='viewport' />");
+        }
+    }
+
+$(window).load(function(){
+	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+		setTimeout(function(){
+			new WOW().init()
+		},150)
+	};
+});
+var DIY_WEBSITE_ID = "63355";
+var DIY_JS_SERVER = "box6js.nicebox.cn";
+var DIY_CUR_URL = "http://box6.nicebox.cn/sysTools.php?mod=diy&act=publishPages&page=1&isphp=0&mainHtml=2&imgLoadLate=2&mipSet=0&productHtml=2&newsHtml=2";
+
+</script>
+<script src="茶与生活_files/login_html_v9_diy.htm"></script>
+
+
+	<script type="text/javascript">var Default_isFT = 0;</script>
+<script type="text/javascript" src="茶与生活_files/transform.js"></script>
+			<div id="comm_layout_header" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div class="view_contents">
+								<div id="div_blank_new01_1560933386501" class="view blank_new01 div  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+					<div class="blank_new01">
+
+<div class="roundcs modSet"></div>	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+					<div id="image_logo_1560933829598" class="view logo image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="logoStyle modSet">
+	
+
+<a href="垃圾分类.html" target="_self"><img class="imgSet" src="茶与生活_files/logo.png" title="" alt="" style="width:auto; height:100%; position:relative; top:0; left:50%; transform:translate(-50%,0);"></a>
+
+
+</div>				</div>
+			</div>
+					<div id="searchbox_style_02_1560933937947" class="view style_02 searchbox  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="searchbox" class="view_contents">
+					<div class="searchStyle_2">
+
+	<form onsubmit="return goSearch(this);" target="_self">
+
+		<div class="searchForm modSet">
+
+            
+
+            <input class="inputSet search_input" name="pkeyword" id="pkeyword" placeholder="请输入搜索内容">
+
+            <button type="button" class="search-btn btnaSet" attrhref="三和茶叶.html"><i class="glyphicon glyphicon-search"></i> </button>
+
+		</div>
+
+	</form>
+
+	
+
+</div>
+
+
+
+
+
+<!--  -->
+<script type="application/javascript">
+	/*	function search(aname){
+		var kw=document.getElementById('pkeyword').value;
+		if(kw=='') kw=$("#'pkeyword'").val();
+		var gourl = $(aname).attr("attrhref");
+		href = gourl+(gourl.indexOf('?')>-1?'&':'?')+"pkeyword="+kw;
+		console.log(href)
+				location.href = href;
+			}*/
+	$("#searchbox_style_02_1560933937947 .search-btn").click(function(){
+		var kw=$("#searchbox_style_02_1560933937947 .search_input").val();
+		var gourl = $(this).attr("attrhref");
+		href = gourl+(gourl.indexOf('?')>-1?'&':'?')+"pkeyword="+kw;
+				location.href = href;
+			})
+	function searchOne(lname){
+		var gourl = $(lname).attr("attrhref");
+		href = gourl+(gourl.indexOf('?')>-1?'&':'?')+"pkeyword="+$(lname).html();
+				location.href = href;
+			}
+	//document.getElementById('pkeyword').value = decodeURIComponent(Request("pkeyword"));
+	$("#searchbox_style_02_1560933937947 .search_input").val(decodeURIComponent(Request("pkeyword")));
+	function goSearch(form) {
+		$(form).find('.search-btn').trigger('click');
+		return false;
+	}
+	</script>
+
+				</div>
+			</div>
+					<div id="div_blank_new01_1560934306156" class="view blank_new01 div  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+					<div class="blank_new01">
+
+<div class="roundcs modSet"></div>	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+					<div id="dh_style_32_1560934919100" class="view style_32 dh  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="dh" class="view_contents">
+					
+<div id="menu" class="menu menuStyle_32">
+	<div class="menuLayout">
+		<ul class="miniMenu columnSet showmobile">
+			<li class="leftBox">
+				<div class="nav"></div>
+				<div class="sidebar icoMenuSet"><i class="fa fa-navicon" onclick="setDhListen('style_01',this)"></i></div>
+				<div class="menuScroll">
+					<ul class="menuUlCopy">
+						
+						 
+							 
+								<li class="rflex" pageid="2686937" showmobile=""><a class="mainMenuSet" href="垃圾分类.html">
+							
+
+								
+
+								网站首页</a>
+							
+								
+								 
+								</li>
+								
+						
+						 
+							 
+								<li class="rflex" pageid="2686939" showmobile=""><a class="mainMenuSet" href="2686939-2686939.html">
+							
+
+								
+
+								企业介绍</a>
+							
+								
+								 
+								</li>
+								
+						
+						 
+							 
+								<li class="rflex" pageid="2686941" showmobile=""><a class="mainMenuSet" href="三和茶叶.html">
+							
+
+								
+
+								三和茶叶</a>
+							
+								
+								 
+								</li>
+								
+						
+						 
+							 
+								<li id="hot" class="rflex" pageid="2686943" showmobile=""><a class="mainMenuSet" href="茶与生活.html" style="background: transparent;">
+							
+
+								
+
+								茶与生活</a>
+							
+								
+								 
+								</li>
+								
+						
+						 
+							 
+								<li class="rflex" pageid="2686945" showmobile=""><a class="mainMenuSet" href="新闻资讯.html">
+							
+
+								
+
+								新闻资讯</a>
+							
+								
+								 
+								</li>
+								
+						
+						 
+							 
+								<li class="rflex" pageid="2686947" showmobile=""><a class="mainMenuSet" href="#">
+							
+
+								
+
+								联系我们</a>
+							
+								
+								 
+								</li>
+								
+						
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<div class="menuUl_box columnSet showpc">
+			<ul class="menuUl dflex maxWidth ">
+				
+				
+				 
+					
+						<li class="rflex isLi" pageid="2686937" showpc="">
+					
+				
+						
+						
+							
+							<a class="mainMenuSet Nosub" href="垃圾分类.html">
+							
+								
+								网站首页
+								
+								
+							</a>
+						
+							
+					 
+						</li>
+					
+				
+				
+				 
+					
+						<li class="rflex isLi" pageid="2686939" showpc="">
+					
+				
+						
+						
+							
+							<a class="mainMenuSet Nosub" href="2686939-2686939.html">
+							
+								
+								企业介绍
+								
+								
+							</a>
+						
+							
+					 
+						</li>
+					
+				
+				
+				 
+					
+						<li class="rflex isLi" pageid="2686941" showpc="">
+					
+				
+						
+						
+							
+							<a class="mainMenuSet Nosub" href="三和茶叶.html">
+							
+								
+								三和茶叶
+								
+								
+							</a>
+						
+							
+					 
+						</li>
+					
+				
+				
+				 
+					
+						<li id="hot" class="rflex isLi" pageid="2686943" showpc="">
+					
+				
+						
+						
+							
+							<a class="mainMenuSet Nosub" href="茶与生活.html">
+							
+								
+								茶与生活
+								
+								
+							</a>
+						
+							
+					 
+						</li>
+					
+				
+				
+				 
+					
+						<li class="rflex isLi" pageid="2686945" showpc="">
+					
+				
+						
+						
+							
+							<a class="mainMenuSet Nosub" href="新闻资讯.html">
+							
+								
+								新闻资讯
+								
+								
+							</a>
+						
+							
+					 
+						</li>
+					
+				
+				
+				 
+					
+						<li class="rflex isLi" pageid="2686947" showpc="">
+					
+				
+						
+						
+							
+							<a class="mainMenuSet Nosub" href="#">
+							
+								
+								联系我们
+								
+								
+							</a>
+						
+							
+					 
+						</li>
+					
+				
+				
+			</ul>
+			
+			<div class="subBox" style="top: 48px;">
+				<div class="subBoxContent maxWidth">
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<!-- 菜单区域 End-->
+
+<!--  -->
+<!--<script src="//box6js.nicebox.cn/exusers/login_html_v9_diy.php?idweb=63355"></script>
+<script src="//box6js.nicebox.cn/exusers/login_html_v9.php?idweb=63355"></script>-->
+<script>
+function navSwtich(obj) {
+	$(obj).siblings(".menuUlCopy").slideToggle(200);
+	$(obj).parent().siblings().find(".menuUlCopy").slideUp(200);
+}
+function subLeft_dh_style_32_1560934919100(){
+	$("#dh_style_32_1560934919100 .menuUl>li").each(function(){
+		$(this).find(".menuUl03").css("left",'100%');
+	})
+}
+$(window).resize(function() {
+	subLeft_dh_style_32_1560934919100();
+})
+$(function(){
+	$("#dh_style_32_1560934919100 .fa-navicon").click(function(){
+		$("#dh_style_32_1560934919100 .menuUlCopy").each(function(){
+			$(this).siblings(".fa").show();
+		})
+	})
+	subLeft_dh_style_32_1560934919100();
+		$("#dh_style_32_1560934919100 .subBox").css("top",$("#dh_style_32_1560934919100 .menuUl_box").height());
+		
+	if($("#dh_style_32_1560934919100 .menuUl").hasClass("noHover")){
+		var tabNum = 0;
+		$("#dh_style_32_1560934919100 .menuUl>li").find(".Onsub").each(function(){
+			tabNum += 1;
+			$(this).parent().attr("tabNum",tabNum)
+		})
+		$("#dh_style_32_1560934919100 .menuUl>li .Onsub").mouseover(function(){
+			$("#dh_style_32_1560934919100 .subBox").show();
+			var index = $(this).parent().attr("tabNum");
+			$("#dh_style_32_1560934919100 .subBox .subItems").eq(index-1).fadeIn(200).siblings().hide();
+		})
+		$("#dh_style_32_1560934919100 .subBox").mouseleave(function(){
+			$(this).hide();
+		})
+		$("#dh_style_32_1560934919100 .menuUl>li .Nosub").mouseover(function(){
+			$("#dh_style_32_1560934919100 .subBox").hide();
+		})
+	}
+})
+</script>
+
+
+				</div>
+			</div>
+						</div>
+			</div>
+					<div id="layout_1561084131536" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div class="view_contents">
+									</div>
+			</div>
+					<div id="layout_1561084139339" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div class="view_contents">
+									</div>
+			</div>
+					<div id="layout_1561084161611" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div class="view_contents">
+								<div id="text_style_01_1561084161613" class="view style_01 text  none wow bounceInDown lockHeightView animated" data-wow-duration="1s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1" style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceInDown;">
+				<div names="text" class="view_contents">
+					茶/与/生/活
+
+				</div>
+			</div>
+					<div id="text_style_01_1561084161620" class="view style_01 text  none wow bounceInDown lockHeightView animated" data-wow-duration="1s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1" style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceInDown;">
+				<div names="text" class="view_contents">
+					Tea and Life
+
+				</div>
+			</div>
+						</div>
+			</div>
+					<div id="layout_diy_1560934247" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1" style="height: 883.9px;">
+				<div class="view_contents">
+								<div id="newsList_style_23_1561084183245" class="view style_23 newsList  none wow bounceIn lockHeightView animated" data-wow-duration="1s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1" style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceIn;">
+				<div names="newsList" class="view_contents"><!--新闻列表区域--><!-- 190426修改必选 -->
+<!--pageSet pagecurSet-->
+<ul class="newslist_style_23"> 
+   
+	<li class="modSet">
+		<div class="newsDate">
+				<span class="newsTime timesSet"><span class="nDate">2019-06-24</span> </span>
+			
+			<div class="newPic imgSet">
+				<a href="2686951-2686951.html?newsid=1794819&amp;_t=1561364416" target="_self"><img class="News_img " src="茶与生活_files/20190621110232541.jpg" alt="喝茶的人，主要靠气质"></a>
+				<div class="zTm" style="margin-top:67%"></div>
+			</div>
+			
+		</div>
+		<div class="newsCont">
+			<div class="newsTitle titleSet">
+					<a class="newTitle pc" href="2686951-2686951.html?newsid=1794819&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">喝茶的人，主要靠气质</a>
+					<a class="newTitle pad" href="2686951-2686951.html?newsid=1794819&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">喝茶的人，主要靠气质</a>
+					<a class="newTitle mobile" href="2686951-2686951.html?newsid=1794819&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">喝茶的人，主要靠气质</a>
+					<span class="titleHr btnaSet"></span>
+			</div>
+			
+			
+			<div class="newsBrief">
+					<div class="newDetail detailSet pc" style="-webkit-line-clamp: ;"><div class="overhide">中国茶道既是生活的艺术，更是人生的艺术。中国人爱喝茶，是自古以来不变的事实。茶者，不靠颜值，靠气质。泡出的是茶，修出的是气质。茶...</div></div>
+					<div class="newDetail detailSet pad" style="-webkit-line-clamp: ;"><div class="overhide">中国茶道既是生活的艺术，更是人生的艺术。中国人爱喝茶，是自古以来不变的事实。茶者，不靠颜值，靠气质。泡出的是茶，修出的是气质。茶...</div></div>
+					<div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;"><div class="overhide">中国茶道既是生活的艺术，更是人生的艺术。中国人爱喝茶，是自古以来不变的事实。茶者，不靠颜值，靠气质。泡出的是茶，修出的是气质。茶...</div></div>
+		    </div>
+             <div class="show_all">
+				 
+                 <a class="btnaSet" href="2686951-2686951.html?newsid=1794819&amp;_t=1561364416" target="_self">查看全文</a>
+				 
+             </div>
+
+		</div>
+	</li>
+	<li class="modSet">
+		<div class="newsDate">
+				<span class="newsTime timesSet"><span class="nDate">2019-06-24</span> </span>
+			
+			<div class="newPic imgSet">
+				<a href="2686951-2686951.html?newsid=1794817&amp;_t=1561364416" target="_self"><img class="News_img " src="茶与生活_files/20190621105823409.jpg" alt="白茶保存需讲究，南北方有差异"></a>
+				<div class="zTm" style="margin-top:67%"></div>
+			</div>
+			
+		</div>
+		<div class="newsCont">
+			<div class="newsTitle titleSet">
+					<a class="newTitle pc" href="2686951-2686951.html?newsid=1794817&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">白茶保存需讲究，南北方有差异</a>
+					<a class="newTitle pad" href="2686951-2686951.html?newsid=1794817&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">白茶保存需讲究，南北方有差异</a>
+					<a class="newTitle mobile" href="2686951-2686951.html?newsid=1794817&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">白茶保存需讲究，南北方有差异</a>
+					<span class="titleHr btnaSet"></span>
+			</div>
+			
+			
+			<div class="newsBrief">
+					<div class="newDetail detailSet pc" style="-webkit-line-clamp: ;"><div class="overhide">白茶素有“一年茶、三年药、七年宝”之称，作为中国茶类中的特殊珍品，白茶一其独特的功效以及收藏价值得到越来越多人的关注与喜爱。作为...</div></div>
+					<div class="newDetail detailSet pad" style="-webkit-line-clamp: ;"><div class="overhide">白茶素有“一年茶、三年药、七年宝”之称，作为中国茶类中的特殊珍品，白茶一其独特的功效以及收藏价值得到越来越多人的关注与喜爱。作为...</div></div>
+					<div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;"><div class="overhide">白茶素有“一年茶、三年药、七年宝”之称，作为中国茶类中的特殊珍品，白茶一其独特的功效以及收藏价值得到越来越多人的关注与喜爱。作为...</div></div>
+		    </div>
+             <div class="show_all">
+				 
+                 <a class="btnaSet" href="2686951-2686951.html?newsid=1794817&amp;_t=1561364416" target="_self">查看全文</a>
+				 
+             </div>
+
+		</div>
+	</li>
+	<li class="modSet">
+		<div class="newsDate">
+				<span class="newsTime timesSet"><span class="nDate">2019-06-24</span> </span>
+			
+			<div class="newPic imgSet">
+				<a href="2686951-2686951.html?newsid=1794815&amp;_t=1561364416" target="_self"><img class="News_img " src="茶与生活_files/20190621105607886.jpg" alt="没几个人知道，这些茶壶泡茶的功效不一般"></a>
+				<div class="zTm" style="margin-top:67%"></div>
+			</div>
+			
+		</div>
+		<div class="newsCont">
+			<div class="newsTitle titleSet">
+					<a class="newTitle pc" href="2686951-2686951.html?newsid=1794815&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">没几个人知道，这些茶壶泡茶的功效不一般</a>
+					<a class="newTitle pad" href="2686951-2686951.html?newsid=1794815&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">没几个人知道，这些茶壶泡茶的功效不一般</a>
+					<a class="newTitle mobile" href="2686951-2686951.html?newsid=1794815&amp;_t=1561364416" target="_self" style="-webkit-line-clamp: ;">没几个人知道，这些茶壶泡茶的功效不一般</a>
+					<span class="titleHr btnaSet"></span>
+			</div>
+			
+			
+			<div class="newsBrief">
+					<div class="newDetail detailSet pc" style="-webkit-line-clamp: ;"><div class="overhide">古有“器为茶之父，水为茶之母”之说。茶与器的关系就如同茶与水的关系一样密不可分，茶具的造型，可以影响品茶人的心情，而茶具的材质更...</div></div>
+					<div class="newDetail detailSet pad" style="-webkit-line-clamp: ;"><div class="overhide">古有“器为茶之父，水为茶之母”之说。茶与器的关系就如同茶与水的关系一样密不可分，茶具的造型，可以影响品茶人的心情，而茶具的材质更...</div></div>
+					<div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;"><div class="overhide">古有“器为茶之父，水为茶之母”之说。茶与器的关系就如同茶与水的关系一样密不可分，茶具的造型，可以影响品茶人的心情，而茶具的材质更...</div></div>
+		    </div>
+             <div class="show_all">
+				 
+                 <a class="btnaSet" href="2686951-2686951.html?newsid=1794815&amp;_t=1561364416" target="_self">查看全文</a>
+				 
+             </div>
+
+		</div>
+	</li>
+	
+		<div class="page_btn">
+				<a id="pagecurSet" class="page pageSet cur" href="javascript:;" page="1">1</a><a class="page pageSet" page="2" href="#newsList_style_23_1561084183245" onclick="RequestURL('newsList_style_23_1561084183245', sys_url_newsList_style_23_1561084183245, 'News_page=2&amp;')">2</a><a class="page pageSet" page="3" href="#newsList_style_23_1561084183245" onclick="RequestURL('newsList_style_23_1561084183245', sys_url_newsList_style_23_1561084183245, 'News_page=3&amp;')">3</a><a class="page pageSet" href="#newsList_style_23_1561084183245" onclick="RequestURL('newsList_style_23_1561084183245', sys_url_newsList_style_23_1561084183245, 'News_page=2&amp;')">&gt;</a>
+		</div>
+	
+</ul>
+	 
+
+<style>
+	#newsList_style_23_1561084183245 .newDetail.pc {display:block;}
+	#newsList_style_23_1561084183245 .newDetail.pad, #newsList_style_23_1561084183245 .newDetail.mobile {display:none;}
+	#newsList_style_23_1561084183245 .newTitle.pc {display:block;}
+	#newsList_style_23_1561084183245 .newTitle.pad, #newsList_style_23_1561084183245 .newTitle.mobile {display:none;}
+	@media screen and (min-width:641px) and (max-width:1200px) {
+		#newsList_style_23_1561084183245 .newDetail.pad {display:block;}
+		#newsList_style_23_1561084183245 .newDetail.pc, #newsList_style_23_1561084183245 .newDetail.mobile {display:none;}
+		#newsList_style_23_1561084183245 .newTitle.pad {display:block;}
+		#newsList_style_23_1561084183245 .newTitle.pc, #newsList_style_23_1561084183245 .newTitle.mobile {display:none;}
+	}
+	@media screen and (max-width:640px) {
+		#newsList_style_23_1561084183245 .newDetail.mobile {display:block;}
+		#newsList_style_23_1561084183245 .newDetail.pc, #newsList_style_23_1561084183245 .newDetail.pad {display:none;}
+		#newsList_style_23_1561084183245 .newTitle.mobile {display:block;}
+		#newsList_style_23_1561084183245 .newTitle.pc, #newsList_style_23_1561084183245 .newTitle.pad {display:none;}
+	}
+</style>
+
+
+
+
+
+
+
+<style>
+@media screen and (min-width: 1025px) {
+	#newsList_style_23_1561084183245 .newslist_style_23 .newsDate{width:  Arraypx;}
+	#newsList_style_23_1561084183245 .newslist_style_23 .newsCont{width: calc(100% - Arraypx - 24px);}
+	}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+	#newsList_style_23_1561084183245 .newslist_style_23 .newsDate{width:  Arraypx;}
+	#newsList_style_23_1561084183245 .newslist_style_23 .newsCont{width: calc(100% - Arraypx - 24px);}
+	}
+
+@media screen and (max-width: 640px) {
+}
+
+/* 新分页 */
+#newsList_style_23_1561084183245 .page_btn{ font-size:14px; text-align: center;}
+#newsList_style_23_1561084183245 .page_btn .all_page{ display:inline-block; margin:0 10px; }
+#newsList_style_23_1561084183245 .page:hover{ background:red; color:white; cursor:pointer;}
+#newsList_style_23_1561084183245 .page_btn .cur{ background:red; color:white; cursor:pointer;}
+#newsList_style_23_1561084183245 .submit_div{ display: inline-block; }
+
+#newsList_style_23_1561084183245 .page_btn input{ width:50px; margin:0 5px;}
+#newsList_style_23_1561084183245 .page_btn input:hover{ cursor:default; background:white; color:#333;}
+#newsList_style_23_1561084183245 .page_submit{margin-left:5px;}
+#newsList_style_23_1561084183245 .page{display:inline-block; border:none; background:white; text-align: center; width:auto; padding:0 15px; margin:0 .5px; height:auto; line-height:35px; box-sizing: border-box; -webkit-box-sizing: border-box; border:1px solid #e5e5e5;}
+@media screen and (max-width:640px) {
+		#newsList_style_23_1561084183245 .page_btn{ font-size:12px; }
+		#newsList_style_23_1561084183245 .submit_div{ display:none; }
+	}
+
+	#newsList_style_23_1561084183245 .page{width:auto; margin:0 5px 10px 5px; border-radius:5px;  }
+	@media screen and (max-width:640px) {
+		#newsList_style_23_1561084183245 .page{line-height:30px; padding:0 13px;}
+	}
+
+</style></div>
+			</div>
+						</div>
+			</div>
+					<div id="layout_1561086240314" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div class="view_contents">
+									</div>
+			</div>
+					<div id="comm_layout_footer" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div class="view_contents">
+								<div id="div_blank_new01_1560938718722" class="view blank_new01 div  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+					<div class="blank_new01">
+
+<div class="roundcs modSet"></div>	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+					<div id="div_includeBlock_1560938593486" class="view includeBlock div  none includeView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+								<div id="div_includeBlock_1560938593536" class="view includeBlock div  none includeView" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+								<div id="text_style_02_1560938593623" class="view style_02 text  none lockHeightView" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					导航栏
+
+				</div>
+			</div>
+					<div id="div_blank_1560938593628" class="view blank div  none" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+					<!-- 
+
+	<a href="javascript:;" style="display:block;width:100%;height:100%;" id="divnet"></a>
+
+ -->
+
+
+
+
+
+
+
+				</div>
+			</div>
+					<div id="dh_style_03_1560938593631" class="view style_03 dh  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="dh" class="view_contents">
+					
+<div class="menuStyle_3">
+	<div class="ddsmoothmenu-v">
+	  <ul class="menuUl01 columnSet">
+	  
+	   
+	    
+		<li class="menuLi01 mainMenuSet">
+		
+	  
+	    
+		<a href="垃圾分类.html">网站首页</a>
+	   
+			
+		</li>
+	  
+	   
+	    
+		<li class="menuLi01 mainMenuSet">
+		
+	  
+	    
+		<a href="2686939-2686939.html">企业介绍</a>
+	   
+			
+		</li>
+	  
+	   
+	    
+		<li class="menuLi01 mainMenuSet">
+		
+	  
+	    
+		<a href="三和茶叶.html">三和茶叶</a>
+	   
+			
+		</li>
+	  
+	   
+	    
+		<li id="hot" class="menuLi01 mainMenuSet">
+		
+	  
+	    
+		<a href="茶与生活.html">茶与生活</a>
+	   
+			
+		</li>
+	  
+	   
+	    
+		<li class="menuLi01 mainMenuSet">
+		
+	  
+	    
+		<a href="新闻资讯.html">新闻资讯</a>
+	   
+			
+		</li>
+	  
+	   
+	    
+		<li class="menuLi01 mainMenuSet">
+		
+	  
+	    
+		<a href="#">联系我们</a>
+	   
+			
+		</li>
+	  
+	  </ul>
+	</div>
+
+	<div class="mobi_top" onclick="setDhListen('style_03',this,'mobi_top')">
+		<i class="icoFont">=</i>
+	</div>
+	<div class="mobi_main">
+		<div class="mobi_title"><i class="m_icoFont" onclick="setDhListen('style_03',this,'m_icoFont')">×</i></div>
+		<div class="header_nav">
+			<div class="header_scroll">
+			<ul class="mobi_menuUl01">
+			 
+				<li class="mobi_menuLi01">
+			 
+				<div class="mobi_border"><a href="垃圾分类.html">网站首页</a>
+				
+			
+					
+				</div></li>
+			
+				<li class="mobi_menuLi01">
+			 
+				<div class="mobi_border"><a href="2686939-2686939.html">企业介绍</a>
+				
+			
+					
+				</div></li>
+			
+				<li class="mobi_menuLi01">
+			 
+				<div class="mobi_border"><a href="三和茶叶.html">三和茶叶</a>
+				
+			
+					
+				</div></li>
+			
+				<li class="mobi_menuLi01">
+			 
+				<div class="mobi_border"><a href="茶与生活.html">茶与生活</a>
+				
+			
+					
+				</div></li>
+			
+				<li class="mobi_menuLi01">
+			 
+				<div class="mobi_border"><a href="新闻资讯.html">新闻资讯</a>
+				
+			
+					
+				</div></li>
+			
+				<li class="mobi_menuLi01">
+			 
+				<div class="mobi_border"><a href="#">联系我们</a>
+				
+			
+					
+				</div></li>
+			
+			</ul>
+			</div>
+		</div>                              
+	</div>
+</div>
+<!-- 菜单区域 End-->
+
+<!--  -->
+
+
+				</div>
+			</div>
+						</div>
+			</div>
+					<div id="div_includeBlock_1560938593541" class="view includeBlock div  none includeView" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+								<div id="div_blank_1560938593650" class="view blank div  none" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+					<!-- 
+
+	<a href="javascript:;" style="display:block;width:100%;height:100%;" id="divnet"></a>
+
+ -->
+
+
+
+
+
+
+
+				</div>
+			</div>
+					<div id="text_style_02_1560938593654" class="view style_02 text  none lockHeightView" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					获取咨询
+
+				</div>
+			</div>
+					<div id="text_style_01_1560994313006" class="view style_01 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					扫描二维码关注公众号获得最新咨询
+
+				</div>
+			</div>
+					<div id="image_style_01_1560994527801" class="view style_01 image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="imgStyle CompatibleImg">
+	
+		<a href="javascript:;" target="">
+	
+			<img class="picSet link-type-" src="茶与生活_files/20190620093618709.png" title="" alt="描述" id="imageModeShow">
+	
+		</a>
+	
+</div>
+
+
+
+
+
+
+<!-- 新加的js  -->
+
+				</div>
+			</div>
+					<div id="image_style_01_1560994584995" class="view style_01 image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="imgStyle CompatibleImg">
+	
+		<a href="javascript:;" target="">
+	
+			<img class="picSet link-type-" src="茶与生活_files/20190620093618709.png" title="" alt="描述" id="imageModeShow">
+	
+		</a>
+	
+</div>
+
+
+
+
+
+
+<!-- 新加的js  -->
+
+				</div>
+			</div>
+					<div id="text_style_01_1560994806352" class="view style_01 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					手机版
+
+				</div>
+			</div>
+					<div id="text_style_01_1560994867633" class="view style_01 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					微信版公众号
+
+				</div>
+			</div>
+						</div>
+			</div>
+					<div id="div_includeBlock_1560938593546" class="view includeBlock div  none includeView" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+								<div id="text_style_02_1560938593679" class="view style_02 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					邮箱：13799998888@163.com
+
+				</div>
+			</div>
+					<div id="div_blank_1560938593686" class="view blank div  none" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="div" class="view_contents">
+					<!-- 
+
+	<a href="javascript:;" style="display:block;width:100%;height:100%;" id="divnet"></a>
+
+ -->
+
+
+
+
+
+
+
+				</div>
+			</div>
+					<div id="image_style_01_1560938593689" class="view style_01 image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="imgStyle CompatibleImg">
+	
+		<a href="javascript:;" target="">
+	
+			<img class="picSet link-type-" src="茶与生活_files/icon1.png" title="" alt="描述" id="imageModeShow">
+	
+		</a>
+	
+</div>
+
+
+
+
+
+
+<!-- 新加的js  -->
+
+				</div>
+			</div>
+					<div id="image_style_01_1560938593691" class="view style_01 image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="imgStyle CompatibleImg">
+	
+		<a href="javascript:;" target="">
+	
+			<img class="picSet link-type-" src="茶与生活_files/icon2.png" title="" alt="描述" id="imageModeShow">
+	
+		</a>
+	
+</div>
+
+
+
+
+
+
+<!-- 新加的js  -->
+
+				</div>
+			</div>
+					<div id="image_style_01_1560938593694" class="view style_01 image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="imgStyle CompatibleImg">
+	
+		<a href="javascript:;" target="">
+	
+			<img class="picSet link-type-" src="茶与生活_files/icon3.png" title="" alt="描述" id="imageModeShow">
+	
+		</a>
+	
+</div>
+
+
+
+
+
+
+<!-- 新加的js  -->
+
+				</div>
+			</div>
+					<div id="image_style_01_1560938593699" class="view style_01 image  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="image" class="view_contents">
+					<div class="imgStyle CompatibleImg">
+	
+		<a href="javascript:;" target="">
+	
+			<img class="picSet link-type-" src="茶与生活_files/icon4.png" title="" alt="描述" id="imageModeShow">
+	
+		</a>
+	
+</div>
+
+
+
+
+
+
+<!-- 新加的js  -->
+
+				</div>
+			</div>
+					<div id="text_style_02_1560938593705" class="view style_02 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					位置：广东省中山市
+
+				</div>
+			</div>
+					<div id="text_style_02_1560938593709" class="view style_02 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					电话：0451-5333XXXX
+
+				</div>
+			</div>
+					<div id="text_style_02_1560938593712" class="view style_02 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					微信公众号：SANHE TEA
+
+				</div>
+			</div>
+					<div id="text_style_02_1560938593721" class="view style_02 text  none lockHeightView" data-wow-duration="2s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					联系方式
+
+				</div>
+			</div>
+						</div>
+			</div>
+						</div>
+			</div>
+					<div id="text_style_02_1560938593573" class="view style_02 text  none lockHeightView" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+				<div names="text" class="view_contents">
+					Copyright @ Company name All rights reserved
+
+				</div>
+			</div>
+						</div>
+			</div>
+		<div class="bottomMenu 123"><ul><li style="height:100%;padding-top:2px;">
+
+							<a href="垃圾分类.html" class="" style=""><div class="menuItem"><div class="menuIco"><img src="茶与生活_files/20190621184252301.png" alt="" style=""></div><input type="hidden" class="menuIcon" value=""><input type="hidden" class="menuColor" value=""><div class="menuName" style="color:#666666;">首页</div></div></a>
+
+							<div class="submenuItems" style="display:none;"></div>
+
+						</li><li style="height:100%;padding-top:2px;">
+
+							<a href="三和茶叶.html" class="" style=""><div class="menuItem"><div class="menuIco"><img src="茶与生活_files/20190621184252311.png" alt="" style=""></div><input type="hidden" class="menuIcon" value=""><input type="hidden" class="menuColor" value=""><div class="menuName" style="color:#666666;">三和茶叶</div></div></a>
+
+							<div class="submenuItems" style="display:none;"></div>
+
+						</li><li style="height:100%;padding-top:2px;">
+
+							<a href="茶与生活.html" class="" style=""><div class="menuItem"><div class="menuIco"><img src="茶与生活_files/20190621184252148.png" alt="" style=""></div><input type="hidden" class="menuIcon" value=""><input type="hidden" class="menuColor" value=""><div class="menuName" style="color:#666666;">茶与生活</div></div></a>
+
+							<div class="submenuItems" style="display:none;"></div>
+
+						</li><li style="height:100%;padding-top:2px;">
+
+							<a href="新闻资讯.html" class="" style=""><div class="menuItem"><div class="menuIco"><img src="茶与生活_files/20190621184252731.png" alt="" style=""></div><input type="hidden" class="menuIcon" value=""><input type="hidden" class="menuColor" value=""><div class="menuName" style="color:#666666;">新闻资讯</div></div></a>
+
+							<div class="submenuItems" style="display:none;"></div>
+
+						</li><li style="height:100%;padding-top:2px;">
+
+							<a href="#" class="" style=""><div class="menuItem"><div class="menuIco"><img src="茶与生活_files/20190621184252209.png" alt="" style=""></div><input type="hidden" class="menuIcon" value=""><input type="hidden" class="menuColor" value=""><div class="menuName" style="color:#666666;">我的</div></div></a>
+
+							<div class="submenuItems" style="display:none;"></div>
+
+						</li></ul></div>
+
+<script>
+
+$(function(){
+
+    $(".showSubMenu").click(function(){
+
+        $(this).next().toggle();
+
+		$(this).parent("li").siblings("li").children(".showSubMenu").next().css("display","none");
+
+    });
+
+    var bottomLen = $(".bottomMenu > ul > li > a").length;
+
+    var url = window.location.pathname;
+
+    var loc = url.substring(url.lastIndexOf("/")+1, url.length);
+
+    for(var i=0;i<bottomLen;i++){
+
+        var curObj = $(".bottomMenu ul li a").eq(i);
+
+        if(loc == curObj.attr("href")){
+
+            var img = curObj.children(".menuItem").children(".menuIco").children("img").attr("src");
+
+            var menuIcon = curObj.children(".menuItem").children(".menuIcon").val();
+
+            var menuColor = curObj.children(".menuItem").children(".menuColor").val();
+
+            var menuName = curObj.children(".menuItem").children(".menuName").html();
+
+            if(menuIcon != ""){
+
+                curObj.children(".menuItem").children(".menuIco").children("img").attr("src",menuIcon);
+
+            }
+
+            if(menuColor != ""){
+
+                curObj.children(".menuItem").children(".menuName").css("color",menuColor);
+
+            }
+
+        }
+
+    }
+
+});
+
+$(window).resize(function(){
+
+    if($("body").width()<640){
+
+        var bottomHeight = $(".bottomMenu").height();
+
+        $("body").css("padding-bottom",bottomHeight+"px");
+
+    }else{
+
+        $("body").css("padding-bottom","0px");
+
+    }
+
+});
+
+</script>
+
+<script>
+	$(function(){
+		sendBatch(batchArr);
+	});
+</script>
+
+<script type="text/javascript" src="茶与生活_files/js.js" charset="utf-8"></script>
+
+</body></html>
