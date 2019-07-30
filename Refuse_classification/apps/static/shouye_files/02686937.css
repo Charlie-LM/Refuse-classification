@@ -537,8 +537,8 @@ body{ background-position:left top; }
 
 
 .img_url{ position:absolute; width:100%; height:100%; left:0; top:0; display:block; z-index: 100;}
-            #banner_style_01_1560935379084 .bannerStyle_1 .main_image .img-item .img_0{background: url('banner1.jpg') center top no-repeat;}
-                #banner_style_01_1560935379084 .bannerStyle_1 .main_image .img-item .img_1{background: url('banner2.jpg') center top no-repeat;}
+            #banner_style_01_1560935379084 .bannerStyle_1 .main_image .img-item .img_0{background: url('/static/img/true2.jpg') center top no-repeat;}
+                #banner_style_01_1560935379084 .bannerStyle_1 .main_image .img-item .img_1{background: url('/static/img/true4.jpg') center top no-repeat;}
                 #banner_style_01_1560935379084 .bannerStyle_1 .ground_glass{}
     
     #banner_style_01_1560935379084 .bannerStyle_1 .main_image .img-item span{background-size:auto 100%!important;}
