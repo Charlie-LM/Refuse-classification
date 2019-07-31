@@ -25,13 +25,15 @@
 </head>
 <body>
 <div class="modal fade" id="myModal" style="font: 600 16px/18px 'Open Sans', sans-serif" tabindex="-1" role="dialog">
-{#    <div style="height:30px;">#}
-{#    </div>#}
+    {#    <div style="height:30px;">#}
+    {#    </div>#}
 
     <div class="login-wrap">
-        <div >
-        <button type="button"  data-dismiss="modal" aria-label="Close" style="padding: 10px 15px 10px 15px;left: 485px; background:rgba(255,255,255,0);z-index: 100"><span aria-hidden="true">×</span>
-  </button>
+        <div>
+            <button type="button" data-dismiss="modal" aria-label="Close"
+                    style="padding: 10px 15px 10px 15px;left: 485px; background:rgba(255,255,255,0);z-index: 100"><span
+                    aria-hidden="true">×</span>
+            </button>
         </div>
         <div class="login-html" style="margin-top: -50px;z-index: 99;">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked/><label for="tab-1" class="tab">登录</label>
@@ -72,15 +74,20 @@
                         <input id="p3ass" type="password" class="input" data-type="password"/>
                     </div>
                     <div class="group">
-                        <label for="pass" class="label">邮箱</label>
+                        <label for="pass" class="label">手机号</label>
                         <input id="pass" type="text" class="input"/>
                     </div>
-                    <div class="group" style="margin-top: 30px">
-                        <button type="submit" class="button">注册</button>
+                    <div class="group">
+                        <label for="pass" class="label">验证码</label>
+                        <div>
+                            <div class="col-md-7 col-xs-7"><input id="pass" type="text" class="input"/></div>
+                            <div class="col-md-5 col-xs-5">
+                                <button class="button" style="font-size: 12px">发送验证码</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <label for="tab-1" style="cursor: pointer">已注册登录?</label>
+                    <div class="group" style="margin-bottom: 0px">
+                        <button type="submit" class="button" style="margin-top: 80px">注册</button>
                     </div>
                 </div>
             </div>
@@ -184,7 +191,8 @@
         </div>
     </nav>
 </div>
-<div id="layout_diy_1560931233" class="layout  none container" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
+<div id="layout_diy_1560931233" class="layout  none container" data-wow-duration="0s" data-wow-delay="0s"
+     data-wow-offset="0"
      data-wow-iteration="1">
     <div class="view_contents">
         <div id="banner_style_01_1560935379084" class="view style_01 banner  none" data-wow-duration="0s"
