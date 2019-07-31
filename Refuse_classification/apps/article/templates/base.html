@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>主页</title>
+    <title>
+        {% block title %}
+            base
+        {% endblock %}
+    </title>
 
     <script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap.js"></script>
@@ -12,13 +16,15 @@
     <script type="text/javascript" src="/static/shouye_files/ubox.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/shouye_files/wow.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/shouye_files/alert.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/static/shouye_files/02686937.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/a_css.css">
     <link rel="stylesheet" type="text/css" href="/static/shouye_files/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="/static/shouye_files/animate.css">
     <link rel="stylesheet" type="text/css" href="/static/shouye_files/box.css">
     <link rel="stylesheet" type="text/css" href="/static/shouye_files/alert.css">
+    {% block jscss %}
     <link rel="stylesheet" type="text/css" href="/static/shouye_files/02686937.css">
+    <script type="text/javascript" src="/static/shouye_files/02686937.js" charset="utf-8"></script>
+    {% endblock %}
     <link rel="stylesheet" href="/static/css/bootstrap.css"/>
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
 
@@ -70,12 +76,12 @@
                         <input id="pas2s" type="password" class="input" data-type="password"/>
                     </div>
                     <div class="group">
-                        <label for="pass" class="label">确认密码</label>
-                        <input id="p3ass" type="password" class="input" data-type="password"/>
+                        <label for="pass2" class="label">确认密码</label>
+                        <input id="pass2" type="password" class="input" data-type="password"/>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">手机号</label>
-                        <input id="pass" type="text" class="input"/>
+                        <input id="mobile" type="text" class="input"/>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">验证码</label>
@@ -167,33 +173,65 @@
 <script src="/static/shouye_files/login_html_v9_diy.html"></script>
 <script type="text/javascript">var Default_isFT = 0;</script>
 <script type="text/javascript" src="/static/shouye_files/transform.js"></script>
+{#导航条#}
 <div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="nav navbar-left col-md-9">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#" class="navbar-brand">网站首页 <span class="sr-only">(current)</span></a>
+                    <li {% block indexac %} {% endblock %}><a href="#" class="navbar-brand">网站首页 <span class="sr-only">(current)</span></a>
                     </li>
-                    <li><a href="#" class="navbar-brand">分类查询</a></li>
-                    <li><a href="#" class="navbar-brand">娱乐天地</a></li>
-                    <li><a href="#" class="navbar-brand">新闻资讯</a></li>
-                    <li><a href="#" class="navbar-brand">社区交流</a></li>
-                    <li><a href="#" class="navbar-brand">投递须知</a></li>
+                    <li {% block searchac %} {% endblock %}><a href="#" class="navbar-brand">分类查询</a></li>
+                    <li {% block interestac %} {% endblock %}><a href="#" class="navbar-brand">娱乐天地</a></li>
+                    <li {% block newsac %} {% endblock %}><a href="#" class="navbar-brand">新闻资讯</a></li>
+                    <li {% block reviewsac %} {% endblock %}><a href="#" class="navbar-brand">社区交流</a></li>
+                    <li {% block lastac %} {% endblock %}><a href="#" class="navbar-brand">投递须知</a></li>
                 </ul>
             </div>
             <div class="dropdown col-md-3 ">
                 <ul class="nav navbar-nav">
-                    <li><a href="#myModal" class="navbar-brand" data-toggle="modal" data-target="#myModal">登录/注册</a>
-                    </li>
-
+                    <li><a href="#myModal" class="navbar-brand" data-toggle="modal" data-target="#myModal">登录/注册</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
+{#轮播图#}
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
-{% block 'article' %}
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="/static/img/true2.jpg" alt="第一张轮播图" style="width: 100%;height: 520px">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="/static/img/true4.jpg" alt="第二张轮播图" style="width: 100%;height: 520px">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="/static/img/true2.jpg" alt="第三张轮播图" style="width: 100%;height: 520px">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block content %}
+
 {% endblock %}
+
 <div id="comm_layout_footer" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
      data-wow-iteration="1">
     <div class="view_contents">
@@ -230,22 +268,22 @@
                                     <div class="ddsmoothmenu-v">
                                         <ul class="menuUl01 columnSet">
                                             <li id="hot" class="menuLi01 mainMenuSet">
-                                                <a href="垃圾分类.html">网站首页</a>
+                                                <a href="#">网站首页</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
-                                                <a href="#">企业介绍</a>
+                                                <a href="#">分类查询</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
-                                                <a href="三和茶叶.html">三和茶叶</a>
+                                                <a href="#">娱乐天地</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
-                                                <a href="茶与生活.html">茶与生活</a>
+                                                <a href="#">新闻资讯</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
-                                                <a href="新闻资讯.html">新闻资讯</a>
+                                                <a href="#">社区交流</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
-                                                <a href="#">联系我们</a>
+                                                <a href="#">投递须知</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -253,40 +291,40 @@
                                         <i class="icoFont">=</i>
                                     </div>
                                     <div class="mobi_main">
-                                        <div class="mobi_title"><i class="m_icoFont"
-                                                                   onclick="setDhListen('style_03',this,'m_icoFont')">×</i>
+                                        <div class="mobi_title">
+                                            <i class="m_icoFont" onclick="setDhListen('style_03',this,'m_icoFont')">×</i>
                                         </div>
                                         <div class="header_nav">
                                             <div class="header_scroll">
                                                 <ul class="mobi_menuUl01">
                                                     <li class="mobi_menuLi01">
                                                         <div class="mobi_border">
-                                                            <a href="垃圾分类.html">网站首页</a>
+                                                            <a href="#">网站首页</a>
                                                         </div>
                                                     </li>
                                                     <li class="mobi_menuLi01">
                                                         <div class="mobi_border">
-                                                            <a href="#">企业介绍</a>
+                                                            <a href="#">分类查询</a>
                                                         </div>
                                                     </li>
                                                     <li class="mobi_menuLi01">
                                                         <div class="mobi_border">
-                                                            <a href="三和茶叶.html">三和茶叶</a>
+                                                            <a href="#">娱乐天地</a>
                                                         </div>
                                                     </li>
                                                     <li class="mobi_menuLi01">
                                                         <div class="mobi_border">
-                                                            <a href="茶与生活.html">茶与生活</a>
+                                                            <a href="#">新闻资讯</a>
                                                         </div>
                                                     </li>
                                                     <li class="mobi_menuLi01">
                                                         <div class="mobi_border">
-                                                            <a href="新闻资讯.html">新闻资讯</a>
+                                                            <a href="#">社区交流</a>
                                                         </div>
                                                     </li>
                                                     <li class="mobi_menuLi01">
                                                         <div class="mobi_border">
-                                                            <a href="#">联系我们</a>
+                                                            <a href="#">投递须知</a>
                                                         </div>
                                                     </li>
                                                 </ul>
