@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +9,24 @@
         {% endblock %}
     </title>
 
-    <script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/static/shouye_files/jquery_002.js"></script>
-    <script type="text/javascript" src="/static/shouye_files/jquery.js"></script>
-    <script type="text/javascript" src="/static/shouye_files/jquery_003.js"></script>
-    <script type="text/javascript" src="/static/shouye_files/ubox.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/static/shouye_files/wow.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/static/shouye_files/alert.js" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/a_css.css">
-    <link rel="stylesheet" type="text/css" href="/static/shouye_files/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="/static/shouye_files/animate.css">
-    <link rel="stylesheet" type="text/css" href="/static/shouye_files/box.css">
-    <link rel="stylesheet" type="text/css" href="/static/shouye_files/alert.css">
+    <script type="text/javascript" src="{% static "js/jquery-3.4.1.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+    <script type="text/javascript" src="{% static "shouye_files/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "shouye_files/jquery_003.js" %}"></script>
+    <script type="text/javascript" src="{% static "shouye_files/ubox.js" %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static "shouye_files/wow.js" %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static "shouye_files/alert.js" %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/a_css.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/font-awesome.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/animate.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/box.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/alert.css" %}">
     {% block jscss %}
-    <link rel="stylesheet" type="text/css" href="/static/shouye_files/02686937.css">
-    <script type="text/javascript" src="/static/shouye_files/02686937.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/02686937.css" %}">
+    <script type="text/javascript" src="{% static "shouye_files/02686937.js" %}" charset="utf-8"></script>
     {% endblock %}
-    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" type="text/css">
 
 </head>
 <body>
@@ -37,7 +37,7 @@
     <div class="login-wrap">
         <div>
             <button type="button" data-dismiss="modal" aria-label="Close"
-                    style="padding: 10px 15px 10px 15px;left: 485px; background:rgba(255,255,255,0);z-index: 100"><span
+                    style="padding: 10px 15px 10px 15px;left: 435px; background:rgba(255,255,255,0);z-index: 100"><span
                     aria-hidden="true">×</span>
             </button>
         </div>
@@ -170,9 +170,9 @@
     var DIY_JS_SERVER = "box6js.nicebox.cn";
     var DIY_CUR_URL = "http://box6.nicebox.cn/sysTools.php?mod=diy&act=publishPages&page=1&isphp=0&mainHtml=2&imgLoadLate=2&mipSet=0&productHtml=2&newsHtml=2";
 </script>
-<script src="/static/shouye_files/login_html_v9_diy.html"></script>
+<script src="{% static "shouye_files/login_html_v9_diy.html" %}"></script>
 <script type="text/javascript">var Default_isFT = 0;</script>
-<script type="text/javascript" src="/static/shouye_files/transform.js"></script>
+<script type="text/javascript" src="{% static "shouye_files/transform.js" %}"></script>
 {#导航条#}
 <div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -208,19 +208,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="/static/img/true2.jpg" alt="第一张轮播图" style="width: 100%;height: 520px">
+            <img src="{% static "img/first.jpg" %}" alt="第一张轮播图" style="width: 100%;height: 520px">
             <div class="carousel-caption">
 
             </div>
         </div>
         <div class="item">
-            <img src="/static/img/true4.jpg" alt="第二张轮播图" style="width: 100%;height: 520px">
+            <img src="{% static "img/true4.jpg" %}" alt="第二张轮播图" style="width: 100%;height: 520px">
             <div class="carousel-caption">
 
             </div>
         </div>
         <div class="item">
-            <img src="/static/img/true2.jpg" alt="第三张轮播图" style="width: 100%;height: 520px">
+            <img src="{% static "img/true2.jpg" %}" alt="第三张轮播图" style="width: 100%;height: 520px">
             <div class="carousel-caption">
 
             </div>
@@ -364,7 +364,7 @@
                             <div names="image" class="view_contents">
                                 <div class="imgStyle CompatibleImg">
                                     <a href="javascript:;" target="">
-                                        <img class="picSet link-type-" src="/static/shouye_files/20190620093618709.png"
+                                        <img class="picSet link-type-" src="{% static "shouye_files/20190620093618709.png" %}"
                                              title=""
                                              alt="描述" id="imageModeShow" style="">
                                     </a>
@@ -377,7 +377,7 @@
                             <div names="image" class="view_contents">
                                 <div class="imgStyle CompatibleImg">
                                     <a href="javascript:;" target="">
-                                        <img class="picSet link-type-" src="/static/shouye_files/20190620093618709.png"
+                                        <img class="picSet link-type-" src="{% static "shouye_files/20190620093618709.png" %}"
                                              title=""
                                              alt="描述" id="imageModeShow" style="">
                                     </a>
@@ -419,7 +419,7 @@
                             <div names="image" class="view_contents">
                                 <div class="imgStyle CompatibleImg">
                                     <a href="javascript:;" target="">
-                                        <img class="picSet link-type-" src="/static/shouye_files/icon1.png" title=""
+                                        <img class="picSet link-type-" src="{% static "shouye_files/icon1.png" %}" title=""
                                              alt="描述"
                                              id="imageModeShow" style="">
                                     </a>
@@ -432,7 +432,7 @@
                             <div names="image" class="view_contents">
                                 <div class="imgStyle CompatibleImg">
                                     <a href="javascript:;" target="">
-                                        <img class="picSet link-type-" src="/static/shouye_files/icon2.png" title=""
+                                        <img class="picSet link-type-" src="{% static "shouye_files/icon2.png" %}" title=""
                                              alt="描述"
                                              id="imageModeShow" style="">
                                     </a>
@@ -445,7 +445,7 @@
                             <div names="image" class="view_contents">
                                 <div class="imgStyle CompatibleImg">
                                     <a href="javascript:;" target="">
-                                        <img class="picSet link-type-" src="/static/shouye_files/icon3.png" title=""
+                                        <img class="picSet link-type-" src="{% static "shouye_files/icon3.png" %}" title=""
                                              alt="描述"
                                              id="imageModeShow" style="">
                                     </a>
@@ -458,7 +458,7 @@
                             <div names="image" class="view_contents">
                                 <div class="imgStyle CompatibleImg">
                                     <a href="javascript:;" target="">
-                                        <img class="picSet link-type-" src="/static/shouye_files/icon4.png" title=""
+                                        <img class="picSet link-type-" src="{% static "shouye_files/icon4.png" %}" title=""
                                              alt="描述"
                                              id="imageModeShow" style="">
                                     </a>
