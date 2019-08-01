@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
+
+{% load staticfiles %}
+
 {% block title %}
     网站首页
 {% endblock %}
 
 {% block jscss %}
-    <link rel="stylesheet" type="text/css" href="/static/shouye_files/02686937.css">
-    <script type="text/javascript" src="/static/shouye_files/02686937.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/02686937.css" %}">
+    <script type="text/javascript" src="{% static "shouye_files/02686937.js" %}" charset="utf-8"></script>
 {% endblock %}
 
 {% block indexac %}class="active"{% endblock %}
@@ -48,7 +51,7 @@
                 <div names="image" class="view_contents">
                     <div class="imgStyle CompatibleImg">
                         <a href="javascript:;" target="">
-                            <img class="picSet link-type-" src="/static/img/保护环境2.png" title="" alt="描述"
+                            <img class="picSet link-type-" src="{% static "img/保护环境2.png" %}" title="" alt="描述"
                                  id="imageModeShow" style="width: 485px;">
                         </a>
                     </div>
@@ -60,7 +63,7 @@
                 <div names="image" class="view_contents">
                     <div class="imgStyle CompatibleImg">
                         <a href="javascript:;" target="">
-                            <img class="picSet link-type-" src="/static/shouye_files/20190620103419325.jpg" title=""
+                            <img class="picSet link-type-" src="{% static "shouye_files/20190620103419325.jpg" %}" title=""
                                  alt="描述" id="imageModeShow" style="">
                         </a>
                     </div>
@@ -121,7 +124,7 @@
                                 <ul class="tab_ul tab_ul_top" style="width: 368px;">
                                     <li class="tab_li tabItemSet tab_li_top tabCurItem">
                                         <div class="tab_pos_r">
-                                            <div class="tab_img tabImgSet"><img src="/static/shouye_files/tabImg.png"
+                                            <div class="tab_img tabImgSet"><img src="{% static "shouye_files/tabImg.png" %}"
                                                                                 ondragstart="return false;" style="">
                                             </div>
                                             <div class="tab_txt" onselectstart="return false"><p>可回收物</p></div>
@@ -129,7 +132,7 @@
                                     </li>
                                     <li class="tab_li tabItemSet tab_li_top">
                                         <div class="tab_pos_r">
-                                            <div class="tab_img tabImgSet"><img src="/static/shouye_files/tabImg.png"
+                                            <div class="tab_img tabImgSet"><img src="{% static "shouye_files/tabImg.png" %}"
                                                                                 ondragstart="return false;" style="">
                                             </div>
                                             <div class="tab_txt" onselectstart="return false"><p>有害垃圾</p></div>
@@ -137,7 +140,7 @@
                                     </li>
                                     <li class="tab_li tabItemSet tab_li_top">
                                         <div class="tab_pos_r">
-                                            <div class="tab_img tabImgSet"><img src="/static/shouye_files/tabImg.png"
+                                            <div class="tab_img tabImgSet"><img src="{% static "shouye_files/tabImg.png" %}"
                                                                                 ondragstart="return false;" style="">
                                             </div>
                                             <div class="tab_txt" onselectstart="return false"><p>厨余垃圾</p></div>
@@ -145,7 +148,7 @@
                                     </li>
                                     <li class="tab_li tabItemSet tab_li_top">
                                         <div class="tab_pos_r">
-                                            <div class="tab_img tabImgSet"><img src="/static/shouye_files/tabImg.png"
+                                            <div class="tab_img tabImgSet"><img src="{% static "shouye_files/tabImg.png" %}"
                                                                                 ondragstart="return false;" style="">
                                             </div>
                                             <div class="tab_txt" onselectstart="return false"><p>其他垃圾</p></div>
@@ -181,7 +184,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/玻璃瓶.jpg"
+                                                                            src="{% static "img/玻璃瓶.jpg" %}"
                                                                             alt="玻璃类"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -223,7 +226,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/塑料瓶.jpg"
+                                                                            src="{% static "img/塑料瓶.jpg" %}"
                                                                             alt="塑料类"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -265,7 +268,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/金属.jpg"
+                                                                            src="{% static "img/金属.jpg" %}"
                                                                             alt="金属类"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -307,7 +310,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/橡胶手套.png"
+                                                                            src="{% static "img/橡胶手套.png" %}"
                                                                             alt="橡胶类"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -671,7 +674,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/电池.jpg"
+                                                                            src="{% static "img/电池.jpg" %}"
                                                                             alt="废电池"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -713,7 +716,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/灯管.png"
+                                                                            src="{% static "img/灯管.png" %}"
                                                                             alt="废灯管"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -755,7 +758,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/药品.jpg"
+                                                                            src="{% static "img/药品.jpg" %}"
                                                                             alt="废药品"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -797,7 +800,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/胶片.jpg"
+                                                                            src="{% static "img/胶片.jpg" %}"
                                                                             alt="废胶片"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1166,7 +1169,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/残羹冷炙.jpg"
+                                                                            src="{% static "img/残羹冷炙.jpg" %}"
                                                                             alt="残羹冷炙"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1208,7 +1211,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/果皮.jpg"
+                                                                            src="{% static "img/果皮.jpg" %}"
                                                                             alt="瓜果皮核"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1250,7 +1253,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/鱼骨.jpg"
+                                                                            src="{% static "img/鱼骨.jpg" %}"
                                                                             alt="固体残渣"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1292,7 +1295,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/落叶.jpg"
+                                                                            src="{% static "img/落叶.jpg" %}"
                                                                             alt="盆栽落叶"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1661,7 +1664,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/卫生纸.png"
+                                                                            src="{% static "img/卫生纸.png" %}"
                                                                             alt="被污染物"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1704,7 +1707,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/陶瓷.jpg"
+                                                                            src="{% static "img/陶瓷.jpg" %}"
                                                                             alt="陶瓷制品"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1746,7 +1749,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/烟灰.jpg"
+                                                                            src="{% static "img/烟灰.jpg" %}"
                                                                             alt="碎屑"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -1788,7 +1791,7 @@
                                                                     <div class="prod_img"><a href="#"
                                                                                              target="_self"><img
                                                                             class="pro_img horizontal"
-                                                                            src="/static/img/打包盒.jpg"
+                                                                            src="{% static "img/打包盒.jpg" %}"
                                                                             alt="一次性"><span></span></a></div>
                                                                     <div class="dummy" style="margin-top:100%"></div>
                                                                 </div>
@@ -2259,7 +2262,7 @@
                                 <li class="modSet" style="display:block">
                                     <div class="newPic imgSet">
                                         <a href="2686951-2686951.html?newsid=1794807&_t=1561364416" target="_self"><img
-                                                class="News_img" src="/static/shouye_files/20190620145216681.jpg"
+                                                class="News_img" src="{% static "shouye_files/20190620145216681.jpg" %}"
                                                 alt="茶具的使用方法及功能"></a>
                                         <div class="zTm" style="margin-top:100%"></div>
                                         <div class="newCont twoBgSet">
@@ -2283,7 +2286,7 @@
                                 <li class="modSet" style="display:block">
                                     <div class="newPic imgSet">
                                         <a href="2686951-2686951.html?newsid=1794809&_t=1561364416" target="_self"><img
-                                                class="News_img" src="/static/shouye_files/20190620145259230.jpg"
+                                                class="News_img" src="{% static "shouye_files/20190620145259230.jpg" %}"
                                                 alt="喝绿茶能预防心肌梗塞"></a>
                                         <div class="zTm" style="margin-top:100%"></div>
                                         <div class="newCont twoBgSet">
@@ -2311,7 +2314,7 @@
 
 
                                         <a href="2686951-2686951.html?newsid=1794811&_t=1561364416" target="_self"><img
-                                                class="News_img" src="/static/shouye_files/20190620145241957.jpg"
+                                                class="News_img" src="{% static "shouye_files/20190620145241957.jpg" %}"
                                                 alt="学会品茶，喝出茶品"></a>
 
 
@@ -2525,4 +2528,4 @@
         sendBatch(batchArr);
     });
 </script>
-<script type="text/javascript" src="/static/js/js.js" charset="utf-8"></script>
+<script type="text/javascript" src="{% static "js/js.js" %}" charset="utf-8"></script>
