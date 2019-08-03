@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block title %}
     新闻资讯
 {% endblock %}
 
 {% block jscss %}
-    <link rel="stylesheet" type="text/css" href="/static/news_files/02686945.css">
-    <script type="text/javascript" src="/static/news_files/02686945.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static "news_files/02686945.js" %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "news_files/02686945.css" %}">
 {% endblock %}
 
 {% block newsac %}class="active"{% endblock %}

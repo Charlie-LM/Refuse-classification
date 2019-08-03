@@ -11,28 +11,27 @@
 
     <script type="text/javascript" src="{% static "js/jquery-3.4.1.js" %}"></script>
     <script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+    <script type="text/javascript" src="{% static "shouye_files/jquery_002.js" %}"></script>
     <script type="text/javascript" src="{% static "shouye_files/jquery.js" %}"></script>
     <script type="text/javascript" src="{% static "shouye_files/jquery_003.js" %}"></script>
     <script type="text/javascript" src="{% static "shouye_files/ubox.js" %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static "shouye_files/wow.js" %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static "shouye_files/alert.js" %}" charset="utf-8"></script>
+    {% block jscss %}
+    <script type="text/javascript" src="{% static "shouye_files/02686937.js" %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/02686937.css" %}">
+    {% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static "css/a_css.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "shouye_files/font-awesome.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "shouye_files/animate.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "shouye_files/box.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "shouye_files/alert.css" %}">
-    {% block jscss %}
-    <link rel="stylesheet" type="text/css" href="{% static "shouye_files/02686937.css" %}">
-    <script type="text/javascript" src="{% static "shouye_files/02686937.js" %}" charset="utf-8"></script>
-    {% endblock %}
     <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
-    <link rel="stylesheet" href="{% static "css/styles.css" %}" type="text/css">
 
 </head>
 <body>
 <div class="modal fade" id="myModal" style="font: 600 16px/18px 'Open Sans', sans-serif" tabindex="-1" role="dialog">
-        <div style="height:30px;">
-        </div>
+    <div style="height:30px;"></div>
 
     <div class="login-wrap">
         <div>

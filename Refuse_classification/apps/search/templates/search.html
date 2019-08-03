@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block title %}
     分类查询
 {% endblock %}
 
 {% block jscss %}
-    <link rel="stylesheet" type="text/css" href="/static/search_files/02686941.css">
-    <script type="text/javascript" src="/static/search_files/02686941.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static "search_files/02686941.js" %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "search_files/02686941.css" %}">
 {% endblock %}
 
 {% block searchac %}class="active"{% endblock %}
