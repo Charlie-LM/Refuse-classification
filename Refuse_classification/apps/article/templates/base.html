@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="{% static "shouye_files/box.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "shouye_files/alert.css" %}">
     <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/a_css.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}"/>
 
 </head>
 <body>
@@ -178,11 +180,11 @@
         <div class="container">
             <div class="nav navbar-left col-md-9">
                 <ul class="nav navbar-nav">
-                    <li {% block indexac %} {% endblock %}><a href="#" class="navbar-brand">网站首页 <span class="sr-only">(current)</span></a>
+                    <li {% block indexac %} {% endblock %}><a href="{% url "article:index" %}" class="navbar-brand">网站首页 <span class="sr-only">(current)</span></a>
                     </li>
-                    <li {% block searchac %} {% endblock %}><a href="#" class="navbar-brand">分类查询</a></li>
+                    <li {% block searchac %} {% endblock %}><a href="{% url "search:search" %}" class="navbar-brand">分类查询</a></li>
                     <li {% block interestac %} {% endblock %}><a href="#" class="navbar-brand">娱乐天地</a></li>
-                    <li {% block newsac %} {% endblock %}><a href="#" class="navbar-brand">新闻资讯</a></li>
+                    <li {% block newsac %} {% endblock %}><a href="{% url "article:news" %}" class="navbar-brand">新闻资讯</a></li>
                     <li {% block reviewsac %} {% endblock %}><a href="#" class="navbar-brand">社区交流</a></li>
                     <li {% block lastac %} {% endblock %}><a href="#" class="navbar-brand">投递须知</a></li>
                 </ul>
@@ -205,26 +207,28 @@
     </ol>
 
     <!-- Wrapper for slides -->
+    {% block lunbo %}
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="{% static "img/first.jpg" %}" alt="第一张轮播图" style="width: 100%;height: 520px">
+            <img src="{% static "img/true6.jpg" %}" alt="第一张轮播图" style="width: 100%;height: 567px">
             <div class="carousel-caption">
 
             </div>
         </div>
         <div class="item">
-            <img src="{% static "img/true4.jpg" %}" alt="第二张轮播图" style="width: 100%;height: 520px">
+            <img src="{% static "img/first.jpg" %}" alt="第二张轮播图" style="width: 100%;height: 567px">
             <div class="carousel-caption">
 
             </div>
         </div>
         <div class="item">
-            <img src="{% static "img/true2.jpg" %}" alt="第三张轮播图" style="width: 100%;height: 520px">
+            <img src="{% static "img/白云四桶.jpg" %}" alt="第三张轮播图" style="width: 100%;height: 567px">
             <div class="carousel-caption">
 
             </div>
         </div>
     </div>
+    {% endblock %}
 </div>
 
 {% block content %}
