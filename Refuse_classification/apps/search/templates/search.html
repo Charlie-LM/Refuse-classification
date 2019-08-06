@@ -40,21 +40,33 @@
                 <div id="searchbox_style_02_1560933937947" class="view style_02 searchbox  none lockHeightView"
                      data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
                     <div names="searchbox" class="view_contents">
-                        <div class="searchStyle_2">
-                            <div class="searchForm modSet">
-                                <input class="inputSet search_input" name="pkeyword" id="pkeyword"
-                                       placeholder="请输入要分类的垃圾" style="text-align: center">
-                                <button type="button" class="search-btn btnaSet"><i
-                                        class="glyphicon glyphicon-search"></i></button>
-                            </div>
-                        </div>
+
                     </div>
+
                 </div>
             </div>
 
         </div>
     </div>
+<div class="searchStyle_2">
+                            <form method="post" action="">
+                                {% csrf_token %}
+                                <div class="searchForm modSet">
+                                    <input class="inputSet search_input" name="pkeyword" id="pkeyword"
+                                           placeholder="请输入要分类的垃圾" style="text-align: center">
+                                    <button type="submit" class="search-btn btnaSet"><i
+                                            class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                                <h3>{{ result.rubbish }}</h3>
+                                <h4>{{ result.rubbish_type }}</h4>
+                                <p>{{ result.rubbish_type_def }}</p>
+                                <p>{{ result.rubbish_type_reason }}</p>
+                                <p>{{ result.rubbish_type_content }}</p>
+                                <p>{{ result.rubbish_way1 }}</p>
+                                <p>{{ result.rubbish_way2 }}</p>
 
+                            </form>
+                        </div>
     <div id="layout_1561083507368" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
          data-wow-iteration="1" style="height: 1305.45px;">
         <div class="view_contents">
