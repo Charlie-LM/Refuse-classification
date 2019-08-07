@@ -40,7 +40,18 @@
                 <div id="searchbox_style_02_1560933937947" class="view style_02 searchbox  none lockHeightView"
                      data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
                     <div names="searchbox" class="view_contents">
+                        <div class="searchStyle_2">
+                            <div class="searchForm modSet">
 
+                                <form method="post" action="">
+                                    {% csrf_token %}
+                                <input class="inputSet search_input" name="pkeyword" id="pkeyword"
+                                       placeholder="请输入要分类的垃圾" style="text-align: center">
+                                <button type="button" class="search-btn btnaSet" onclick="search();"><i
+                                        class="glyphicon glyphicon-search"></i></button>
+                                    </form>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -48,25 +59,41 @@
 
         </div>
     </div>
-<div class="searchStyle_2">
-                            <form method="post" action="">
-                                {% csrf_token %}
-                                <div class="searchForm modSet">
-                                    <input class="inputSet search_input" name="pkeyword" id="pkeyword"
-                                           placeholder="请输入要分类的垃圾" style="text-align: center">
-                                    <button type="submit" class="search-btn btnaSet"><i
-                                            class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                                <h3>{{ result.rubbish }}</h3>
-                                <h4>{{ result.rubbish_type }}</h4>
-                                <p>{{ result.rubbish_type_def }}</p>
-                                <p>{{ result.rubbish_type_reason }}</p>
-                                <p>{{ result.rubbish_type_content }}</p>
-                                <p>{{ result.rubbish_way1 }}</p>
-                                <p>{{ result.rubbish_way2 }}</p>
+    <div>
 
-                            </form>
-                        </div>
+
+        <h3 id="rubbish"></h3>
+        <h4 id="rubbish_type"></h4>
+        <p id="rubbish_type_def"></p>
+        <p id="rubbish_type_reason"></p>
+        <p id="rubbish_type_content"></p>
+        <p id="rubbish_way1"></p>
+        <p id="rubbish_way2"></p>
+    <script>
+        function search() {
+            $.ajax({
+                url: '/search/ajax_demo/',
+                type: 'POST',
+                data: {"kw": $('#pkeyword').val()},
+                success:function (result) {
+                    var final_re = result['result'];
+                    $("#rubbish").html(final_re.rubbish);
+                    $("#rubbish_type").html(final_re.rubbish_type);
+                    $("#rubbish_type_def").html(final_re.rubbish_type_def);
+                    $("#rubbish_type_reason").html(final_re.rubbish_type_reason);
+                    $("#rubbish_type_content").html(final_re.rubbish_type_content);
+                    $("#rubbish_way1").html(final_re.rubbish_way1);
+                    $("#rubbish_way2").html(final_re.rubbish_way2);
+
+                },
+                error:function (result) {
+                    alert("对不起,暂时无法查询到该垃圾的分类结果")
+                }
+            })
+        }
+    </script>
+
+    </div>
     <div id="layout_1561083507368" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
          data-wow-iteration="1" style="height: 1305.45px;">
         <div class="view_contents">
