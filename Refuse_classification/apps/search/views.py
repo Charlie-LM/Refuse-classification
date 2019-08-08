@@ -10,6 +10,6 @@ def ajax_demo(request):
     if request.is_ajax:
         kw = request.POST.get('kw')
         result = api_baidu.jiekou(kw)
-        #print(result)
+        print(result)
         # return render(request, 'ceshi.html')
-    return JsonResponse({"result":result})
+    return JsonResponse(result)

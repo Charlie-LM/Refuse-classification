@@ -7,11 +7,12 @@ class UserInfo():
     mobile = models
 
 class News(models.Model):
-    title = models.CharField(max_length=200,verbose_name="标题",unique=True)
+    title = models.CharField(max_length=200, verbose_name="标题", unique=True)
     description = models.TextField(verbose_name="概括描述")
-    time = models.CharField(max_length=20,verbose_name="时间")
-    author = models.CharField(max_length=20,verbose_name="作者")
+    time_time = models.CharField(max_length=20, verbose_name="时间")
+    author = models.CharField(max_length=200, verbose_name="作者")
     content = models.TextField(verbose_name="新闻内容")
+    from_from = models.CharField(max_length=200, verbose_name="来源")
 
     class Meta:
         verbose_name = '新闻类'

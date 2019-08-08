@@ -45,11 +45,11 @@
 
                                 <form method="post" action="">
                                     {% csrf_token %}
-                                <input class="inputSet search_input" name="pkeyword" id="pkeyword"
-                                       placeholder="请输入要分类的垃圾" style="text-align: center">
-                                <button type="button" class="search-btn btnaSet" onclick="search();"><i
-                                        class="glyphicon glyphicon-search"></i></button>
-                                    </form>
+                                    <input class="inputSet search_input" name="pkeyword" id="pkeyword"
+                                           placeholder="请输入要分类的垃圾" style="text-align: center">
+                                    <button type="button" class="search-btn btnaSet" onclick="search();"><i
+                                            class="glyphicon glyphicon-search"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -60,39 +60,51 @@
         </div>
     </div>
     <div>
-
-
+        <div style="float: left">
+           <img src="" id="img" style="height: 310px;">
+        </div>
+        <div style="display: inline">
         <h3 id="rubbish"></h3>
         <h4 id="rubbish_type"></h4>
-        <p id="rubbish_type_def"></p>
         <p id="rubbish_type_reason"></p>
+        <p id="rubbish_type_def"></p>
+        <p id="rubbish_def_title" style="font-weight: bold;font-size: 14px"></p>
         <p id="rubbish_type_content"></p>
-        <p id="rubbish_way1"></p>
-        <p id="rubbish_way2"></p>
-    <script>
-        function search() {
-            $.ajax({
-                url: '/search/ajax_demo/',
-                type: 'POST',
-                data: {"kw": $('#pkeyword').val()},
-                success:function (result) {
-                    var final_re = result['result'];
-                    $("#rubbish").html(final_re.rubbish);
-                    $("#rubbish_type").html(final_re.rubbish_type);
-                    $("#rubbish_type_def").html(final_re.rubbish_type_def);
-                    $("#rubbish_type_reason").html(final_re.rubbish_type_reason);
-                    $("#rubbish_type_content").html(final_re.rubbish_type_content);
-                    $("#rubbish_way1").html(final_re.rubbish_way1);
-                    $("#rubbish_way2").html(final_re.rubbish_way2);
+        <p id="rubbish_def_title2" style="font-weight: bold;font-size: 14px"></p>
+        <p id="rubbish_way"></p>
+        </div>
+        <script>
+            function search() {
+                $.ajax({
+                    url: '/search/ajax_demo/',
+                    type: 'POST',
+                    data: {"kw": $('#pkeyword').val()},
+                    success: function (final_re) {
+                        if (final_re) {
+                            $("#rubbish").html(final_re.rubbish);
+                            $("#rubbish_type").html(final_re.rubbish_type);
+                            $("#rubbish_type_def").html(final_re.rubbish_type_def);
+                            $("#rubbish_type_reason").html(final_re.rubbish_type_reason);
+                            $("#rubbish_type_content").html(final_re.rubbish_type_content);
+                            $("#rubbish_way").html(final_re.rubbish_way);
 
-                },
-                error:function (result) {
-                    alert("对不起,暂时无法查询到该垃圾的分类结果")
-                }
-            })
-        }
-    </script>
+                            $("#rubbish_def_title").html(final_re.rubbish_def_title);
+                            $("#rubbish_def_title2").html(final_re.rubbish_def_title2);
+                             $("#img").attr("src",final_re.rubbish_img);
 
+
+                        } else {
+                            alert("对不起,暂时无法查询到该垃圾的分类结果")
+                        }
+
+
+                    },
+                    error: function (result) {
+                        alert("对不起,暂时无法查询到该垃圾的分类结果")
+                    }
+                })
+            }
+        </script>
     </div>
     <div id="layout_1561083507368" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
          data-wow-iteration="1" style="height: 1305.45px;">
