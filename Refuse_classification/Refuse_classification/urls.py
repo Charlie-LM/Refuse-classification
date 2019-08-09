@@ -23,10 +23,11 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^accounts/', include('apps.accounts.urls', namespace='accounts')),
+    url(r'^accounts/', include('apps.accounts.urls', namespace='accounts')),
     url(r'^article/', include('apps.article.urls', namespace='article')),
     url(r'^search/', include('apps.search.urls', namespace='search')),
     url(r'^reviews/', include('apps.reviews.urls', namespace='reviews')),
+    url(r'^apis/', include('apps.apis.urls', namespace="apis")),
     # url(r'^base/$', include('apps.urls', namespace='base')),
     url(r'^%s(?P<path>.*)$' % re.escape(settings.STATIC_URL.lstrip('/')), serve,
         {"document_root": settings.STATIC_ROOT}),

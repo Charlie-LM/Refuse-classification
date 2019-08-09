@@ -74,7 +74,7 @@
                     </div>
                     <div class="group">
                         <label for="pass" class="label">密码</label>
-                        <input id="pas2s" type="password" class="input" data-type="password"/>
+                        <input id="pass" type="password" class="input" data-type="password"/>
                     </div>
                     <div class="group">
                         <label for="pass2" class="label">确认密码</label>
@@ -198,7 +198,7 @@
                 <li {% block lastac %} {% endblock %}><a href="#" class="navbar-brand">投递须知</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#myModal" class="navbar-brand" data-toggle="modal" data-target="#myModal">登录/注册</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="navbar-brand" data-toggle="modal" data-target="#myModal">登录/注册</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
