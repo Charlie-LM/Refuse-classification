@@ -69,43 +69,19 @@
                                     9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将...
                                 </div>
                                 <div class="show_all">
-                                    <a class="btnaSet"
-                                       href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794821&amp;_t=1561364416"
-                                       target="_self">查看全文</a>
+
                                 </div>
                             </div>
                         </li>
-
+                        {% for i in ss %}
                         <li class="sumary_list modSet">
-                            <div class="newCont">
-                                <div class="newTitle ">
-                                    <div class="newName titleSet ">
-                                        <span class="newSort sortSet"> 新闻资讯</span>
-                                        <a class="titleSet"
-                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794823&amp;_t=1561364416"
-                                           target="_self">中国茶叶协会会长王庆：讲好中国茶故事靠标准化 茶业要“讲普通话”</a>
-                                        <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-                                    </div>
-                                </div>
-                                <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">中
-                                    国茶叶流通协会会长王庆在6月8日西安举行的全国茶叶标准化技术委员会茯茶工作组一届二次工作会议上表示：向中外消费者讲好中国茶的故事主要靠标准，中国
-                                    茶叶企业不能各讲各的方言，都要“讲普通话”。王庆表示，陕西茯茶近几年恢复了历史上的传统，帮助行业消化了产能，对乡村振兴、精准扶贫和茶农增收作用相
-                                    当大···
-                                </div>
-                                <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
-                                    中国茶叶流通协会会长王庆在6月8日西安举行的全国茶叶标准化技术委员会茯茶工作组一届二次工作会议上表示：向中外消费者讲好中国茶的故事主要靠标准，中国茶叶企业不能各讲各的方言，都要“讲普通话”。王庆表示，...
-                                </div>
-                                <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
-                                    中国茶叶流通协会会长王庆在6月8日西安举行的全国茶叶标准化技术委员会茯茶...
-                                </div>
-                                <div class="show_all">
-                                    <a class="btnaSet"
-                                       href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794823&amp;_t=1561364416"
-                                       target="_self">查看全文</a>
-                                </div>
-                            </div>
+                            {{ i.1|safe }}
+                            {{ i.2|safe }}
+                            {{ i.3|safe }}
+                        <a class="btnaSet" href="/contents/{{ i.0 }}"
+                                       >查看全文</a>
                         </li>
-
+                        {% endfor %}
                         <li class="sumary_list modSet">
                             <div class="newCont">
                                 <div class="newTitle ">
@@ -328,6 +304,9 @@
     <div class="view_contents">
     </div>
 </div>
+    <div>
+    {{ pagr.page|safe }}
+    </div>
 {% endblock %}
 <script>
 
