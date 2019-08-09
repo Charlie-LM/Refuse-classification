@@ -25,7 +25,7 @@ driver = webdriver.Firefox()
 driver.get('http://www.chinaenvironment.com/search/index.aspx?nodeid=128&keyword=垃圾分类')
 
 # 定义循环次数，点击“加载更多“按钮的次数,设置睡眠时间防止反爬
-for i in range(2):
+for i in range(3):
     driver.find_element_by_class_name('getMore').click()
     time.sleep(random.randint(3, 5))
 
@@ -48,6 +48,12 @@ for item in class_a:  # 判定是否以..开头开头
 #######################循环爬网页开始#####################
 
 for x in list_html_list:
+    news_id = re.findall(r"/zxxwlb/index_55_(.*).html", x)
+    try:
+        news_url = "/article/contents/"+news_id[0]
+    except:
+        continue
+
     url = "http://www.chinaenvironment.com" + x
     header = {
         'User-Agent':
@@ -60,7 +66,7 @@ for x in list_html_list:
     # 获取正文
     soup = BeautifulSoup(html, 'lxml')
     content = soup.find_all(class_='edits')
-    abstrat = soup.select('.edits > p')[0]  # 获取短暂描述
+    abstract = soup.select('.edits > p')[0]  # 获取短暂描述
 
     # 获取大标题
     title = soup.find_all(class_='articleTit')[0]
@@ -73,13 +79,17 @@ for x in list_html_list:
     from_from = soup.find_all(class_='ibox from')[0]
     author = soup.find_all(class_='ibox author')[0]
     # 将三类数据加入一个列表
-    list_all_html.append([title, abstrat, time_time, author, content, from_from])
-    time.sleep(random.randint(3,6))
+    list_all_html.append(
+        {'title': title, 'abstract': abstract, 'time_time': time_time, 'author': author, 'content': content,
+         'from_from': from_from, 'news_id': news_id[0],'news_url':news_url})
+    time.sleep(random.randint(3, 6))
+
+
 n = 1
 for i in list_all_html:
     try:
-        News.objects.create(title=str(i[0]), description=str(i[1]), time_time=str(i[2]), author=str(i[3]),
-                        content=str(i[4]), from_from=str(i[5]))
+        News.objects.create(title=str(i['title']), description=str(i['abstract']), time_time=str(i['time_time']), author=str(i['author']),
+                            content=str(i['content']), from_from=str(i['from_from']), news_id=str(i['news_id']),news_url=str(i['news_url']))
         print(f'第{n}条数据写入成功')
         n = n + 1
     except:
