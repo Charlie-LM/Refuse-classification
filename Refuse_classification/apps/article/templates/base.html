@@ -29,7 +29,11 @@
     <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
     <link rel="stylesheet" href="{% static "css/a_css.css" %}"/>
     <link rel="stylesheet" href="{% static "css/styles.css" %}"/>
-
+    <style>
+        .activesss{
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
 <div class="modal fade" id="myModal" style="font: 600 16px/18px 'Open Sans', sans-serif" tabindex="-1" role="dialog">
@@ -193,7 +197,7 @@
                 <li {% block indexac %} {% endblock %}><a href="{% url "article:index" %}" class="navbar-brand">网站首页 <span class="sr-only">(current)</span></a></li>
                 <li {% block searchac %} {% endblock %}><a href="{% url "search:search" %}" class="navbar-brand">分类查询</a></li>
                 <li {% block interestac %} {% endblock %}><a href="#" class="navbar-brand">娱乐天地</a></li>
-                <li {% block newsac %} {% endblock %}><a href="{% url "article:news" %}" class="navbar-brand">新闻资讯</a></li>
+                <li {% block newsac %} {% endblock %}><a href="{% url "article:news" 1 %}" class="navbar-brand">新闻资讯</a></li>
                 <li {% block reviewsac %} {% endblock %}><a href="#" class="navbar-brand">社区交流</a></li>
                 <li {% block lastac %} {% endblock %}><a href="#" class="navbar-brand">投递须知</a></li>
             </ul>

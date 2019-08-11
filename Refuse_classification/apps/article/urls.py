@@ -20,13 +20,9 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/$',views.index,name='index'),
-<<<<<<< HEAD
-    url(r'^news/',views.news,name='news'),
-=======
-    url(r'^news/$',views.news,name='news'),
->>>>>>> 4e07c66a143e0a5af4b63c24557d2de3e4e48ebc
+    url(r'^news/(?P<id>\d+)/$',views.news,name='news'),
     url(r'^interest/$', views.interest, name='interest'),
-    url(r'^base/$',views.base,name='base')
-# (?P<id>\d+)
+    url(r'^base/$',views.base,name='base'),
+
 
 ]

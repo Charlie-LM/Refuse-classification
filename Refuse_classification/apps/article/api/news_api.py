@@ -25,7 +25,7 @@ driver = webdriver.Firefox()
 driver.get('http://www.chinaenvironment.com/search/index.aspx?nodeid=128&keyword=垃圾分类')
 
 # 定义循环次数，点击“加载更多“按钮的次数,设置睡眠时间防止反爬
-for i in range(3):
+for i in range(5):
     driver.find_element_by_class_name('getMore').click()
     time.sleep(random.randint(3, 5))
 
@@ -92,6 +92,7 @@ for i in list_all_html:
                             content=str(i['content']), from_from=str(i['from_from']), news_id=str(i['news_id']),news_url=str(i['news_url']))
         print(f'第{n}条数据写入成功')
         n = n + 1
+
     except:
         print("重复数据")
 # print(list_all_html[0])

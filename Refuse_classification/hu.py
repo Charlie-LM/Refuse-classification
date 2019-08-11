@@ -43,26 +43,26 @@ class Pageinfo(object):
                     sotp = self.page + 5 + 1
         if self.page <= 1:
             # prev = f"<a class='page-link' href='' aria-label='Previous'><< 上一页</a>"
-            prev = f'<li class="page-item "><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>'
+            prev = f'<a class="page pageSet cur" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a>'
         else:
             # prev = f"<a class='page-link' href='{self.url}?page={self.page - 1}' aria-label='Previous'><< 上一页</a>"
-            prev = f'<li class="page-item "><a class="page-link" href="{self.url}/{self.page - 1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>'
+            prev = f'<a class="page pageSet cur" href="{self.url}{self.page - 1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a>'
         if self.page >= self.all_page:
-            next = f"<a class='page-link' href='' aria-label='Next'>下一页>></a>"
-            next = f'<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>'
+            # next = f"<a class='page pageSet cur' href='' aria-label='Next'>下一页>></a>"
+            next = f'<a class="page pageSet cur" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a>'
         else:
-            next = f'<li class="page-item"><a class="page-link" href="{self.url}/{self.page + 1}" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>'
+            next = f'<a class="page pageSet cur" href="{self.url}{self.page + 1}" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a>'
             # next = f"<a class='page-link' href='{self.url}?page={self.page + 1}' aria-label='Previous'>下一页>></a>"
 
         pagelist = []
         pagelist.append(prev)
         for i in range(begin, sotp):
             if i == self.page:
-                # v = f"<a  class='page-item active' href='{self.url}?page={i}'>{i}</a>"
-                v= f'<li class="page-item active"><a class="page-link" href="{self.url}/{i}">{i}</a></li>'
+                # v = f"<a  class='page-item active' href='{self.urpage pageSet curpage={i}'>{i}</a>"
+                v= f'<a class="page pageSet cur activesss"  href="{self.url}{i}">{i}</a>'
             else:
                 # v = f"<a  class='page-item active' href='{self.url}?page={i}'>{i}</a>"
-                v= f'<li class="page-item "><a class="page-link" href="{self.url}/{i}">{i}</a></li>'
+                v= f'<a class="page pageSet cur " href="{self.url}{i}">{i}</a>'
 
             pagelist.append(v)
         pagelist.append(next)

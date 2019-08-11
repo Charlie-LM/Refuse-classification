@@ -7,11 +7,11 @@ def index(request):
 
 
 def news(request,id):
-    cout = News.objects.all().count()
+    count = News.objects.all().count() #查看数据库里面的所有数据
     ids=int(id)
-    pages=hu.Pageinfo(id,cout,6,'/abc/')
+    pages=hu.Pageinfo(ids,count,6,'/article/news/') #实例化实例
     ss = News.objects.all().values_list()[pages.start():pages.end()]
-    return rendewr(request,'News.html',{'ss':ss,'pagr':pages})
+    return render(request,'News.html',{'ss':ss,'pages':pages})
 
 
 def interest(request):

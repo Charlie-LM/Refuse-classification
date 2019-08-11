@@ -7,306 +7,319 @@
 {% block jscss %}
     <script type="text/javascript" src="{% static "news_files/02686945.js" %}" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="{% static "news_files/02686945.css" %}">
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
 {% endblock %}
 
 {% block newsac %}class="active"{% endblock %}
 
 {% block content %}
 
-<div id="layout_1561086490088" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
-     data-wow-iteration="1">
-    <div class="view_contents">
-    </div>
-</div>
-<div id="layout_1561086955352" class="layout  none wow bounceInDown animated" data-wow-duration="1s" data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1"
-     style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceInDown;">
-    <div class="view_contents">
-        <div id="text_style_01_1561086955357" class="view style_01 text  none lockHeightView" data-wow-duration="0s"
-             data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
-            <div names="text" class="view_contents">
-                新/闻/资/讯
-            </div>
-        </div>
-        <div id="text_style_01_1561086955371" class="view style_01 text  none lockHeightView" data-wow-duration="0s"
-             data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
-            <div names="text" class="view_contents">
-                News and Life
-            </div>
+    <div id="layout_1561086490088" class="layout  none " data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
+         data-wow-iteration="1">
+        <div class="view_contents">
         </div>
     </div>
-</div>
-<div id="layout_diy_1560934259" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
-     data-wow-iteration="1" style="height: 759.683px;">
-    <div class="view_contents">
-        <div id="newsList_style_18_1561086911503"
-             class="view style_18 newsList  none wow bounceIn lockHeightView animated" data-wow-duration="1s"
-             data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1"
-             style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceIn;">
-            <div names="newsList" class="view_contents"><!---新闻列表区域-->
-                <!--pageSet pagecurSet-->
-                <div class="boxNewsListStyle_18">
-                    <ul id="boxNewsList">
-                        <li class="sumary_list modSet">
-                            <div class="newCont">
-                                <div class="newTitle ">
-                                    <div class="newName titleSet ">
-                                        <span class="newSort sortSet"> 新闻资讯</span>
-                                        <a class="titleSet"
-                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794821&amp;_t=1561364416"
-                                           target="_self">杭州气温“断崖式”下降 西湖龙井谷雨茶产量减少</a>
-                                        <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-
-                                    </div>
-                                </div>
-                                <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">9
-                                    日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将对杭州西湖龙井茶叶生长带来影响，不少茶农坦言西湖龙井谷雨茶产量将降低，价格
-                                    将随之上涨。9日17时浙江省气象台发布强天气通报，该省湖州、嘉兴、杭州、绍兴北部等地区已出现大范围8-11级雷雨大风，局部地区有···
-                                </div>
-                                <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
-                                    9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将对杭州西湖龙井茶叶生长带来影响，不少茶农坦言西湖龙井谷雨茶产量将降低，价格将随之上涨。9日17时浙江省气象台发布强天气通报，该省...
-                                </div>
-                                <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
-                                    9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将...
-                                </div>
-                                <div class="show_all">
-
-                                </div>
-                            </div>
-                        </li>
-                        {% for i in ss %}
-                        <li class="sumary_list modSet">
-                            {{ i.1|safe }}
-                            {{ i.2|safe }}
-                            {{ i.3|safe }}
-                        <a class="btnaSet" href="/contents/{{ i.0 }}"
-                                       >查看全文</a>
-                        </li>
-                        {% endfor %}
-                        <li class="sumary_list modSet">
-                            <div class="newCont">
-                                <div class="newTitle ">
-                                    <div class="newName titleSet ">
-                                        <span class="newSort sortSet"> 新闻资讯</span>
-                                        <a class="titleSet"
-                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
-                                           target="_self">安吉县杜尉栋副县长一行到访浙茶集团商议茶苗扶贫事宜</a>
-
-
-                                        <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">2
-                                    月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰等一行到访浙茶集团，商讨茶苗扶贫后续事宜。集团董事长毛立民、总经理吴骁等出
-                                    席座谈。会上，杜尉栋首先表示了感谢，2018年黄杜村党员提出捐赠1500万株茶苗后，浙茶集团积极响应，在茶苗受捐地遴选、茶叶产销等多方面给予了大
-                                    力支持···
-                                </div>
-                                <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
-                                    2月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰等一行到访浙茶集团，商讨茶苗扶贫后续事宜。集团董事长毛立民、总经理吴骁等出席座谈。会上，杜尉栋首先表示了感谢，2018年黄杜村党...
-                                </div>
-                                <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
-                                    2月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰...
-                                </div>
-
-
-                                <div class="show_all">
-                                    <a class="btnaSet"
-                                       href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
-                                       target="_self">查看全文</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="page_btn">
-                        <a id="pagecurSet" class="page pageSet cur" href="javascript:;" page="1">1</a><a
-                            class="page pageSet" page="2" href="#newsList_style_18_1561086911503"
-                            onclick="RequestURL('newsList_style_18_1561086911503', sys_url_newsList_style_18_1561086911503, 'News_page=2&amp;')">2</a><a
-                            class="page pageSet" href="#newsList_style_18_1561086911503"
-                            onclick="RequestURL('newsList_style_18_1561086911503', sys_url_newsList_style_18_1561086911503, 'News_page=2&amp;')">&gt;</a>
-                    </div>
-
+    <div id="layout_1561086955352" class="layout  none wow bounceInDown animated" data-wow-duration="1s"
+         data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1"
+         style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceInDown;">
+        <div class="view_contents">
+            <div id="text_style_01_1561086955357" class="view style_01 text  none lockHeightView" data-wow-duration="0s"
+                 data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+                <div names="text" class="view_contents">
+                    新/闻/资/讯
                 </div>
-                <!---新闻列表区域 结束--->
-                <style>
-                    #newsList_style_18_1561086911503 .newDetail.pc {
-                        display: block;
-                    }
+            </div>
+            <div id="text_style_01_1561086955371" class="view style_01 text  none lockHeightView" data-wow-duration="0s"
+                 data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
+                <div names="text" class="view_contents">
+                    News and Life
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="layout_diy_1560934259" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
+         data-wow-iteration="1" style="height: 759.683px;">
+        <div class="view_contents">
+            <div id="newsList_style_18_1561086911503"
+                 class="view style_18 newsList  none wow bounceIn lockHeightView animated" data-wow-duration="1s"
+                 data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1"
+                 style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceIn;">
+                <div names="newsList" class="view_contents"><!---新闻列表区域-->
+                    <!--pageSet pagecurSet-->
+                    <div class="boxNewsListStyle_18">
+                        <ul id="boxNewsList">
+                            <li class="sumary_list modSet">
+                                <div class="newCont">
+                                    <div class="newTitle ">
+                                        <div class="newName titleSet ">
+                                            <span class="newSort sortSet"> 新闻资讯</span>
+                                            <a class="titleSet"
+                                               href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794821&amp;_t=1561364416"
+                                               target="_self">杭州气温“断崖式”下降 西湖龙井谷雨茶产量减少</a>
+                                            <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
 
-                    #newsList_style_18_1561086911503 .newDetail.pad, #newsList_style_18_1561086911503 .newDetail.mobile {
-                        display: none;
-                    }
+                                        </div>
+                                    </div>
+                                    <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">9
+                                        日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将对杭州西湖龙井茶叶生长带来影响，不少茶农坦言西湖龙井谷雨茶产量将降低，价格
+                                        将随之上涨。9日17时浙江省气象台发布强天气通报，该省湖州、嘉兴、杭州、绍兴北部等地区已出现大范围8-11级雷雨大风，局部地区有···
+                                    </div>
+                                    <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
+                                        9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将对杭州西湖龙井茶叶生长带来影响，不少茶农坦言西湖龙井谷雨茶产量将降低，价格将随之上涨。9日17时浙江省气象台发布强天气通报，该省...
+                                    </div>
+                                    <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
+                                        9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将...
+                                    </div>
+                                    <div class="show_all">
 
-                    #newsList_style_18_1561086911503 .newTitle.pc {
-                        display: block;
-                    }
+                                    </div>
+                                </div>
+                            </li>
+                            {% for i in ss %}
+                                <li class="sumary_list modSet">
+                                    {{ i.1|safe }}
+                                    {{ i.2|safe }}
+                                    {{ i.3|safe }}
+                                    <a class="btnaSet" href="/contents/{{ i.0 }}"
+                                    >查看全文</a>
+                                </li>
+                            {% endfor %}
+                            <li class="sumary_list modSet">
+                                <div class="newCont">
+                                    <div class="newTitle ">
+                                        <div class="newName titleSet ">
+                                            <span class="newSort sortSet"> 新闻资讯</span>
+                                            <a class="titleSet"
+                                               href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
+                                               target="_self">安吉县杜尉栋副县长一行到访浙茶集团商议茶苗扶贫事宜</a>
 
-                    #newsList_style_18_1561086911503 .newTitle.pad, #newsList_style_18_1561086911503 .newTitle.mobile {
-                        display: none;
-                    }
 
-                    @media screen and (min-width: 641px) and (max-width: 1200px) {
-                        #newsList_style_18_1561086911503 .newDetail.pad {
+                                            <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">2
+                                        月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰等一行到访浙茶集团，商讨茶苗扶贫后续事宜。集团董事长毛立民、总经理吴骁等出
+                                        席座谈。会上，杜尉栋首先表示了感谢，2018年黄杜村党员提出捐赠1500万株茶苗后，浙茶集团积极响应，在茶苗受捐地遴选、茶叶产销等多方面给予了大
+                                        力支持···
+                                    </div>
+                                    <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
+                                        2月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰等一行到访浙茶集团，商讨茶苗扶贫后续事宜。集团董事长毛立民、总经理吴骁等出席座谈。会上，杜尉栋首先表示了感谢，2018年黄杜村党...
+                                    </div>
+                                    <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
+                                        2月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰...
+                                    </div>
+
+
+                                    <div class="show_all">
+                                        <a class="btnaSet"
+                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
+                                           target="_self">查看全文</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="page_btn">
+
+                            {{ pages.a_page|safe }}
+                        </div>
+
+                        {#                                            <div class="page_btn">#}
+                        {#                                                <a id="pagecurSet" class="page pageSet cur" href="javascript:;" page="1">1</a><a#}
+                        {#                                                    class="page pageSet" page="2" href="#newsList_style_18_1561086911503"#}
+                        {#                                                    onclick="RequestURL('newsList_style_18_1561086911503', sys_url_newsList_style_18_1561086911503, 'News_page=2&amp;')">2</a><a#}
+                        {#                                                    class="page pageSet" href="#newsList_style_18_1561086911503"#}
+                        {#                                                    onclick="RequestURL('newsList_style_18_1561086911503', sys_url_newsList_style_18_1561086911503, 'News_page=2&amp;')">&gt;</a>#}
+                        {#                                            </div>#}
+
+                    </div>
+                    <!---新闻列表区域 结束--->
+                    <style>
+                        #newsList_style_18_1561086911503 .newDetail.pc {
                             display: block;
                         }
 
-                        #newsList_style_18_1561086911503 .newDetail.pc, #newsList_style_18_1561086911503 .newDetail.mobile {
+                        #newsList_style_18_1561086911503 .newDetail.pad, #newsList_style_18_1561086911503 .newDetail.mobile {
                             display: none;
                         }
 
-                        #newsList_style_18_1561086911503 .newTitle.pad {
+                        #newsList_style_18_1561086911503 .newTitle.pc {
                             display: block;
                         }
 
-                        #newsList_style_18_1561086911503 .newTitle.pc, #newsList_style_18_1561086911503 .newTitle.mobile {
-                            display: none;
-                        }
-                    }
-
-                    @media screen and (max-width: 640px) {
-                        #newsList_style_18_1561086911503 .newDetail.mobile {
-                            display: block;
-                        }
-
-                        #newsList_style_18_1561086911503 .newDetail.pc, #newsList_style_18_1561086911503 .newDetail.pad {
+                        #newsList_style_18_1561086911503 .newTitle.pad, #newsList_style_18_1561086911503 .newTitle.mobile {
                             display: none;
                         }
 
-                        #newsList_style_18_1561086911503 .newTitle.mobile {
-                            display: block;
+                        @media screen and (min-width: 641px) and (max-width: 1200px) {
+                            #newsList_style_18_1561086911503 .newDetail.pad {
+                                display: block;
+                            }
+
+                            #newsList_style_18_1561086911503 .newDetail.pc, #newsList_style_18_1561086911503 .newDetail.mobile {
+                                display: none;
+                            }
+
+                            #newsList_style_18_1561086911503 .newTitle.pad {
+                                display: block;
+                            }
+
+                            #newsList_style_18_1561086911503 .newTitle.pc, #newsList_style_18_1561086911503 .newTitle.mobile {
+                                display: none;
+                            }
                         }
 
-                        #newsList_style_18_1561086911503 .newTitle.pc, #newsList_style_18_1561086911503 .newTitle.pad {
-                            display: none;
+                        @media screen and (max-width: 640px) {
+                            #newsList_style_18_1561086911503 .newDetail.mobile {
+                                display: block;
+                            }
+
+                            #newsList_style_18_1561086911503 .newDetail.pc, #newsList_style_18_1561086911503 .newDetail.pad {
+                                display: none;
+                            }
+
+                            #newsList_style_18_1561086911503 .newTitle.mobile {
+                                display: block;
+                            }
+
+                            #newsList_style_18_1561086911503 .newTitle.pc, #newsList_style_18_1561086911503 .newTitle.pad {
+                                display: none;
+                            }
                         }
-                    }
-                </style>
-                <style>
-                    @media screen and (min-width: 1025px) {
-                        #newsList_style_18_1561086911503 .sumary_list .newPic {
-                            width: 0px;
+                    </style>
+                    <style>
+                        @media screen and (min-width: 1025px) {
+                            #newsList_style_18_1561086911503 .sumary_list .newPic {
+                                width: 0px;
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: calc(100% - 0px - 10px);
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: 100%;
+                            }
                         }
 
-                        #newsList_style_18_1561086911503 .sumary_list .newCont {
-                            width: calc(100% - 0px - 10px);
+                        @media screen and (min-width: 640px) and (max-width: 1024px) {
+                            #newsList_style_18_1561086911503 .sumary_list .newPic {
+                                width: 0px;
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: calc(100% - 0px - 10px);
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: 100%;
+                            }
                         }
 
-                        #newsList_style_18_1561086911503 .sumary_list .newCont {
-                            width: 100%;
-                        }
-                    }
-
-                    @media screen and (min-width: 640px) and (max-width: 1024px) {
-                        #newsList_style_18_1561086911503 .sumary_list .newPic {
-                            width: 0px;
+                        @media screen and (max-width: 640px) {
                         }
 
-                        #newsList_style_18_1561086911503 .sumary_list .newCont {
-                            width: calc(100% - 0px - 10px);
+                        .activesss {
+                            background-color: red;
                         }
 
-                        #newsList_style_18_1561086911503 .sumary_list .newCont {
-                            width: 100%;
-                        }
-                    }
-
-                    @media screen and (max-width: 640px) {
-                    }
-
-                    /* 新分页 */
-                    #newsList_style_18_1561086911503 .page_btn {
-                        font-size: 14px;
-                        text-align: center;
-                    }
-
-                    #newsList_style_18_1561086911503 .page_btn .all_page {
-                        display: inline-block;
-                        margin: 0 10px;
-                    }
-
-                    #newsList_style_18_1561086911503 .page:hover {
-                        background: red;
-                        color: white;
-                        cursor: pointer;
-                    }
-
-                    #newsList_style_18_1561086911503 .page_btn .cur {
-                        background: red;
-                        color: white;
-                        cursor: pointer;
-                    }
-
-                    #newsList_style_18_1561086911503 .submit_div {
-                        display: inline-block;
-                    }
-
-                    #newsList_style_18_1561086911503 .page_btn input {
-                        width: 50px;
-                        margin: 0 5px;
-                    }
-
-                    #newsList_style_18_1561086911503 .page_btn input:hover {
-                        cursor: default;
-                        background: white;
-                        color: #333;
-                    }
-
-                    #newsList_style_18_1561086911503 .page_submit {
-                        margin-left: 5px;
-                    }
-
-                    #newsList_style_18_1561086911503 .page {
-                        display: inline-block;
-                        border: none;
-                        background: white;
-                        text-align: center;
-                        width: auto;
-                        padding: 0 15px;
-                        margin: 0 .5px;
-                        height: auto;
-                        line-height: 35px;
-                        box-sizing: border-box;
-                        -webkit-box-sizing: border-box;
-                        border: 1px solid #e5e5e5;
-                    }
-
-                    @media screen and (max-width: 640px) {
+                        /* 新分页 */
                         #newsList_style_18_1561086911503 .page_btn {
-                            font-size: 12px;
+                            font-size: 14px;
+                            text-align: center;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_btn .all_page {
+                            display: inline-block;
+                            margin: 0 10px;
+                        }
+
+                        #newsList_style_18_1561086911503 .page:hover {
+                            background: red;
+                            color: white;
+                            cursor: pointer;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_btn .cur {
+                            background: white;
+                            color: green;
+                            cursor: pointer;
                         }
 
                         #newsList_style_18_1561086911503 .submit_div {
-                            display: none;
+                            display: inline-block;
                         }
-                    }
 
-                    #newsList_style_18_1561086911503 .page {
-                        width: auto;
-                        margin: 0 5px 10px 5px;
-                        border-radius: 5px;
-                    }
+                        #newsList_style_18_1561086911503 .page_btn input {
+                            width: 50px;
+                            margin: 0 5px;
+                        }
 
-                    @media screen and (max-width: 640px) {
+                        #newsList_style_18_1561086911503 .page_btn input:hover {
+                            cursor: default;
+                            background: white;
+                            color: #333;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_submit {
+                            margin-left: 5px;
+                        }
+
                         #newsList_style_18_1561086911503 .page {
-                            line-height: 30px;
-                            padding: 0 13px;
+                            display: inline-block;
+                            border: none;
+                            background: white;
+                            text-align: center;
+                            width: auto;
+                            padding: 0 15px;
+                            margin: 0 .5px;
+                            height: auto;
+                            line-height: 35px;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            border: 1px solid #e5e5e5;
                         }
-                    }
 
-                </style>
+                        @media screen and (max-width: 640px) {
+                            #newsList_style_18_1561086911503 .page_btn {
+                                font-size: 12px;
+                            }
+
+                            #newsList_style_18_1561086911503 .submit_div {
+                                display: none;
+                            }
+                        }
+
+                        #newsList_style_18_1561086911503 .page {
+                            width: auto;
+                            margin: 0 5px 10px 5px;
+                            border-radius: 5px;
+                        }
+
+                        @media screen and (max-width: 640px) {
+                            #newsList_style_18_1561086911503 .page {
+                                line-height: 30px;
+                                padding: 0 13px;
+                            }
+                        }
+
+                    </style>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="layout_1561088589828" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
-     data-wow-iteration="1">
-    <div class="view_contents">
+    <div id="layout_1561088589828" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
+         data-wow-iteration="1" page_btn>
+        <div class="view_contents">
+        </div>
     </div>
-</div>
-    <div>
-    {{ pagr.page|safe }}
-    </div>
+
 {% endblock %}
 <script>
 
