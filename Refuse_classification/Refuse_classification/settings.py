@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -62,7 +61,7 @@ ROOT_URLCONF = 'Refuse_classification.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Refuse_classification.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -87,7 +85,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -107,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -122,7 +118,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -143,7 +138,8 @@ LOGGING = {
     'disable_existing_loggers': True,
     'formatters': {
         'standard': {
-            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}  #日志格式
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}
+        # 日志格式
     },
     'filters': {
     },
@@ -152,17 +148,17 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
             'include_html': True,
-            },
-        'default': {
-            'level':'DEBUG',
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_ROOT, 'all.log'),     # 日志输出文件
-            'maxBytes': 1024*1024*5,       # 文件大小
-            'backupCount': 5,              # 备份份数
-            'formatter':'standard',        # 使用哪种formatters日志格式
-            'encoding':'utf-8',
         },
-        'console':{
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_ROOT, 'all.log'),  # 日志输出文件
+            'maxBytes': 1024 * 1024 * 5,  # 文件大小
+            'backupCount': 5,  # 备份份数
+            'formatter': 'standard',  # 使用哪种formatters日志格式
+            'encoding': 'utf-8',
+        },
+        'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'standard'
@@ -174,7 +170,7 @@ LOGGING = {
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
-            'encoding':'utf-8',
+            'encoding': 'utf-8',
         },
         'apis_handler': {
             'level': 'DEBUG',
@@ -183,16 +179,16 @@ LOGGING = {
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
-            'encoding':'utf-8',
+            'encoding': 'utf-8',
         },
-        'repo_handler': {
+        'search_handler': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_ROOT, 'repo.log'),
+            'filename': os.path.join(LOG_ROOT, 'search.log'),
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
-            'encoding':'utf-8',
+            'encoding': 'utf-8',
         }
     },
     'loggers': {
@@ -201,7 +197,7 @@ LOGGING = {
         #     'level': 'DEBUG',
         #     'propagate': False
         # },
-        'account':{
+        'account': {
             'handlers': ['account_handler', 'console'],
             'level': 'DEBUG',
             'propagate': False
@@ -211,17 +207,16 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': False
         },
-        'repo': {
-            'handlers': ['repo_handler', 'console'],
+        'search': {
+            'handlers': ['search_handler', 'console'],
             'level': 'DEBUG',
             'propagate': False
         },
+
     }
 }
 
-
 AUTH_USER_MODEL = 'accounts.User'
-
 
 CACHES = {
     'default': {
@@ -231,13 +226,12 @@ CACHES = {
         'LOCATION': 'redis://101.200.36.24:6379',
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-             "PASSWORD": "rootroot",
+            "PASSWORD": "rootroot",
         },
     },
 }
 
+FontPath = os.path.join(BASE_DIR, 'static/fonts/')
 
-FontPath = os.path.join(BASE_DIR,'static/fonts/')
-
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
