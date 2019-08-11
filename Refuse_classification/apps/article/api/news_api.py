@@ -65,7 +65,7 @@ for x in list_html_list:
     html = res.text
     # 获取正文
     soup = BeautifulSoup(html, 'lxml')
-    content = soup.find_all(class_='edits')
+    content = soup.find_all(class_='edits')[0]
 
     # 获取短暂描述
     abstract0 = soup.select('.edits > p')[0]
