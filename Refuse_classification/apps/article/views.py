@@ -11,7 +11,7 @@ def news(request,id):
     ids=int(id)
     pages=hu.Pageinfo(id,cout,6,'/abc/')
     ss = News.objects.all().values_list()[pages.start():pages.end()]
-    return render(request,'News.html',{'ss':ss,'pagr':pages})
+    return rendewr(request,'News.html',{'ss':ss,'pagr':pages})
 
 
 def interest(request):

@@ -21,10 +21,10 @@ def send_sms(mobile, captcha):
     }
     # 还有我们准备用Post传的值，这里值用字典的形式
     values = {
-        "sid": "c881986f76a4a91f0ea478ff89abf7d5",
-        "token": "a167672e9b2ff0a407060ce4c42e7898",
-        "appid": "4bdd5c0687414cd9a51bb22880187fea",
-        "templateid": "489147",
+        "sid": "96856508d1fe89dd7fcd7840756fb405",
+        "token": "3d050cfbd2e3d7f60dba4dae8e495e66",
+        "appid": "fb36a24e6de14e4db10c42daddcef738",
+        "templateid": "489470",
         "param": str(captcha),
         "mobile": mobile,
     }
@@ -52,4 +52,4 @@ def send_sms(mobile, captcha):
 
 if __name__ == "__main__":
     # 测试短信接口是否是管用
-    send_sms("18373300710", "123456")
+    send_sms("15675365506", "123456")
