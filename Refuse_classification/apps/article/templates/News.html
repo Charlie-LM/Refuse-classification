@@ -8,7 +8,7 @@
     <script type="text/javascript" src="{% static "news_files/02686945.js" %}" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="{% static "news_files/02686945.css" %}">
     <style>
-        .active {
+        .activesss {
             background-color: red;
         }
     </style>
@@ -75,18 +75,41 @@
                                         9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将...
                                     </div>
                                     <div class="show_all">
-
+                                        <a class="btnaSet"
+                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
+                                           target="_self">查看全文</a>
                                     </div>
                                 </div>
                             </li>
                             {% for i in ss %}
-                                <li class="sumary_list modSet">
-                                    {{ i.1|safe }}
-                                    {{ i.2|safe }}
-                                    {{ i.3|safe }}
-                                    <a class="btnaSet" href="/contents/{{ i.0 }}"
-                                    >查看全文</a>
-                                </li>
+                            <li class="sumary_list modSet">
+                                <div class="newCont">
+                                    <div class="newTitle ">
+                                        <div class="newName titleSet ">
+                                            <span class="newSort sortSet"> {{ i.1|safe }}</span>
+                                            <a class="titleSet"
+                                               href="/contents/{{ i.0 }}"
+                                               target="_self">{{ i.2|safe }}</a>
+                                            <span class="newsTime timesSet"><span class="nDate">{{ i.4|safe }}</span></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">
+                                        {{ i.3|safe }}
+                                    </div>
+                                    <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
+                                        {{ i.3|safe }}
+                                    </div>
+                                    <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
+                                        {{ i.3|safe }}
+                                    </div>
+                                    <div class="show_all">
+                                        <a class="btnaSet"
+                                           href="{{ i.8 }}"
+                                           target="_self">查看全文</a>
+                                    </div>
+                                </div>
+                            </li>
                             {% endfor %}
                             <li class="sumary_list modSet">
                                 <div class="newCont">

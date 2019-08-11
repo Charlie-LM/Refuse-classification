@@ -59,7 +59,7 @@ class Pageinfo(object):
         for i in range(begin, sotp):
             if i == self.page:
                 # v = f"<a  class='page-item active' href='{self.urpage pageSet curpage={i}'>{i}</a>"
-                v= f'<a class="page pageSet cur activesss"  href="{self.url}{i}">{i}</a>'
+                v= f'<a class="activesss page pageSet cur"  href="{self.url}{i}">{i}</a>'
             else:
                 # v = f"<a  class='page-item active' href='{self.url}?page={i}'>{i}</a>"
                 v= f'<a class="page pageSet cur " href="{self.url}{i}">{i}</a>'
