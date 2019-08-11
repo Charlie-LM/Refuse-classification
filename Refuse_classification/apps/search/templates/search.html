@@ -47,7 +47,7 @@
                                     {% csrf_token %}
                                     <input class="inputSet search_input" name="pkeyword" id="pkeyword"
                                            placeholder="请输入要分类的垃圾" style="text-align: center">
-                                    <button type="button" class="search-btn btnaSet" onclick="search();"><i
+                                    <button id="sousuo" type="button" class="search-btn btnaSet" onclick="search();"><i
                                             class="glyphicon glyphicon-search"></i></button>
                                 </form>
                             </div>
@@ -61,9 +61,9 @@
     </div>
     <div style="background: url({% static 'search_files/tupian_05.jpg' %});margin-top: 0px">
         <div style="float: left">
-           <img src="" id="img" style="height: 310px;">
+           <img src="" id="img" style="height: 310px">
         </div>
-        <div style="display: inline">
+        <div id="lajidata" style="display: none">
         <h3 id="rubbish" style="margin: 0px;"></h3>
         <h4 id="rubbish_type"></h4>
         <p id="rubbish_type_reason"></p>
@@ -75,6 +75,8 @@
         </div>
         <script>
             function search() {
+                var data1=document.getElementById('lajidata');
+                data1.style.display="block";
                 $.ajax({
                     url: '/search/ajax_demo/',
                     type: 'POST',
