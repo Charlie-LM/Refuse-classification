@@ -25,7 +25,7 @@ driver = webdriver.Firefox()
 driver.get('http://www.chinaenvironment.com/search/index.aspx?nodeid=128&keyword=垃圾分类')
 
 # 定义循环次数，点击“加载更多“按钮的次数,设置睡眠时间防止反爬
-for i in range(5):
+for i in range(1):
     driver.find_element_by_class_name('getMore').click()
     time.sleep(random.randint(3, 5))
 
@@ -66,19 +66,27 @@ for x in list_html_list:
     # 获取正文
     soup = BeautifulSoup(html, 'lxml')
     content = soup.find_all(class_='edits')
-    abstract = soup.select('.edits > p')[0]  # 获取短暂描述
 
-    # 获取大标题
-    title = soup.find_all(class_='articleTit')[0]
+    # 获取短暂描述
+    abstract0 = soup.select('.edits > p')[0]
+    abstract = re.findall(r'<p>[\s\S]\s+(.*)[\s\S]</p>',str(abstract0))[0]
+
+    # 获取大标题 只获取内容
+    title0 = soup.find_all(class_='articleTit')[0]
+    title = re.findall(r'<.*>(.*)<.*>',str(title0))[0]
 
     # 获取时间与作者
     time_autor = soup.find_all(class_='articleInfo cleargap')
     [s.extract() for s in time_autor[0]("a")]
 
-    time_time = soup.find_all(class_='ibox time')[0]
+    #获取时间，只获取内容
+    time_time0 = soup.find_all(class_='ibox time')[0]
+    time_time = re.findall(r'<.*>(.*)<.*>',str(time_time0))[0]
+
     from_from = soup.find_all(class_='ibox from')[0]
     author = soup.find_all(class_='ibox author')[0]
-    # 将三类数据加入一个列表
+
+    # 将数据加入一个列表
     list_all_html.append(
         {'title': title, 'abstract': abstract, 'time_time': time_time, 'author': author, 'content': content,
          'from_from': from_from, 'news_id': news_id[0],'news_url':news_url})

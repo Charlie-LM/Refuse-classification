@@ -13,6 +13,11 @@ def news(request,id):
     ss = News.objects.all().values_list()[pages.start():pages.end()]
     return render(request,'News.html',{'ss':ss,'pages':pages})
 
+def contents(request,id):
+    contents = News.objects.get(news_id=id)
+    return render(request,'contents.html',{'contents':contents})
+
+
 
 def interest(request):
     return render(request,'interest.html')
