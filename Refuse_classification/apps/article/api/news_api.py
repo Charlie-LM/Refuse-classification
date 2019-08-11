@@ -21,7 +21,8 @@ content = ''
 from_from = ''
 
 # 创建对象并且打开目标网站
-driver = webdriver.Firefox()
+path = "./chromedriver.exe"
+driver = webdriver.Chrome(executable_path=path)
 driver.get('http://www.chinaenvironment.com/search/index.aspx?nodeid=128&keyword=垃圾分类')
 
 # 定义循环次数，点击“加载更多“按钮的次数,设置睡眠时间防止反爬
@@ -65,7 +66,7 @@ for x in list_html_list:
     html = res.text
     # 获取正文
     soup = BeautifulSoup(html, 'lxml')
-    content = soup.find_all(class_='edits')
+    content = soup.find_all(class_='edits')[0]
 
     # 获取短暂描述
     abstract0 = soup.select('.edits > p')[0]
