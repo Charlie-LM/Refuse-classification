@@ -13,7 +13,7 @@ class News(models.Model):
     class Meta:
         verbose_name = '新闻类'
         verbose_name_plural = verbose_name
-        ordering = ['-title', ]
+        ordering = ['-news_id', ]
 
     def __str__(self):
         return self.title

@@ -36,7 +36,7 @@
             <div id="text_style_01_1561086955371" class="view style_01 text  none lockHeightView" data-wow-duration="0s"
                  data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
                 <div names="text" class="view_contents">
-                    News and Life
+                    News Information
                 </div>
             </div>
         </div>
@@ -52,43 +52,14 @@
                     <!--pageSet pagecurSet-->
                     <div class="boxNewsListStyle_18">
                         <ul id="boxNewsList">
+                            {% for i in ss %}
                             <li class="sumary_list modSet">
                                 <div class="newCont">
                                     <div class="newTitle ">
                                         <div class="newName titleSet ">
                                             <span class="newSort sortSet"> 新闻资讯</span>
                                             <a class="titleSet"
-                                               href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794821&amp;_t=1561364416"
-                                               target="_self">杭州气温“断崖式”下降 西湖龙井谷雨茶产量减少</a>
-                                            <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-
-                                        </div>
-                                    </div>
-                                    <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">9
-                                        日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将对杭州西湖龙井茶叶生长带来影响，不少茶农坦言西湖龙井谷雨茶产量将降低，价格
-                                        将随之上涨。9日17时浙江省气象台发布强天气通报，该省湖州、嘉兴、杭州、绍兴北部等地区已出现大范围8-11级雷雨大风，局部地区有···
-                                    </div>
-                                    <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
-                                        9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将对杭州西湖龙井茶叶生长带来影响，不少茶农坦言西湖龙井谷雨茶产量将降低，价格将随之上涨。9日17时浙江省气象台发布强天气通报，该省...
-                                    </div>
-                                    <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
-                                        9日，受江淮气旋和冷空气影响，浙江多地气温“断崖式”下降。大幅度降温也将...
-                                    </div>
-                                    <div class="show_all">
-                                        <a class="btnaSet"
-                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
-                                           target="_self">查看全文</a>
-                                    </div>
-                                </div>
-                            </li>
-                            {% for i in ss %}
-                            <li class="sumary_list modSet">
-                                <div class="newCont">
-                                    <div class="newTitle ">
-                                        <div class="newName titleSet ">
-                                            <span class="newSort sortSet"> {{ i.1|safe }}</span>
-                                            <a class="titleSet"
-                                               href="/contents/{{ i.0 }}"
+                                               href="{{ i.8 }}"
                                                target="_self">{{ i.2|safe }}</a>
                                             <span class="newsTime timesSet"><span class="nDate">{{ i.4|safe }}</span></span>
 
@@ -111,42 +82,6 @@
                                 </div>
                             </li>
                             {% endfor %}
-                            <li class="sumary_list modSet">
-                                <div class="newCont">
-                                    <div class="newTitle ">
-                                        <div class="newName titleSet ">
-                                            <span class="newSort sortSet"> 新闻资讯</span>
-                                            <a class="titleSet"
-                                               href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
-                                               target="_self">安吉县杜尉栋副县长一行到访浙茶集团商议茶苗扶贫事宜</a>
-
-
-                                            <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">2
-                                        月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰等一行到访浙茶集团，商讨茶苗扶贫后续事宜。集团董事长毛立民、总经理吴骁等出
-                                        席座谈。会上，杜尉栋首先表示了感谢，2018年黄杜村党员提出捐赠1500万株茶苗后，浙茶集团积极响应，在茶苗受捐地遴选、茶叶产销等多方面给予了大
-                                        力支持···
-                                    </div>
-                                    <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
-                                        2月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰等一行到访浙茶集团，商讨茶苗扶贫后续事宜。集团董事长毛立民、总经理吴骁等出席座谈。会上，杜尉栋首先表示了感谢，2018年黄杜村党...
-                                    </div>
-                                    <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
-                                        2月25日，安吉县人民政府副县长杜尉栋、湖州市政府区域合作办副主任何锋峰...
-                                    </div>
-
-
-                                    <div class="show_all">
-                                        <a class="btnaSet"
-                                           href="http://demo.templateonline.cn/fee9fefceadd8a56/2686951-2686951.html?newsid=1794825&amp;_t=1561364416"
-                                           target="_self">查看全文</a>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                         <div class="page_btn">
 
