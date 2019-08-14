@@ -20,7 +20,8 @@ def contents(request,id):
 
 
 def interest(request):
-    return render(request,'interest.html')
+    id =58709988
+    return render(request,'interest.html',{'id':id})
 
 def base(request):
     return render(request,'base.html')

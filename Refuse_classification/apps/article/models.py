@@ -19,13 +19,13 @@ class News(models.Model):
         return self.title
 
 class Interest(models.Model):
-    title = models.CharField(max_length=200, verbose_name="标题", unique=True)
+    vd_id = models.CharField(max_length=20, verbose_name="视频id", unique=True)
     time = models.DateTimeField(auto_now_add=True)
-    content = models.TextField(verbose_name="段子内容")
+    title = models.TextField(verbose_name="视频标题")
     avator = models.ImageField(upload_to='avator/', default='imgs/default.png',)
 
     class Meta:
-        verbose_name = '段子类'
+        verbose_name = '视频类'
         verbose_name_plural = verbose_name
         ordering = ['-title', ]
 
