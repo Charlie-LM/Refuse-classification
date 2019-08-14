@@ -21,7 +21,8 @@ content = ''
 from_from = ''
 
 # 创建对象并且打开目标网站
-driver = webdriver.Firefox()
+path = "./chromedriver.exe"
+driver = webdriver.Chrome(executable_path=path)
 driver.get('http://www.chinaenvironment.com/search/index.aspx?nodeid=128&keyword=垃圾分类')
 
 # 定义循环次数，点击“加载更多“按钮的次数,设置睡眠时间防止反爬

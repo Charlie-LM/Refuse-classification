@@ -2199,7 +2199,7 @@
                  data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1"
                  style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceInDown;">
                 <div names="text" class="view_contents">
-                    茶/与/生/活
+                    新/闻/资/讯
                 </div>
             </div>
             <div id="text_style_01_1561011915551"
@@ -2207,7 +2207,7 @@
                  data-wow-delay="0.25s" data-wow-offset="0" data-wow-iteration="1"
                  style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-iteration-count: 1; animation-name: bounceInDown;">
                 <div names="text" class="view_contents">
-                    Tea and Life
+                    News Information
                 </div>
             </div>
         </div>
@@ -2245,180 +2245,69 @@
                     <div class="boxNewsListStyle_12">
                         <ul>
                             <div class="newLeft">
+                                {% for i in ss %}
                                 <li class="modSet" style="display:block">
                                     <div class="newPic imgSet">
-                                        <a href="2686951-2686951.html?newsid=1794807&_t=1561364416" target="_self"><img
+                                        <a href="{{ i.8 }}" target="_self"><img
                                                 class="News_img" src="{% static "shouye_files/20190620145216681.jpg" %}"
                                                 alt="茶具的使用方法及功能"></a>
                                         <div class="zTm" style="margin-top:100%"></div>
                                         <div class="newCont twoBgSet">
                                             <div class="newTitle">
                                                 <a class="titleSet"
-                                                   href="2686951-2686951.html?newsid=1794807&_t=1561364416"
-                                                   target="_self">茶具的使用方法及功能</a>
+                                                   href="{{ i.8 }}"
+                                                   target="_self">{{ i.2|safe }}</a>
                                             </div>
                                             <div class="newDetail detailSet pc">
-                                                在茶事活动中，茶具不仅仅是指茶壶、品饮对杯。自嘉茶为大家整理了茶具的使用方法。熟悉泡茶用具，在茶事活动中也能够事半功倍。
+                                                {{ i.3|safe }}
                                             </div>
                                             <div class="newDetail detailSet pad">
-                                                在茶事活动中，茶具不仅仅是指茶壶、品饮对杯。自嘉茶为大家整理了茶具的使用方法。熟悉泡茶用具，在茶事活动中也能够事半功倍。
+                                                {{ i.3|safe }}
                                             </div>
                                             <div class="newDetail detailSet mobile">
-                                                在茶事活动中，茶具不仅仅是指茶壶、品饮对杯。自嘉茶为大家整理了茶具的使用...
+                                                {{ i.3|safe }}
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="modSet" style="display:block">
-                                    <div class="newPic imgSet">
-                                        <a href="2686951-2686951.html?newsid=1794809&_t=1561364416" target="_self"><img
-                                                class="News_img" src="{% static "shouye_files/20190620145259230.jpg" %}"
-                                                alt="喝绿茶能预防心肌梗塞"></a>
-                                        <div class="zTm" style="margin-top:100%"></div>
-                                        <div class="newCont twoBgSet">
-                                            <div class="newTitle">
-                                                <a class="titleSet"
-                                                   href="2686951-2686951.html?newsid=1794809&_t=1561364416"
-                                                   target="_self">喝绿茶能预防心肌梗塞</a>
-                                            </div>
-                                            <div class="newDetail detailSet pc">
-                                                绿茶现已成为白领们办公桌上不可少的饮料，绿茶能帮助消化，还能起到清肠减肥的作用。另外饮用绿茶可以降低三高，还能降脂，降了三高就意味着人们得心肌梗死的机率就小了一些，这些都不是吹的，一些国外的研究学家们都可以证明。
-                                            </div>
-                                            <div class="newDetail detailSet pad">
-                                                绿茶现已成为白领们办公桌上不可少的饮料，绿茶能帮助消化，还能起到清肠减肥的作用。另外饮用绿茶可以降低三高，还能降脂，降了...
-                                            </div>
-                                            <div class="newDetail detailSet mobile">
-                                                绿茶现已成为白领们办公桌上不可少的饮料，绿茶能帮助消化，还能起到清肠减肥...
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="modSet" style="display:block">
-
-
-                                    <div class="newPic imgSet">
-
-
-                                        <a href="2686951-2686951.html?newsid=1794811&_t=1561364416" target="_self"><img
-                                                class="News_img" src="{% static "shouye_files/20190620145241957.jpg" %}"
-                                                alt="学会品茶，喝出茶品"></a>
-
-
-                                        <div class="zTm" style="margin-top:100%"></div>
-
-
-                                        <div class="newCont twoBgSet">
-                                            <div class="newTitle">
-                                                <a class="titleSet"
-                                                   href="2686951-2686951.html?newsid=1794811&_t=1561364416"
-                                                   target="_self">学会品茶，喝出茶品</a>
-                                            </div>
-                                            <div class="newDetail detailSet pc">
-                                                不同的花茶的功效不同，所以在选购的时候需看清其作用，比如说洋甘菊特别具有安定神经与助消化系统的作用，最适合餐后与睡前饮用，是容易失眠的人的最佳茶饮。花茶有减肥、解暑热、散瘀血、降血压、降血脂、化热、消水肿等功效。
-                                            </div>
-                                            <div class="newDetail detailSet pad">
-                                                不同的花茶的功效不同，所以在选购的时候需看清其作用，比如说洋甘菊特别具有安定神经与助消化系统的作用，最适合餐后与睡前饮用...
-                                            </div>
-                                            <div class="newDetail detailSet mobile">
-                                                不同的花茶的功效不同，所以在选购的时候需看清其作用，比如说洋甘菊特别具有...
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </li>
+                                {% endfor %}
                             </div>
                             <div class="newRight">
                                 <div class="newsScroll">
                                     <ul class="ulScroll">
                                         <div class="news1">
+
+                                            {% for i in ss %}
                                             <li class="newsLi">
                                                 <div class="newsCont">
                                                     <div id="news_list">
                                                         <div class="newsTitle">
                                                             <a class="titleSet"
-                                                               href="2686951-2686951.html?newsid=1794807&_t=1561364416"
-                                                               target="_self">茶具的使用方法及功能</a>
+                                                               href="{{ i.8 }}"
+                                                               target="_self">{{ i.2|safe }}</a>
                                                         </div>
                                                         <div class="newsTN">
                                                             <div class="newsTimeSet">
-                                                                <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
+                                                                <span class="newsTime timesSet"><span class="nDate">{{ i.4|safe }}</span></span>
                                                             </div>
                                                             <div class="newsName">
                                                             </div>
                                                         </div>
                                                         <div class="newsDetail_Right">
                                                             <div class="newDetail detailSet pc">
-                                                                在茶事活动中，茶具不仅仅是指茶壶、品饮对杯。自嘉茶为大家整理了茶具的使用方法。熟悉泡茶用具，在茶事活动中也能够事半功倍。
+                                                                {{ i.3|safe }}
                                                             </div>
                                                             <div class="newDetail detailSet pad">
-                                                                在茶事活动中，茶具不仅仅是指茶壶、品饮对杯。自嘉茶为大家整理了茶具的使用方法。熟悉泡茶用具，在茶事活动中也能够事半功倍。
+                                                                {{ i.3|safe }}
                                                             </div>
                                                             <div class="newDetail detailSet mobile">
-                                                                在茶事活动中，茶具不仅仅是指茶壶、品饮对杯。自嘉茶为大家整理了茶具的使用...
+                                                                {{ i.3|safe }}
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="newsLi">
-                                                <div class="newsCont">
-                                                    <div id="news_list">
-                                                        <div class="newsTitle">
-                                                            <a class="titleSet"
-                                                               href="2686951-2686951.html?newsid=1794809&_t=1561364416"
-                                                               target="_self">喝绿茶能预防心肌梗塞</a>
-                                                        </div>
-                                                        <div class="newsTN">
-                                                            <div class="newsTimeSet">
-                                                                <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-                                                            </div>
-                                                            <div class="newsName">
-                                                            </div>
-                                                        </div>
-                                                        <div class="newsDetail_Right">
-                                                            <div class="newDetail detailSet pc">
-                                                                绿茶现已成为白领们办公桌上不可少的饮料，绿茶能帮助消化，还能起到清肠减肥的作用。另外饮用绿茶可以降低三高，还能降脂，降了三高就意味着人们得心肌梗死的机率就小了一些，这些都不是吹的，一些国外的研究学家们都可以证明。
-                                                            </div>
-                                                            <div class="newDetail detailSet pad">
-                                                                绿茶现已成为白领们办公桌上不可少的饮料，绿茶能帮助消化，还能起到清肠减肥的作用。另外饮用绿茶可以降低三高，还能降脂，降了...
-                                                            </div>
-                                                            <div class="newDetail detailSet mobile">
-                                                                绿茶现已成为白领们办公桌上不可少的饮料，绿茶能帮助消化，还能起到清肠减肥...
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="newsLi">
-                                                <div class="newsCont">
-                                                    <div id="news_list">
-                                                        <div class="newsTitle">
-                                                            <a class="titleSet"
-                                                               href="2686951-2686951.html?newsid=1794811&_t=1561364416"
-                                                               target="_self">学会品茶，喝出茶品</a>
-                                                        </div>
-                                                        <div class="newsTN">
-                                                            <div class="newsTimeSet">
-                                                                <span class="newsTime timesSet"><span class="nDate">2019-06-24</span></span>
-                                                            </div>
-                                                            <div class="newsName">
-                                                            </div>
-                                                        </div>
-                                                        <div class="newsDetail_Right">
-                                                            <div class="newDetail detailSet pc">
-                                                                不同的花茶的功效不同，所以在选购的时候需看清其作用，比如说洋甘菊特别具有安定神经与助消化系统的作用，最适合餐后与睡前饮用，是容易失眠的人的最佳茶饮。花茶有减肥、解暑热、散瘀血、降血压、降血脂、化热、消水肿等功效。
-                                                            </div>
-                                                            <div class="newDetail detailSet pad">
-                                                                不同的花茶的功效不同，所以在选购的时候需看清其作用，比如说洋甘菊特别具有安定神经与助消化系统的作用，最适合餐后与睡前饮用...
-                                                            </div>
-                                                            <div class="newDetail detailSet mobile">
-                                                                不同的花茶的功效不同，所以在选购的时候需看清其作用，比如说洋甘菊特别具有...
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            {% endfor %}
                                         </div>
                                     </ul>
                                 </div>

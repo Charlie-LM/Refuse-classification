@@ -217,6 +217,7 @@
     </nav>
 </div>
 {#轮播图#}
+{% block lunbo %}
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -226,30 +227,29 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    {% block lunbo %}
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="{% static "img/true6.jpg" %}" alt="第一张轮播图" style="width: 100%;height: 567px">
-                <div class="carousel-caption">
 
-                </div>
-            </div>
-            <div class="item">
-                <img src="{% static "img/first.jpg" %}" alt="第二张轮播图" style="width: 100%;height: 567px">
-                <div class="carousel-caption">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="{% static "img/true6.jpg" %}" alt="第一张轮播图" style="width: 100%;height: 567px">
+            <div class="carousel-caption">
 
-                </div>
-            </div>
-            <div class="item">
-                <img src="{% static "img/白云四桶.jpg" %}" alt="第三张轮播图" style="width: 100%;height: 567px">
-                <div class="carousel-caption">
-
-                </div>
             </div>
         </div>
-    {% endblock %}
-</div>
+        <div class="item">
+            <img src="{% static "img/first.jpg" %}" alt="第二张轮播图" style="width: 100%;height: 567px">
+            <div class="carousel-caption">
 
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static "img/白云四桶.jpg" %}" alt="第三张轮播图" style="width: 100%;height: 567px">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
 {% block content %}
 
 {% endblock %}
