@@ -37,7 +37,7 @@ def contents(request, id):
 
 def interest(request):
     id =58709988
-    return render(request,'interest.html',{'id':id})
+    return render(request,'interesting.html',{'id':id})
 
 def base(request):
     return render(request, 'base.html')

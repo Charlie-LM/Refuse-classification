@@ -27,7 +27,7 @@ class Interest(models.Model):
     class Meta:
         verbose_name = '视频类'
         verbose_name_plural = verbose_name
-        ordering = ['-title', ]
+        ordering = ['-vd_id' ]
 
     def __str__(self):
         return self.title
