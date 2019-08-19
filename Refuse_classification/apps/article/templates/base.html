@@ -29,13 +29,14 @@
     <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
     <link rel="stylesheet" href="{% static "css/a_css.css" %}"/>
     <link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+
+    {% block css %}
     <style>
         .activesss {
             background-color: red;
         }
 
     </style>
-    {% block css %}
     {% endblock %}
 </head>
 <body>
@@ -197,12 +198,12 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left">
                     <li {% block indexac %} {% endblock %}><a href="{% url "article:index" %}" class="navbar-brand">网站首页
                         <span class="sr-only">(current)</span></a></li>
                     <li {% block searchac %} {% endblock %}><a href="{% url "search:search" %}" class="navbar-brand">分类查询</a>
                     </li>
-                    <li {% block interestac %} {% endblock %}><a href="#" class="navbar-brand">娱乐天地</a></li>
+                    <li {% block interestac %} {% endblock %}><a href="{% url "article:interesting" %}" class="navbar-brand">娱乐天地</a></li>
                     <li {% block newsac %} {% endblock %}><a href="{% url "article:news" 1 %}"
                                                              class="navbar-brand">新闻资讯</a></li>
                     <li {% block reviewsac %} {% endblock %}><a href="#" class="navbar-brand">社区交流</a></li>

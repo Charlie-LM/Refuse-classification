@@ -16,21 +16,21 @@
 <body>
 <div class="container">
     <div id="vd"></div>
-    <audio id="player" autoplay="autoplay" src="http://player.bilibili.com/player.html?aid=57679051"></audio>
+    <audio id="player" autoplay="autoplay" src=""></audio>
 </div>
-{#<script>#}
-{#    function callbackfunction(j){#}
-{#				var u = j.durl[0].url;#}
-{#				$("#vd").html('<video width="680" height="376" src="'+u+'" preload="auto" autoplay="" controls="" class="embed-responsive-item"></video>')#}
-{#				// $("#page1").attr("href",j.durl[0].url);#}
-{#    }#}
-{#    function parseVideo(id){#}
-{#				$.getScript("http://api.bilibili.com/playurl?callback=callbackfunction&aid="+id+"&page="+1+"&platform=html5&quality=3&vtype=mp4&type=jsonp");#}
-{#    }#}
-{#    var id={{ id }}#}
-{#    parseVideo(id)#}
-{##}
-{#</script>#}
+<script>
+    function callbackfunction(j){
+				var u = j.durl[0].url;
+				$("#vd").html('<video width="680" height="376" src="'+u+'" preload="auto" autoplay="" controls="" class="embed-responsive-item"></video>')
+				// $("#page1").attr("href",j.durl[0].url);
+    }
+    function parseVideo(id){
+				$.getScript("http://api.bilibili.com/playurl?callback=callbackfunction&aid="+id+"&page="+1+"&platform=html5&quality=3&vtype=mp4&type=jsonp");
+    }
+    var id={{ id }}
+    parseVideo(id)
+
+</script>
 
 </body>
 </html>

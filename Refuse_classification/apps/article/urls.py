@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from . import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,6 +25,6 @@ urlpatterns = [
     url(r'^interest/$', views.interest, name='interest'),
     url(r'^base/$',views.base,name='base'),
     url(r'^contents/(?P<id>\d+)/$',views.contents,name='contents'),
-
+    url(r'^interesting/$',TemplateView.as_view(template_name='interesting.html'),name='interesting'),
 
 ]
