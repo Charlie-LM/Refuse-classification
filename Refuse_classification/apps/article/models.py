@@ -19,7 +19,7 @@ class News(models.Model):
         return self.title
 
 class Interest(models.Model):
-    vd_id = models.IntegerField(max_length=20, verbose_name="视频id", unique=True)
+    vd_id = models.IntegerField(verbose_name="视频id", unique=True)
     time = models.DateTimeField(auto_now_add=True)
     title = models.TextField(verbose_name="视频标题")
     avator = models.ImageField(upload_to='avator/', default='imgs/default.png',)
