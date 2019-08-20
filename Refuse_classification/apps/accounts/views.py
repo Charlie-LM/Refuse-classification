@@ -74,32 +74,38 @@ class Login(View):
 
     # Form表单直接提交
     def post(self, request):
-        # 表单数据绑定
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            captcha = form.cleaned_data["captcha"]
-            session_captcha_code = request.session.get("captcha_code", "")
-            logger.debug(f"登录提交验证码:{captcha}-{session_captcha_code}")
-            # 验证码一致
-            print(captcha.lower(), session_captcha_code.lower())
-            if captcha.lower() == session_captcha_code.lower():
-                user, flag = form.check_password()
-                # user = auth.authenticate(username=username, password=password)
-                if flag and user and user.is_active:
-                    auth.login(request, user)
-                    logger.info(f"{user.username}登录成功")
-                    # 跳转到next
-                    return redirect(request.session.get("next", '/'))
-                msg = "用户名或密码错误"
-                logger.error(f"{username}登录失败, 用户名或密码错误")
+        ret={"code":400,"msg":"调用方式错误"}
+        if request.is_ajax():
+            # 表单数据绑定
+            form = LoginForm(request.POST)
+            if form.is_valid():
+                username = form.cleaned_data["username"]
+                captcha = form.cleaned_data["captcha"]
+                session_captcha_code = request.session.get("captcha_code", "")
+                logger.debug(f"登录提交验证码:{captcha}-{session_captcha_code}")
+                # 验证码一致
+                print(captcha.lower(), session_captcha_code.lower())
+                if captcha.lower() == session_captcha_code.lower():
+                    user, flag = form.check_password()
+                    # user = auth.authenticate(username=username, password=password)
+                    if flag and user and user.is_active:
+                        auth.login(request, user)
+                        logger.info(f"{user.username}登录成功")
+                        ret["code"] = 200
+                        ret["msg"] = "登录成功"
+                        # 跳转到next
+                        return JsonResponse(ret)
+                    ret["code"] = 402
+                    ret["msg"] = "用户名或密码错误"
+                    logger.error(f"{username}登录失败, 用户名或密码错误")
+                else:
+                    ret["code"] = 401
+                    ret["msg"] = "验证码错误"
+                    logger.error(f"{username}登录失败, 验证码错误")
             else:
-                msg = "验证码错误"
-                logger.error(f"{username}登录失败, 验证码错误")
-        else:
-            msg = "表单数据不完整"
-            logger.error(msg)
-        return render(request, "login.html", {"form": form, "msg": msg})
+                ret["msg"] = form.errors
+                logger.error(ret["msg"])
+        return JsonResponse(ret)
 
 
 def logout(request):

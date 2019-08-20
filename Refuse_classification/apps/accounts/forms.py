@@ -8,14 +8,14 @@ from .models import User
 # 用户注册
 class RegisterForm(forms.ModelForm):
     password2 = forms.CharField(label="确认密码", widget=widgets.PasswordInput(attrs={"class":"input", "placeholder": "请再输入密码","id":"pass2"}))
-    mobile_captcha = forms.CharField(label="验证码", widget=widgets.TextInput(attrs={"class":"input", "placeholder":"验证码", "error_messages": {"invalid": "验证码错误"}}))
+    mobile_captcha = forms.CharField(label="验证码", widget=widgets.TextInput(attrs={"class":"input", "placeholder":"验证码", "error_messages": {"invalid": "验证码错误"},"id":"mobile_cap"}))
     class Meta:
         model = User
         fields = ['username', 'mobile', 'password']
         widgets = {
             'username': widgets.TextInput(attrs={"class": "input", "placeholder": "请输入用户名","id":"user1"}),
-            'mobile': widgets.TextInput(attrs={"class":"input", "placeholder": "请输入手机号","id":"mobile"}),
-            'password': widgets.PasswordInput(attrs={"class": "input", "placeholder": "请输入密码","id":"pass"}),
+            'mobile': widgets.TextInput(attrs={"class":"input", "placeholder": "请输入手机号","id":"id_mobile"}),
+            'password': widgets.PasswordInput(attrs={"class": "input", "placeholder": "请输入密码","id":"pass1"}),
         }
 
     # username是否重复django会自动检查，因为它是unique的，所以不需要自己写clean_username
@@ -48,9 +48,9 @@ class LoginForm(forms.Form):
                                widget=widgets.TextInput(attrs={"class": "input", "placeholder": "用户名","id":"user"}))
     captcha = forms.CharField(label="验证码", widget=widgets.TextInput(
         attrs={"class": "input", "placeholder": "验证码", "onblur": "check_captcha()",
-               "error_messages": {"invalid": "验证码错误"}}))
+               "error_messages": {"invalid": "验证码错误"},"id":"catcha"}))
     password = forms.CharField(label="密 码",
-                               widget=widgets.PasswordInput(attrs={"class": "input", "placeholder": "请输入密码","id":"pass1"}))
+                               widget=widgets.PasswordInput(attrs={"class": "input", "placeholder": "请输入密码","id":"pass"}))
 
     def check_password(self):
         print('check password')
@@ -58,7 +58,10 @@ class LoginForm(forms.Form):
         password = self.cleaned_data['password']
         try:
             user = User.objects.get(username=username)
-            return user, auth_check_password(password, user.password)
+            if user:
+                return user, auth_check_password(password, user.password)
+            else:
+                raise ValidationError("用户名或密码不正确")
         except:
             return None, False
 
@@ -68,4 +71,4 @@ class LoginForm(forms.Form):
         if ret:
             return self.cleaned_data.get("username")
         else:
-            raise ValidationError("用户名或密码不正确")
+            raise ValidationError("用户不存在")
