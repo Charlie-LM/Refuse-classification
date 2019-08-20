@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.reviews',
     'apps.search',
     'apps.apis',
+    'apps.deliver',
     'apps',
 
 ]

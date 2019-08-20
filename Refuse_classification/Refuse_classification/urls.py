@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.views.static import serve
 import re
 from . import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -32,6 +33,7 @@ urlpatterns = [
     url(r'^%s(?P<path>.*)$' % re.escape(settings.STATIC_URL.lstrip('/')), serve,
         {"document_root": settings.STATIC_ROOT}),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": settings.MEDIA_ROOT}),
+    url(r'^deliver$',TemplateView.as_view(template_name='deliver.html'),name='deliver')
 ]
 
 handler404 = views.my404
