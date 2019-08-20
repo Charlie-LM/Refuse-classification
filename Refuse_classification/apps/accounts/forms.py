@@ -7,15 +7,15 @@ from .models import User
 
 # 用户注册
 class RegisterForm(forms.ModelForm):
-    password2 = forms.CharField(label="密 码2", widget=widgets.PasswordInput(attrs={"class":"form-control", "placeholder": "请再输入密码"}))
-    mobile_captcha = forms.CharField(label="验证码", widget=widgets.TextInput(attrs={"style":"width: 160px;padding: 10px", "placeholder":"验证码", "error_messages": {"invalid": "验证码错误"}}))
+    password2 = forms.CharField(label="确认密码", widget=widgets.PasswordInput(attrs={"class":"input", "placeholder": "请再输入密码","id":"pass2"}))
+    mobile_captcha = forms.CharField(label="验证码", widget=widgets.TextInput(attrs={"class":"input", "placeholder":"验证码", "error_messages": {"invalid": "验证码错误"}}))
     class Meta:
         model = User
         fields = ['username', 'mobile', 'password']
         widgets = {
-            'username': widgets.TextInput(attrs={"class": "form-control", "placeholder": "请输入用户名"}),
-            'mobile': widgets.TextInput(attrs={"class":"form-control", "placeholder": "请输入手机号"}),
-            'password': widgets.PasswordInput(attrs={"class": "form-control", "placeholder": "请输入密码"}),
+            'username': widgets.TextInput(attrs={"class": "input", "placeholder": "请输入用户名","id":"user1"}),
+            'mobile': widgets.TextInput(attrs={"class":"input", "placeholder": "请输入手机号","id":"mobile"}),
+            'password': widgets.PasswordInput(attrs={"class": "input", "placeholder": "请输入密码","id":"pass"}),
         }
 
     # username是否重复django会自动检查，因为它是unique的，所以不需要自己写clean_username
@@ -45,12 +45,12 @@ class RegisterForm(forms.ModelForm):
 # ModelForm对于unique字段会检查是否已经存在，如果存在，is_valid结果会为False
 class LoginForm(forms.Form):
     username = forms.CharField(label="用户名", max_length="24",
-                               widget=widgets.TextInput(attrs={"class": "form-control", "placeholder": "用户名"}))
+                               widget=widgets.TextInput(attrs={"class": "input", "placeholder": "用户名","id":"user"}))
     captcha = forms.CharField(label="验证码", widget=widgets.TextInput(
-        attrs={"style": "width: 160px;padding: 10px", "placeholder": "验证码", "onblur": "check_captcha()",
+        attrs={"class": "input", "placeholder": "验证码", "onblur": "check_captcha()",
                "error_messages": {"invalid": "验证码错误"}}))
     password = forms.CharField(label="密 码",
-                               widget=widgets.PasswordInput(attrs={"class": "form-control", "placeholder": "请输入密码"}))
+                               widget=widgets.PasswordInput(attrs={"class": "input", "placeholder": "请输入密码","id":"pass1"}))
 
     def check_password(self):
         print('check password')

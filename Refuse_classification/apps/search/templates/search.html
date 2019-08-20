@@ -43,7 +43,7 @@
                         <div class="searchStyle_2">
                             <div class="searchForm modSet">
 
-                                <form>
+                                <form method="post" action="">
                                     {% csrf_token %}
                                     <input class="inputSet search_input" name="pkeyword" id="pkeyword"
                                            placeholder="请输入要分类的垃圾" style="text-align: center">
@@ -82,7 +82,7 @@
                 data1.style.display="block";
                 $.ajax({
                     url: '/search/ajax_demo/',
-                    type: 'GET',
+                    type: 'POST',
                     data: {"kw": $('#pkeyword').val()},
                     success: function (final_re) {
                         if (final_re) {
