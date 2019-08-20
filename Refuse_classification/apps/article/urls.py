@@ -20,11 +20,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/$',views.index,name='index'),
-    url(r'^news/(?P<id>\d+)/$',views.news,name='news'),
-    url(r'^interest/$', views.interest, name='interest'),
-    url(r'^base/$',views.base,name='base'),
-    url(r'^contents/(?P<id>\d+)/$',views.contents,name='contents'),
-    url(r'^interesting/$',TemplateView.as_view(template_name='interesting.html'),name='interesting'),
+    url(r'^index/$', views.index, name='index'),
+    url(r'^news/(?P<id>\d+)/$', views.news, name='news'),
+    url(r'^interest/(?P<id>\d+)/$', views.interest, name='interest'),
+    url(r'^base/$', views.base, name='base'),
+    url(r'^contents/(?P<id>\d+)/$', views.contents, name='contents'),
+    url(r'^interest_con/(?P<id>\d+)/$', views.interest_con, name='interest_con'),
 
 ]
