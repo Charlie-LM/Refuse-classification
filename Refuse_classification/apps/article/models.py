@@ -23,6 +23,7 @@ class Interest(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     title = models.TextField(verbose_name="视频标题")
     avator = models.ImageField(upload_to='avator/', default='imgs/default.png',)
+    all_time = models.CharField(verbose_name="视频时长",max_length=10)
 
     class Meta:
         verbose_name = '视频类'

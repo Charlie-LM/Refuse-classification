@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import News
+from .models import News,Interest
 import hu
 
 
@@ -35,9 +35,20 @@ def contents(request, id):
                   {'contents': contents, 'up_contents': up_contents, 'down_contents': down_contents})
 
 
-def interest(request):
-    id =58709988
-    return render(request,'interesting.html',{'id':id})
+def interest(request,id):
+    count = Interest.objects.all().count()  # 查看数据库里面的所有数据
+    ids = int(id)
+    pages_i = hu.Pageinfo(ids, count, 12, '/article/interest/')  # 实例化实例
+    list0 = Interest.objects.all().values_list()[pages_i.start():pages_i.end()]
+    return render(request, 'interesting.html', {'list0': list0, 'pages_i': pages_i})
+
+def interest_con(request, id):
+    contents = Interest.objects.get(vd_id=id)
+    contents_id = contents.vd_id
+    print(contents_id)
+    return render(request, 'interest_con.html',{'contents_id': contents_id})
+
+
 
 def base(request):
     return render(request, 'base.html')
