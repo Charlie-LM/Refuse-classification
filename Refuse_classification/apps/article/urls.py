@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^index/$', views.index, name='index'),
     url(r'^news/(?P<id>\d+)/$', views.news, name='news'),
     url(r'^interest/(?P<id>\d+)/$', views.interest, name='interest'),
-    url(r'^base/$', views.base, name='base'),
+    url(r'^base/$', views.Base.as_view(), name='base'),
     url(r'^contents/(?P<id>\d+)/$', views.contents, name='contents'),
     url(r'^interest_con/(?P<id>\d+)/$', views.interest_con, name='interest_con'),
 

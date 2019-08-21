@@ -238,3 +238,18 @@ FontPath = os.path.join(BASE_DIR, 'static/fonts/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# 配置缩略图
+THUMBNAIL_ALIASES = {
+    # target: 'accounts.User' => 给哪个app/Model/Field配置缩略图
+    '': {
+        # avatar: 表示将来引用的名字
+        # crop: False=> 不裁剪、同比例缩小
+        'avatar': {'size': (50, 50), 'crop': True},
+    },
+
+    # 'accounts': {
+    #     'xs': {'size': (30, 30), 'crop': True},
+    #     'xs_nocorp': {'size': (30, 30), 'crop': False},
+    # },
+}

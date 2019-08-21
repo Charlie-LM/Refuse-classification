@@ -7,17 +7,12 @@
 {% block jscss %}
     <script type="text/javascript" src="{% static "news_files/02686945.js" %}" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="{% static "news_files/02686945.css" %}">
-    <style>
-        .activesss {
-            background-color: red;
-        }
-    </style>
+
 {% endblock %}
 
 {% block newsac %}class="active"{% endblock %}
 
 {% block content %}
-
     <div id="layout_1561086490088" class="layout  none " data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
          data-wow-iteration="1">
         <div class="view_contents">
@@ -37,6 +32,21 @@
                  data-wow-delay="0s" data-wow-offset="0" data-wow-iteration="1">
                 <div names="text" class="view_contents">
                     News Information
+                </div>
+            </div>
+            <div class="medium-4 small-4 columns pull-right">
+                <div names="searchbox" class="view_contents">
+                    <div class="searchStyle_2">
+                        <div class="searchForm modSet">
+                            <form method="post" action="">
+                                {% csrf_token %}
+                                <input class="inputSet search_input" name="pkeyword" id="pkeyword"
+                                       placeholder="请输入要搜索的新闻" style="text-align: center;border-color: #e6e6e6">
+                                <button id="sousuo" type="button" class="search-btn btnaSet" onclick="search();"><i
+                                        class="glyphicon glyphicon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,13 +75,13 @@
 
                                         </div>
                                     </div>
-                                    <div class="newDetail detailSet pc" style="-webkit-line-clamp: ;">
+                                    <div class="newDetail detailSet pc">
                                         {{ i.3|safe }}
                                     </div>
-                                    <div class="newDetail detailSet pad" style="-webkit-line-clamp: ;">
+                                    <div class="newDetail detailSet pad">
                                         {{ i.3|safe }}
                                     </div>
-                                    <div class="newDetail detailSet mobile" style="-webkit-line-clamp: ;">
+                                    <div class="newDetail detailSet mobile">
                                         {{ i.3|safe }}
                                     </div>
                                     <div class="show_all">
@@ -209,6 +219,10 @@
                             cursor: pointer;
                         }
 
+                        .activesss .page .pageSet .cur {
+                            background: red;!important;
+                        }
+
                         #newsList_style_18_1561086911503 .submit_div {
                             display: inline-block;
                         }
@@ -271,11 +285,7 @@
             </div>
         </div>
     </div>
-    <div id="layout_1561088589828" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
-         data-wow-iteration="1" page_btn>
-        <div class="view_contents">
-        </div>
-    </div>
+
 
 {% endblock %}
 <script>
