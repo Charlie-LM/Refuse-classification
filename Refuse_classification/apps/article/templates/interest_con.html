@@ -15,22 +15,26 @@
 
         .aspect-ratio iframe {
             position: absolute;
-            width: 50%;
-            height: 50%;
-            left: 0;
-            top: 0;
+            width: 80%;
+            height: 90%;
+            left: 10%;
+            top: 5%;
         }
     </style>
 {% endblock %}
 {% load staticfiles %}
 
 {% block content %}
-<div class="aspect-ratio">
+<div class="container">
+    <div class="aspect-ratio">
+        <h3 style="text-align: center">{{ contents.title }}</h3>
     <iframe class="img"
-            src="https://player.bilibili.com/player.html?aid={{ contents_id }}&page=1&as_wide=1&&high_quality=1"
+            src="https://player.bilibili.com/player.html?aid={{ contents.vd_id }}&page=1&as_wide=1&&high_quality=1"
             scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
     </iframe>
+    </div>
 </div>
+
 {% endblock %}
 
 

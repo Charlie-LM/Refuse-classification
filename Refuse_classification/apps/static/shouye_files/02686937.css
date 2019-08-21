@@ -1569,7 +1569,7 @@ body {
     font-family: Microsoft YaHei;
     position: absolute;
     top: 61px;
-    left: 55.833333333333336%;
+    left: 30%;
 }
 
 @media screen and (min-width: 641px) and (max-width: 1200px) {
@@ -1592,7 +1592,7 @@ body {
 
 #text_style_01_1561011794563 > .view_contents {
     font-size: 18px;
-    color: #2cff2f;
+    color: #666666;
 }
 
 @media screen and (max-width: 640px) {
@@ -1609,7 +1609,7 @@ body {
     font-family: Microsoft YaHei;
     position: absolute;
     top: 108px;
-    left: 55.75%;
+    left: 30%;
 }
 
 @media screen and (min-width: 641px) and (max-width: 1200px) {
@@ -1632,7 +1632,7 @@ body {
 }
 
 #text_style_01_1561339943222 > .view_contents {
-    color: #2cff2f;
+    color: #666666;
     font-size: 14px;
     line-height: 26px;
 }

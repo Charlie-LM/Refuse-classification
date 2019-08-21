@@ -11,14 +11,12 @@ def index(request):
     ss = News.objects.all().values_list()[pages.start():pages.end()]
     return render(request, 'index.html', {'ss': ss, 'pages': pages})
 
-
 def news(request, id):
     count = News.objects.all().count()  # 查看数据库里面的所有数据
     ids = int(id)
     pages = hu.Pageinfo(ids, count, 6, '/article/news/')  # 实例化实例
     ss = News.objects.all().values_list()[pages.start():pages.end()]
     return render(request, 'News.html', {'ss': ss, 'pages': pages})
-
 
 def contents(request, id):
     contents = News.objects.get(news_id=id)
@@ -34,7 +32,6 @@ def contents(request, id):
     return render(request, 'contents.html',
                   {'contents': contents, 'up_contents': up_contents, 'down_contents': down_contents})
 
-
 def interest(request,id):
     count = Interest.objects.all().count()  # 查看数据库里面的所有数据
     ids = int(id)
@@ -44,11 +41,7 @@ def interest(request,id):
 
 def interest_con(request, id):
     contents = Interest.objects.get(vd_id=id)
-    contents_id = contents.vd_id
-    print(contents_id)
-    return render(request, 'interest_con.html',{'contents_id': contents_id})
-
-
+    return render(request, 'interest_con.html',{'contents': contents})
 
 def base(request):
     return render(request, 'base.html')

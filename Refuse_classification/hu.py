@@ -1,6 +1,6 @@
 # coding=gbk
 # 人生苦短，我用python
-__auther__ = 'Mr.Hu'
+# __auther__ = 'Mr.Hu'
 
 class Pageinfo(object):
     #                  当前页  总数据量    每页显示数量  展现页面数量

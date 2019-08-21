@@ -10,23 +10,30 @@
 {% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/app.css' %}">
-    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
     <section class="content">
         <!-- newest video -->
         <div class="main-heading">
             <div class="row secBg padding-14">
                 <div class="medium-8 small-8 columns">
-                    <div class="head-title">
+                    <div class="head-title" style="position: relative;top: 7px;">
                         <i class="fa fa-film"></i>
                         <h4>Newest Videos</h4>
                     </div>
                 </div>
-                <div class="medium-4 small-4 columns">
-                    <ul class="tabs text-right pull-right" data-tabs id="newVideos">
-                        <li class="tabs-title is-active"><a href="#new-all">all</a></li>
-                        <li class="tabs-title"><a href="#new-hd">HD</a></li>
-                    </ul>
+                <div class="medium-4 small-4 columns pull-right">
+                    <div names="searchbox" class="view_contents">
+                        <div class="searchStyle_2">
+                            <div class="searchForm modSet">
+                                <form method="post" action="">
+                                    {% csrf_token %}
+                                    <input class="inputSet search_input" name="pkeyword" id="pkeyword"
+                                           placeholder="请输入要搜索的视频" style="text-align: center;border-color: #e6e6e6">
+                                    <button id="sousuo" type="button" class="search-btn btnaSet" onclick="search();"><i
+                                            class="glyphicon glyphicon-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,16 +66,11 @@
                                         </div>
                                     </div>
                                     <div class="post-des">
-                                        <h6><a href="" target = "_blank">{{ i.3 }}</a>
+                                        <h6><a href="" target = "_blank">{{ i.3 | truncatechars:18 }}</a>
                                         </h6>
-{#                                        <div class="post-summary">#}
-{#                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem#}
-{#                                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab#}
-{#                                                illo inventore veritatis et quasi architecto beatae vitae dicta sunt#}
-{#                                                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut#}
-{#                                                odit aut fugit, sed quia consequuntur magni dolores eos qui ratione#}
-{#                                                voluptatem sequi nesciunt.</p>#}
-{#                                        </div>#}
+                                        <div class="post-summary">
+                                            <p>{{ i.3 }}</p>
+                                        </div>
                                         <div class="post-button">
                                             <a href="" class="secondary-button"><i
                                                     class="glyphicon glyphicon-play-circle"></i>播放</a>
@@ -77,8 +79,8 @@
                                 </div>
                             </div>
                             {% endfor %}
-                        <div class="page_btn">
-                        {{ pages_i.a_page|safe }}
+                            <div class="page_btn">
+                            {{ pages_i.a_page|safe }}
                             </div>
                         </div>
                     </div>

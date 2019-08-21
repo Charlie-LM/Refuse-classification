@@ -15,7 +15,7 @@ header = {
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0'
 }
 n = 1
-for page in range(1, 3):
+for page in range(1, 10):
     url = 'https://api.bilibili.com/x/web-interface/search/type?jsonp=jsonp&&search_type=video&highli' \
           'ght=1&keyword=垃圾分类搞笑视频&page=' + str(
         page)

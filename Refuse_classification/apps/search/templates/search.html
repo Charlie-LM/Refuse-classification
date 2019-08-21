@@ -42,7 +42,6 @@
                     <div names="searchbox" class="view_contents">
                         <div class="searchStyle_2">
                             <div class="searchForm modSet">
-
                                 <form method="post" action="">
                                     {% csrf_token %}
                                     <input class="inputSet search_input" name="pkeyword" id="pkeyword"
@@ -53,10 +52,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
     <div style="background-color: #eaeaea;margin-top: 0px">
@@ -109,6 +106,14 @@
                     }
                 })
             }
+            $(function(){
+                $('#pkeyword').keydown(function (e) {
+                    if(event.keyCode == 13){
+                        event.preventDefault();
+                        search();
+                    }
+                });
+            });
         </script>
     </div>
     <div id="layout_1561083507368" class="layout  none" data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
