@@ -16,7 +16,7 @@ body{font-family: "Microsoft Yahei";}
 /*----------------------------------------------------------------------------------------------------------*/
 .content{float: left;}
 .flex-text-wrap,pre{margin: 0 !important;}
-.commentAll{width: 60%;padding: 20px;border: 1px solid #ededed;margin: 20px auto;}
+.commentAll{width: 70%;padding: 20px;border: 1px solid #ededed;margin: 20px auto;font-size: 14px!important;}
 .plBtn{width: 75px;height: 36px;line-height: 36px;background-color: #339b53;text-align: center;display: block;float: right;color: #FFFFFF;font-size: 12px;border-radius: 6px;margin-right: 2px;margin-top: 20px;}
 .plBtn:hover{background-color: #2f904d;}
 
@@ -28,8 +28,8 @@ body{font-family: "Microsoft Yahei";}
     padding: 10px 0;
 }
 .comment-show-con-img {
-    width: 48px;
-    height: 48px;
+    width: 65px;
+    height: 65px;
     overflow: hidden;
     margin-top: 5px;
 }
@@ -54,11 +54,11 @@ body{font-family: "Microsoft Yahei";}
     margin-top: 7px;
 }
 .comment-size-name {
-    font-size: 12px;
+    font-size: 14px;
     color: #339b53;
 }
 .my-pl-con {
-    font-size: 12px;
+    font-size: 14px;
     color: #8b8b8b;
     width: 100%;
 }
@@ -93,7 +93,7 @@ body{font-family: "Microsoft Yahei";}
     display: block;
 }
 .date-dz-pl, .date-dz-line, .date-dz-z {
-    font-size: 12px;
+    font-size: 14px;
     color: #8b8b8b;
 }
 .date-dz-line {

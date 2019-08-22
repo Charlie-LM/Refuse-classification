@@ -21,14 +21,14 @@ content = ''
 from_from = ''
 
 # 创建对象并且打开目标网站
-path = "./chromedriver.exe"
-driver = webdriver.Chrome(executable_path=path)
+path = "./geckodriver.exe"
+driver = webdriver.Firefox(executable_path=path)
 driver.get('http://www.chinaenvironment.com/search/index.aspx?nodeid=128&keyword=垃圾分类')
 
 # 定义循环次数，点击“加载更多“按钮的次数,设置睡眠时间防止反爬
-for i in range(1):
+for i in range(10):
     driver.find_element_by_class_name('getMore').click()
-    time.sleep(random.randint(3, 5))
+    time.sleep(random.randint(5, 7))
 
 # 获取网站url
 soup = BeautifulSoup(driver.page_source, 'lxml')
@@ -70,8 +70,10 @@ for x in list_html_list:
 
     # 获取短暂描述
     abstract0 = soup.select('.edits > p')[0]
-    abstract = re.findall(r'<p>[\s\S]\s+(.*)[\s\S]</p>',str(abstract0))[0]
-
+    try:
+        abstract = re.findall(r'<p>[\s\S]\s+(.*)[\s\S]</p>',str(abstract0))[0]
+    except:
+        continue
     # 获取大标题 只获取内容
     title0 = soup.find_all(class_='articleTit')[0]
     title = re.findall(r'<.*>(.*)<.*>',str(title0))[0]
