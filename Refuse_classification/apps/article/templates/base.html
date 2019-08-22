@@ -593,43 +593,69 @@
     });
 </script>
 {#忘记密码模态框#}
-<div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">重置密码</h4>
+                <h4 class="modal-title" id="myModalLabel">修改密码</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" id="change_pd">
-                     {% csrf_token %}
-                      <div class="form-group">
-                          <label for="inputPasswordOld" class="col-lg-3 control-label">旧密码</label>
-                          <div class="col-lg-9">
-                              <input name="oldpassword" type="password" class="form-control" id="inputPasswordOld" placeholder="旧密码"  minlength="6" required>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="inputPasswordNew1" class="col-lg-3 control-label">新密码</label>
-                          <div class="col-lg-9">
-                              <input name="newpassword1" type="password" class="form-control" id="inputPasswordNew1" placeholder="新密码"  minlength="6" required>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="inputPasswordNew1" class="col-lg-3 control-label">新密码</label>
-                          <div class="col-lg-9">
-                              <input name="newpassword2" type="password" class="form-control" id="inputPasswordNew2" placeholder="请再输入一次新密码" minlength="6" required>
-                          </div>
-                      </div>
-                 </form>
+                <form class="form-horizontal" role="form" id="forget_pd">
+                    {% csrf_token %}
+                    <h2 style="display:inline;">请输入绑定的邮箱:</h2><input type="email" placeholder="邮箱" name="email" style="height: 30px;width: 50%;">
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-success" id="pass_change">确认修改</button>
+                <button type="button" class="btn btn-success" id="pass_forget">发送邮件</button>
             </div>
         </div>
     </div>
 </div>
+{#忘记密码的ajax#}
+<script>
+    $("#pass_forget").click(function () {
+        // some_check
+        $.ajax({
+            url: "{% url 'accounts:password_forget' %}",
+            type: "POST",
+            dataType: "json",
+            data: $("#forget_pd").serialize(), // {"username":'cali'}
+            success: function (data) {
+                if(data.code == 200 ){
+                    alert("发送成功");
+                }else{
+                    msg = "新错误类型";
+                    if(data.code == 404){
+                        for(var i in data.msg){
+                            msg = data.msg;
+                            break
+                        }
+                    }else{
+                          // 402 => form.errors
+                          msg = data.msg
+                    }
+                }
+                $.gritter.add({
+                    // (string | mandatory) the heading of the notification
+                    title: '提交结果',
+                    // (string | mandatory) the text inside the notification
+                    //text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur ridiculus mus.'
+                    text: msg
+                });
+
+            },
+            error:function(){
+                alert('未知错误')
+            },
+            // 解决csrftoken
+            beforeSend: function(xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+            }
+        });
+    });
+</script>
 {#导航条#}
 <div>
     <nav class="navbar navbar-inverse">
@@ -676,7 +702,7 @@
                         <li><a href="" class="navbar-brand" data-toggle="modal"
                                data-target="#myModal">登录/注册</a></li>
                         <li><a href="" class="navbar-brand" data-toggle="modal"
-                               data-target="#myModal">忘记密码？</a></li>
+                               data-target="#forgetModal">忘记密码？</a></li>
                     </ul>
                 {% endif %}
 
