@@ -57,22 +57,24 @@ class Base(View):
             else:
                 ret_info["msg"] = "邮箱为空"
                 return JsonResponse(ret_info)
-            if request.POST.get("mobile") and len(request.POST.get('email').strip()) !=0:
-                request.user.mobile = request.POST.get("mobile")
-            else:
-                ret_info["msg"] = "手机为空"
-                return JsonResponse(ret_info)
-            if request.POST.get("qq") and len(request.POST.get('email').strip()) !=0:
-                request.user.qq = request.POST.get("qq")
-            else:
-                ret_info["msg"] = "QQ为空"
-                return JsonResponse(ret_info)
-            if request.POST.get("realname") and len(request.POST.get('email').strip()) !=0:
-                request.user.username = request.POST.get("realname")
+
+            if request.POST.get("username") and len(request.POST.get('username').strip()) !=0:
+                request.user.username = request.POST.get("username")
             else:
                 ret_info["msg"] = "昵称为空"
                 return JsonResponse(ret_info)
 
+            if request.POST.get("mobile") and len(request.POST.get('mobile').strip()) !=0:
+                request.user.mobile = request.POST.get("mobile")
+            else:
+                ret_info["msg"] = "手机为空"
+                return JsonResponse(ret_info)
+
+            if request.POST.get("qq") and len(request.POST.get('qq').strip()) != 0:
+                request.user.qq = request.POST.get("qq")
+            else:
+                ret_info["msg"] = "QQ为空"
+                return JsonResponse(ret_info)
             # if request.POST.get("email","mobile","qq","username"):
             ret_info = {"code": 200, "msg": "修改成功"}
             request.user.save()

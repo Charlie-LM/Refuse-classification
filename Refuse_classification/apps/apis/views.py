@@ -4,8 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.cache import cache
 from libs import sms
 from django.db.models import Q
-import random
-import logging
+import random,os,logging,datetime,time
+from django.views.generic import View
+from django.contrib import auth
 logger = logging.getLogger("apis")
 
 def get_mobile_captcha(request):
@@ -57,6 +58,72 @@ def check_captcha(request):
         ret = {"code": 200, "msg": "验证码正确"}
     return JsonResponse(ret)
 
+from Refuse_classification.settings import MEDIA_ROOT,MEDIA_URL
+class ChangeAvator(LoginRequiredMixin, View):
+    def post(self, request):
+        today = datetime.date.today().strftime("%Y%m%d")
+        # 图片的data-img格式=>data:image/jpg;base64,xxxx
+        img_src_str = request.POST.get("image")
+        img_str = img_src_str.split(',')[1]
+        # 取出格式:jpg/png...
+        img_type = img_src_str.split(';')[0].split('/')[1]
+        # 取出数据:转化为bytes格式
+        img_data = base64.b64decode(img_str)
+        # 相对上传路径: 头像上传的相对路径
+        avator_path = os.path.join("avator",today)
+        # 绝对上传路径：头像上传的绝对路径
+        avator_path_full = os.path.join(MEDIA_ROOT, avator_path)
+        if not os.path.exists(avator_path_full):
+            os.mkdir(avator_path_full)
+        filename = str(time.time())+"."+img_type
+        # 绝对文件路径，用于保存图片
+        filename_full = os.path.join(avator_path_full, filename)
+        # 相对MEDIA_URL路径，用于展示数据
+        img_url = f"{MEDIA_URL}{avator_path}/{filename}"
+        try:
+            with open(filename_full, 'wb') as fp:
+                fp.write(img_data)
+            ret = {
+                "result": "ok",
+                "file": img_url
+            }
+        except Exception as ex:
+            ret = {
+                "result": "error",
+                "file": "upload fail"
+            }
 
+        request.user.avator_sor = os.path.join(avator_path,filename)
+        request.user.save()
+        return JsonResponse(ret)
 
+class ChangePasswdView(LoginRequiredMixin, View):
+    def post(self, request):
+        # from表单提交的数据
+        old_password = request.POST.get("oldpassword")
+        new_password1 = request.POST.get("newpassword1")
+        new_password2 = request.POST.get("newpassword2")
+        ## 前端验证 new_password1 == new_password2 才能提交
+        ret_info = {"code": 400, "msg": "修改失败"}
+        try:
+            if new_password1 != new_password2:
+                ret_info = {"code":401, "msg":"新密码不一致"}
+                return JsonResponse(ret_info)
+            elif len(new_password1.strip()) == 0:
+                ret_info = {"code":402, "msg":"新密码为空"}
+                return JsonResponse(ret_info)
+            else:
+                user = auth.authenticate(username=request.user.username, password=old_password)
+                if user:
+                    user.set_password(new_password1)
+                    user.save()
+                    auth.logout(request)
+                    # auth.update_session_auth_hash(request, user)
+                    ret_info = {"code":200, "msg":"修改成功"}
+                    return JsonResponse(ret_info)
+                else:
+                    ret_info = {"code": 403, "msg": "旧密码不正确"}
+                    return JsonResponse(ret_info)
+        except:
+            return JsonResponse(ret_info)
 

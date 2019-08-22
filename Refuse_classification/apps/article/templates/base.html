@@ -15,7 +15,10 @@
     <script type="text/javascript" src="{% static "shouye_files/jquery_002.js" %}"></script>
     <script type="text/javascript" src="{% static "shouye_files/jquery.js" %}"></script>
     <script type="text/javascript" src="{% static 'assets/gritter/js/jquery.gritter.js' %}"></script>
-
+    <script src="{% static 'avator/js/amazeui.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'avator/js/cropper.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/custom.js' %}" charset="utf-8"></script>
+    <script src="{% static 'avator/js/custom_up_img.js' %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static "shouye_files/jquery_003.js" %}"></script>
     <script type="text/javascript" src="{% static "shouye_files/ubox.js" %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static "shouye_files/wow.js" %}" charset="utf-8"></script>
@@ -35,19 +38,16 @@
     <link rel="stylesheet" href="{% static "css/a_css.css" %}"/>
     <link rel="stylesheet" href="{% static "css/styles.css" %}"/>
     <link rel="stylesheet" href="{% static "assets/gritter/css/jquery.gritter.css" %}">
-
-    {% block css %}
-    <style>
-        .activesss {
-            background-color: red;
-        }
-        #login_btn{
-            margin-top: 75px;
-        }
-        #captcha_img{
-            margin-top: 9px;
-        }
+    <link rel="stylesheet" href="{% static 'avator/css/amazeui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'avator/css/amazeui.cropper.css' %}">
+    <link rel="stylesheet" href="{% static 'avator/css/custom_up_img.css' %}">
+    <style type="text/css">
+        .up-img-cover {width: 100%;height: 100%;}
+        .up-img-cover img{width: 100%;}
+        #login_btn{margin-top: 70px}
+        #captcha_img{margin-top: 7px}
     </style>
+    {% block css %}
     {% endblock %}
 </head>
 <body>
@@ -87,9 +87,7 @@
                         <button type="button" class="button" id="login_btn">登录</button>
                     </div>
                     <div class="hr1"></div>
-                    <div class="foot-lnk">
-                        <label for="tab-2" style="cursor: pointer">忘记密码?</label>
-                    </div>
+
                 </form>
                 <form class="sign-up-htm" id="register_form">
                     <div class="group">
@@ -356,7 +354,7 @@
 <script src="{% static "shouye_files/login_html_v9_diy.html" %}"></script>
 <script type="text/javascript">var Default_isFT = 0;</script>
 <script type="text/javascript" src="{% static "shouye_files/transform.js" %}"></script>
-
+{#个人资料模态框#}
 <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -373,7 +371,7 @@
                     <div><a style="text-align: center; display: block;"  id="pic"></a></div>
                   </div>
                   <div class="col-xs-6">
-                  <form class="form-horizontal" role="form" id="luom">
+                  <form class="form-horizontal" role="form" id="change_ur">
                      {% csrf_token %}
                       <div class="form-group">
                           <label for="inputEmail" class="col-lg-3 control-label">邮箱</label>
@@ -382,9 +380,9 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="inputRealName" class="col-lg-3 control-label">昵称</label>
+                          <label for="inputUserName" class="col-lg-3 control-label">昵称</label>
                           <div class="col-lg-9">
-                              <input name="realname" type="text" class="form-control" id="inputUserName" value="{{ user.username }}"  required>
+                              <input name="username" type="text" class="form-control" id="inputUserName" value="{{ user.username }}"  required>
                           </div>
                       </div>
                       <div class="form-group">
@@ -410,48 +408,228 @@
         </div>
     </div>
 </div>
+<!--图片上传框-->
+<div class="am-modal am-modal-no-btn up-frame-bj " tabindex="-1" id="doc-modal-1">
+  <div class="am-modal-dialog up-frame-parent up-frame-radius">
+    <div class="am-modal-hd up-frame-header">
+       <label>修改头像</label>
+      <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+    </div>
+    <div class="am-modal-bd  up-frame-body">
+      <div class="am-g am-fl">
+        <div class="am-form-group am-form-file">
+          <div class="am-fl">
+            <button type="button" class="am-btn am-btn-default am-btn-sm">
+              <i class="am-icon-cloud-upload"></i> 选择要上传的文件</button>
+          </div>
+          <input type="file" id="inputImage">
+        </div>
+      </div>
+      <div class="am-g am-fl" >
+        <div class="up-pre-before up-frame-radius">
+            <img alt="" src="" id="image" >
+        </div>
+        <div class="up-pre-after up-frame-radius">
+        </div>
+      </div>
+      <div class="am-g am-fl">
+        <div class="up-control-btns">
+            <span class="am-icon-rotate-left"  onclick="rotateimgleft()"></span>
+            <span class="am-icon-rotate-right" onClick="rotateimgright()"></span>
+            <span class="am-icon-check" id="up-btn-ok" url="{% url 'apis:change_avator' %}"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--加载框-->
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">正在上传...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>
+
+<!--警告框-->
+<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">信息</div>
+        <div class="am-modal-bd"  id="alert_content">
+            成功了
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+{#修改个人资料的ajax#}
 <script>
     $("#user_change").click(function () {
-          // some_check
-          $.ajax({
-              url: "{% url 'article:base' %}",
-              type: "POST",
-              dataType: "json",
-              data: $("#luom").serialize(), // {"username":'cali'}
-              success: function (data) {
-                  if(data.code == 200 ){
-                      alert("修改成功");
-                  }else{
-                       msg = "新错误类型";
-                      if(data.code == 400){
-                          for(var i in data.msg){
-                              msg = data.msg;
-                              break
-                          }
-                      }else{
+        // some_check
+        $.ajax({
+            url: "{% url 'article:base' %}",
+            type: "POST",
+            dataType: "json",
+            data: $("#change_ur").serialize(), // {"username":'cali'}
+            success: function (data) {
+                if(data.code == 200 ){
+                    alert("修改成功");
+                }else{
+                    msg = "新错误类型";
+                    if(data.code == 400){
+                        for(var i in data.msg){
+                            msg = data.msg;
+                            break
+                        }
+                    }else{
                           // 402 => form.errors
                           msg = data.msg
-                      }
-                  }
-                  $.gritter.add({
-                      // (string | mandatory) the heading of the notification
-                      title: '提交结果',
-                      // (string | mandatory) the text inside the notification
-                      //text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur ridiculus mus.'
-                      text: msg
-                  });
+                    }
+                }
+                $.gritter.add({
+                    // (string | mandatory) the heading of the notification
+                    title: '提交结果',
+                    // (string | mandatory) the text inside the notification
+                    //text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur ridiculus mus.'
+                    text: msg
+                });
 
-              },
-              error:function(){
-                  alert('no')
-              },
-              // 解决csrftoken
-              beforeSend: function(xhr, settings) {
-                  xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
-              }
-          });
+            },
+            error:function(){
+                alert('未知错误')
+            },
+            // 解决csrftoken
+            beforeSend: function(xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+            }
+        });
     });
 </script>
+{#修改密码模态框#}
+<div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="change_pd">
+                     {% csrf_token %}
+                      <div class="form-group">
+                          <label for="inputPasswordOld" class="col-lg-3 control-label">旧密码</label>
+                          <div class="col-lg-9">
+                              <input name="oldpassword" type="password" class="form-control" id="inputPasswordOld" placeholder="旧密码"  minlength="6" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputPasswordNew1" class="col-lg-3 control-label">新密码</label>
+                          <div class="col-lg-9">
+                              <input name="newpassword1" type="password" class="form-control" id="inputPasswordNew1" placeholder="新密码"  minlength="6" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputPasswordNew1" class="col-lg-3 control-label">新密码</label>
+                          <div class="col-lg-9">
+                              <input name="newpassword2" type="password" class="form-control" id="inputPasswordNew2" placeholder="请再输入一次新密码" minlength="6" required>
+                          </div>
+                      </div>
+                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="pass_change">确认修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+{#改密码的ajax#}
+<script>
+    $("#pass_change").click(function () {
+        // some_check
+        $.ajax({
+            url: "{% url 'apis:change_passwd' %}",
+            type: "POST",
+            dataType: "json",
+            data: $("#change_pd").serialize(), // {"username":'cali'}
+            success: function (data) {
+                if(data.code == 200 ){
+                    window.location.href='{% url 'article:index' %}';
+                    alert("修改成功");
+
+                }else{
+                    msg = "新错误类型";
+                    if(data.code == 400){
+                        for(var i in data.msg){
+                            msg = data.msg;
+                            break
+                        }
+                    }else{
+                          // 402 => form.errors
+                          msg = data.msg
+                    }
+                }
+                $.gritter.add({
+                    // (string | mandatory) the heading of the notification
+                    title: '提交结果',
+                    // (string | mandatory) the text inside the notification
+                    //text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur ridiculus mus.'
+                    text: msg
+                });
+
+            },
+            error:function(){
+                alert('未知错误')
+            },
+            // 解决csrftoken
+            beforeSend: function(xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+            }
+        });
+    });
+</script>
+{#忘记密码模态框#}
+<div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">重置密码</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="change_pd">
+                     {% csrf_token %}
+                      <div class="form-group">
+                          <label for="inputPasswordOld" class="col-lg-3 control-label">旧密码</label>
+                          <div class="col-lg-9">
+                              <input name="oldpassword" type="password" class="form-control" id="inputPasswordOld" placeholder="旧密码"  minlength="6" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputPasswordNew1" class="col-lg-3 control-label">新密码</label>
+                          <div class="col-lg-9">
+                              <input name="newpassword1" type="password" class="form-control" id="inputPasswordNew1" placeholder="新密码"  minlength="6" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputPasswordNew1" class="col-lg-3 control-label">新密码</label>
+                          <div class="col-lg-9">
+                              <input name="newpassword2" type="password" class="form-control" id="inputPasswordNew2" placeholder="请再输入一次新密码" minlength="6" required>
+                          </div>
+                      </div>
+                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="pass_change">确认修改</button>
+            </div>
+        </div>
+    </div>
+</div>
 {#导航条#}
 <div>
     <nav class="navbar navbar-inverse">
@@ -485,7 +663,7 @@
                             <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="" data-toggle="modal" data-target="#userModal">个人资料</a></li>
-                                <li><a href="#">修改密码</a></li>
+                                <li><a href="" data-toggle="modal" data-target="#passModal">修改密码</a></li>
                                 <li><a href="{% url 'accounts:logout' %}">退出登录</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{% url 'accounts:logout' %}">退出登录</a></li>
@@ -495,8 +673,10 @@
 
                 {% else %}
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'accounts:login' %}" class="navbar-brand" data-toggle="modal"
+                        <li><a href="" class="navbar-brand" data-toggle="modal"
                                data-target="#myModal">登录/注册</a></li>
+                        <li><a href="" class="navbar-brand" data-toggle="modal"
+                               data-target="#myModal">忘记密码？</a></li>
                     </ul>
                 {% endif %}
 

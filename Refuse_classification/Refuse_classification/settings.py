@@ -237,6 +237,8 @@ CACHES = {
 FontPath = os.path.join(BASE_DIR, 'static/fonts/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if not os.path.exists(MEDIA_ROOT):
+    os.mkdir(MEDIA_ROOT)
 MEDIA_URL = '/media/'
 
 # 配置缩略图
