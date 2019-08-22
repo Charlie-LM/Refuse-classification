@@ -476,7 +476,7 @@
                     <li {% block interestac %} {% endblock %}><a href="{% url "article:interest" 1 %}" class="navbar-brand">娱乐天地</a></li>
                     <li {% block newsac %} {% endblock %}><a href="{% url "article:news" 1 %}"
                                                              class="navbar-brand">新闻资讯</a></li>
-                    <li {% block reviewsac %} {% endblock %}><a href="#" class="navbar-brand">社区交流</a></li>
+                    <li {% block reviewsac %} {% endblock %}><a href="{% url "reviews:reviews" %}" class="navbar-brand">社区交流</a></li>
                     <li {% block lastac %} {% endblock %}><a href="{% url 'deliver' %}" class="navbar-brand">投递须知</a></li>
                 </ul>
                 {% if request.user.is_authenticated %}
@@ -592,7 +592,7 @@
                                                 <a href="{% url 'article:news' 1 %}">新闻资讯</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
-                                                <a href="#">社区交流</a>
+                                                <a href="{% url "reviews:reviews" %}">社区交流</a>
                                             </li>
                                             <li class="menuLi01 mainMenuSet">
                                                 <a href="{% url 'deliver' %}">投递须知</a>
