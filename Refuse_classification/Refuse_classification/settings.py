@@ -255,4 +255,23 @@ THUMBNAIL_ALIASES = {
     #     'xs_nocorp': {'size': (30, 30), 'crop': False},
     # },
 }
+
 SESSION_COOKIE_AGE=60*5
+
+
+
+DEFAULT_FROM_EMAIL = '1426726364@qq.com'
+
+# 163邮箱SMTP服务器地址
+EMAIL_HOST = 'smtp.qq.com'
+# 发件人的邮箱
+EMAIL_HOST_USER = '1426726364@qq.com'
+# 发件人邮箱密码
+EMAIL_HOST_PASSWORD = 'rmyeffrrhmsxjiaf'
+# tls协议，有True和False两种情况
+EMAIL_USE_TLS = True
+# 发件人的邮箱
+EMAIL_FROM = '1426726364@qq.com'
+
+
+
