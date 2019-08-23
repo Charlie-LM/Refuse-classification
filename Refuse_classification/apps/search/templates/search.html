@@ -58,25 +58,25 @@
     </div>
     <div style="background-color: #eaeaea;margin-top: 0px">
         <div style="float: left;margin-left: 20%">
-           <img src="" id="img" style="height: 300px">
+            <img src="" id="img" style="height: 400px;margin-top: -50px">
         </div>
         <div id="lajidata" style="display: none;height: 300px">
-            <div class="col-md-3 col-xs-12"><h3 id="rubbish" style="margin: 0px;"></h3>
-            <h4 id="rubbish_type"></h4>
-            <p id="rubbish_type_reason"></p>
-            <p id="rubbish_type_def"></p></div>
+            <div class="col-md-3 col-xs-12"><h3 id="rubbish" style="margin-top: 20px;"></h3>
+                <h4 id="rubbish_type"></h4>
+                <p id="rubbish_type_reason"></p>
+                <p id="rubbish_type_def"></p></div>
 
-            <div class="col-md-3 col-xs-12"><p id="rubbish_def_title" style="font-weight: bold;font-size: 14px"></p>
-            <p id="rubbish_type_content"></p></div>
+            <div class="col-md-3 col-xs-12"><p id="rubbish_def_title" style="font-weight: bold;font-size: 14px;margin-top: 20px"></p>
+                <p id="rubbish_type_content"></p></div>
 
             <div class="col-md-3 col-xs-12"><p id="rubbish_def_title2" style="font-weight: bold;font-size: 14px"></p>
-            <p id="rubbish_way"></p></div>
+                <p id="rubbish_way"></p></div>
 
         </div>
         <script>
             function search() {
-                var data1=document.getElementById('lajidata');
-                data1.style.display="block";
+                var data1 = document.getElementById('lajidata');
+                data1.style.display = "block";
                 $.ajax({
                     url: '/search/ajax_demo/',
                     type: 'POST',
@@ -92,7 +92,7 @@
 
                             $("#rubbish_def_title").html(final_re.rubbish_def_title);
                             $("#rubbish_def_title2").html(final_re.rubbish_def_title2);
-                             $("#img").attr("src",final_re.rubbish_img);
+                            $("#img").attr("src", final_re.rubbish_img);
 
 
                         } else {
@@ -106,9 +106,10 @@
                     }
                 })
             }
-            $(function(){
+
+            $(function () {
                 $('#pkeyword').keydown(function (e) {
-                    if(event.keyCode == 13){
+                    if (event.keyCode == 13) {
                         event.preventDefault();
                         search();
                     }
@@ -210,11 +211,11 @@
                                                                             玻璃瓶,玻璃窗...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -252,11 +253,11 @@
                                                                             塑料桶,牙刷,其他...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -294,11 +295,11 @@
                                                                             易拉罐,废电线,回形针...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -336,11 +337,11 @@
                                                                             报纸,书本,广告纸,纸盒...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -378,11 +379,11 @@
                                                                             废弃衣物,桌布,毛巾...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -760,11 +761,11 @@
                                                                             充电电池,镉镍电池,其他...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -802,11 +803,11 @@
                                                                             废荧光灯,废水银温度计...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"> <i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"> <i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -844,11 +845,11 @@
                                                                             过期药物,药物胶囊...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -886,11 +887,11 @@
                                                                             废农药,废油漆,其他...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1268,11 +1269,11 @@
                                                                             剩饭,餐桌上的剩菜...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1310,11 +1311,11 @@
                                                                             各种水果的果皮,果核...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1352,11 +1353,11 @@
                                                                             肉块,蛋壳,骨头,其他...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1394,11 +1395,11 @@
                                                                             植物的落叶,菜帮,菜叶...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1776,12 +1777,12 @@
                                                                             餐巾纸,湿纸巾...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情#}
+{#                                                                            </a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1819,11 +1820,11 @@
                                                                             碗碟,花瓶,茶壶,茶杯...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1861,11 +1862,11 @@
                                                                             烟灰,坚果,发丝,其他...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1903,11 +1904,11 @@
                                                                             打包盒,筷子,一次性杯子...
                                                                         </div>
                                                                     </div>
-                                                                    <div class="p_line2 showButton">
-                                                                        <div class="btnn btnaSet">
-                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>
-                                                                        </div>
-                                                                    </div>
+{#                                                                    <div class="p_line2 showButton">#}
+{#                                                                        <div class="btnn btnaSet">#}
+{#                                                                            <a class="" href="#" target="_self"><i></i>查看详情</a>#}
+{#                                                                        </div>#}
+{#                                                                    </div>#}
                                                                 </div>
                                                             </div>
                                                         </li>

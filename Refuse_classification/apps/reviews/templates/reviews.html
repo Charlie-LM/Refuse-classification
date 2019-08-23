@@ -35,7 +35,7 @@
                                 class="date-dz-left pull-left comment-time">{{ say.create_time }}</span>
                             <div class="date-dz-right pull-right comment-pl-block">
 {#                                <a href="javascript:;" class="removeBlock">删除</a>#}
-                                <a href="javascript:;" class="date-dz-pl pl-hf pull-left hf-con-block" sayid="{{ say.say_id }}">回复</a>
+                                <a href="javascript:;" class="date-dz-pl pl-hf pull-left hf-con-block" sayid="{{ say.say_id }}" style="font-size: 12px">回复</a>
 {#                                <span class="pull-left date-dz-line">|</span>#}
 
                             </div>
@@ -45,7 +45,7 @@
                                 <div class="all-pl-con">
                                     <div class="pl-text hfpl-text clearfix">
                                         <img src="/media/{{ comment.user_pic }}" style="height: 40px;border-radius:50%; overflow:hidden;" alt="">
-                                        <a href="#" class="comment-size-name">{{ comment.username }}: </a><span
+                                        <a href="#" style="font-size: 12px" class="comment-size-name">{{ comment.username }}: </a><span
                                             class="my-pl-con">回复
                                         <a href="#" class="atName">{{ comment.beusername }} </a> : {{ comment.content }}</span>
                                     </div>
@@ -54,7 +54,7 @@
                                         <div class="date-dz-right pull-right comment-pl-block">
 {#                                            <a href="javascript:;" class="removeBlock">删除</a>#}
                                             <a href="javascript:;"
-                                               class="date-dz-pl pl-hf hf-con-block pull-left" sayid="{{ say.say_id }}">回复</a>
+                                               class="date-dz-pl pl-hf hf-con-block pull-left" style="font-size: 12px" sayid="{{ say.say_id }}">回复</a>
 {#                                            <span class="pull-left date-dz-line">|</span>#}
 {#                                            <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>#}
                                         </div>
@@ -121,7 +121,7 @@
                     async: false,
                     success: function (result) {
                         if (result.status==200) {
-                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="/media/'+ result.user_pic+'" alt="" style="height: 60px;border-radius:50%; overflow:hidden;"></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">{{ request.user.username }} : </a> <span class="my-pl-con">&nbsp;' + result.content + '</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + result.create_time + '</span> <div class="date-dz-right pull-right comment-pl-block"> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span>  </div> </div><div class="hf-list-con"></div></div> </div>';
+                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="/media/'+ result.user_pic+'" alt="" style="height: 60px;border-radius:50%; overflow:hidden;"></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">{{ request.user.username }} : </a> <span class="my-pl-con">&nbsp;' + result.content + '</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + result.create_time + '</span> <div class="date-dz-right pull-right comment-pl-block"> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left" style="font-size: 12px">回复</a> <span class="pull-left date-dz-line">|</span>  </div> </div><div class="hf-list-con"></div></div> </div>';
                         } else {
                             if (result.status==404) {
                                 alert('发表失败,请等一会再试');
@@ -199,7 +199,7 @@
                 async: false,
                 success: function (result) {
                     if (result.status) {
-                        oHtml = '<div class="all-pl-con"><div class="pl-text hfpl-text clearfix"><img src="/media/'+ result.user_pic+'" alt="" style="height: 40px;border-radius:50%; overflow:hidden;"><a href="#" class="comment-size-name">{{ request.user.username }}</a><span class="my-pl-con">:回复@<a href="#" class="comment-size-name">' + result.username+ '</a> </span>'+result.content+'</div><div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + result.create_time + '</span> <div class="date-dz-right pull-right comment-pl-block">  <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> </div> </div></div>';
+                        oHtml = '<div class="all-pl-con"><div class="pl-text hfpl-text clearfix"><img src="/media/'+ result.user_pic+'" alt="" style="height: 40px;border-radius:50%; overflow:hidden;"><a href="#" class="comment-size-name">{{ request.user.username }}</a><span class="my-pl-con">:回复@<a href="#" class="comment-size-name">' + result.username+ '</a> </span>'+result.content+'</div><div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + result.create_time + '</span> <div class="date-dz-right pull-right comment-pl-block">  <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left" style="font-size: 12px">回复</a> <span class="pull-left date-dz-line">|</span> </div> </div></div>';
                         oThis.parents('.hf-con').parents('.comment-show-con-list').find('.hf-list-con').css('display', 'block').prepend(oHtml) && oThis.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf').addClass('hf-con-block') && oThis.parents('.hf-con').remove();
 
                     } else {

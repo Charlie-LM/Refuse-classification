@@ -255,3 +255,4 @@ THUMBNAIL_ALIASES = {
     #     'xs_nocorp': {'size': (30, 30), 'crop': False},
     # },
 }
+SESSION_COOKIE_AGE=60*5

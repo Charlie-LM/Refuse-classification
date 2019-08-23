@@ -13,6 +13,27 @@
 {% block newsac %}class="active"{% endblock %}
 
 {% block content %}
+{#    <script>#}
+{#    function search() {#}
+{#                var data1=document.getElementById('sousuo');#}
+{#                data1.style.display="block";#}
+{#                $.ajax({#}
+{#                    url: '/article/news/1/',#}
+{#                    type: 'POST',#}
+{#                    data: {"search": $('#pkeyword').val()},#}
+{#                    success: function (final_re) {#}
+{#                        if (final_re) {#}
+{##}
+{##}
+{##}
+{#                        }#}
+{#                    },#}
+{#                    error: function (result) {#}
+{#                        alert("对不起,暂时无法查询到该新闻的分类结果")#}
+{#                    }#}
+{#                })#}
+{#            }#}
+{#    </script>#}
     <div id="layout_1561086490088" class="layout  none " data-wow-duration="0s" data-wow-delay="0s" data-wow-offset="0"
          data-wow-iteration="1">
         <div class="view_contents">
@@ -42,7 +63,7 @@
                                 {% csrf_token %}
                                 <input class="inputSet search_input" name="pkeyword" id="pkeyword"
                                        placeholder="请输入要搜索的新闻" style="text-align: center;border-color: #e6e6e6">
-                                <button id="sousuo" type="button" class="search-btn btnaSet" onclick="search();"><i
+                                <button id="sousuo" type="submit" class="search-btn btnaSet"><i
                                         class="glyphicon glyphicon-search"></i></button>
                             </form>
                         </div>
@@ -70,7 +91,7 @@
                                             <span class="newSort sortSet"> 新闻资讯</span>
                                             <a class="titleSet"
                                                href="{{ i.8 }}"
-                                               target="_self">{{ i.2|safe }}</a>
+                                               target="_blank">{{ i.2|safe }}</a>
                                             <span class="newsTime timesSet"><span class="nDate">{{ i.4|safe }}</span></span>
 
                                         </div>
@@ -87,7 +108,7 @@
                                     <div class="show_all">
                                         <a class="btnaSet"
                                            href="{{ i.8 }}"
-                                           target="_self">查看全文</a>
+                                           target="_blank">查看全文</a>
                                     </div>
                                 </div>
                             </li>

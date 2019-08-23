@@ -3,13 +3,189 @@
 {% block title %}
     趣味视频
 {% endblock %}
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/app.css' %}">
-    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+{% block jscss %}
+    <script type="text/javascript" src="{% static "news_files/02686945.js" %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "news_files/02686945.css" %}">
 {#    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">#}
 {% endblock %}
 {% block interestac %}class="active" {% endblock %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <style>
+        #newsList_style_18_1561086911503 .newDetail.pc {
+            display: block;
+        }
+
+        #newsList_style_18_1561086911503 .newDetail.pad, #newsList_style_18_1561086911503 .newDetail.mobile {
+            display: none;
+        }
+
+        #newsList_style_18_1561086911503 .newTitle.pc {
+            display: block;
+        }
+
+        #newsList_style_18_1561086911503 .newTitle.pad, #newsList_style_18_1561086911503 .newTitle.mobile {
+            display: none;
+        }
+
+        @media screen and (min-width: 641px) and (max-width: 1200px) {
+            #newsList_style_18_1561086911503 .newDetail.pad {
+                display: block;
+            }
+
+            #newsList_style_18_1561086911503 .newDetail.pc, #newsList_style_18_1561086911503 .newDetail.mobile {
+                display: none;
+            }
+
+            #newsList_style_18_1561086911503 .newTitle.pad {
+                display: block;
+            }
+
+            #newsList_style_18_1561086911503 .newTitle.pc, #newsList_style_18_1561086911503 .newTitle.mobile {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            #newsList_style_18_1561086911503 .newDetail.mobile {
+                display: block;
+            }
+
+            #newsList_style_18_1561086911503 .newDetail.pc, #newsList_style_18_1561086911503 .newDetail.pad {
+                display: none;
+            }
+
+            #newsList_style_18_1561086911503 .newTitle.mobile {
+                display: block;
+            }
+
+            #newsList_style_18_1561086911503 .newTitle.pc, #newsList_style_18_1561086911503 .newTitle.pad {
+                display: none;
+            }
+        }
+    </style>
+    <style>
+                        @media screen and (min-width: 1025px) {
+                            #newsList_style_18_1561086911503 .sumary_list .newPic {
+                                width: 0px;
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: calc(100% - 0px - 10px);
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: 100%;
+                            }
+                        }
+
+                        @media screen and (min-width: 640px) and (max-width: 1024px) {
+                            #newsList_style_18_1561086911503 .sumary_list .newPic {
+                                width: 0px;
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: calc(100% - 0px - 10px);
+                            }
+
+                            #newsList_style_18_1561086911503 .sumary_list .newCont {
+                                width: 100%;
+                            }
+                        }
+
+                        @media screen and (max-width: 640px) {
+                        }
+
+                        .activesss {
+                            background-color: red;
+                        }
+
+                        /* 新分页 */
+                        #newsList_style_18_1561086911503 .page_btn {
+                            font-size: 14px;
+                            text-align: center;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_btn .all_page {
+                            display: inline-block;
+                            margin: 0 10px;
+                        }
+
+                        #newsList_style_18_1561086911503 .page:hover {
+                            background: red;
+                            color: white;
+                            cursor: pointer;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_btn .cur {
+                            background: white;
+                            color: green;
+                            cursor: pointer;
+                        }
+
+                        .activesss .page .pageSet .cur {
+                            background: red;!important;
+                        }
+
+                        #newsList_style_18_1561086911503 .submit_div {
+                            display: inline-block;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_btn input {
+                            width: 50px;
+                            margin: 0 5px;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_btn input:hover {
+                            cursor: default;
+                            background: white;
+                            color: #333;
+                        }
+
+                        #newsList_style_18_1561086911503 .page_submit {
+                            margin-left: 5px;
+                        }
+
+                        #newsList_style_18_1561086911503 .page {
+                            display: inline-block;
+                            border: none;
+                            background: white;
+                            text-align: center;
+                            width: auto;
+                            padding: 0 15px;
+                            margin: 0 .5px;
+                            height: auto;
+                            line-height: 35px;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            border: 1px solid #e5e5e5;
+                        }
+
+                        @media screen and (max-width: 640px) {
+                            #newsList_style_18_1561086911503 .page_btn {
+                                font-size: 12px;
+                            }
+
+                            #newsList_style_18_1561086911503 .submit_div {
+                                display: none;
+                            }
+                        }
+
+                        #newsList_style_18_1561086911503 .page {
+                            width: auto;
+                            margin: 0 5px 10px 5px;
+                            border-radius: 5px;
+                        }
+
+                        @media screen and (max-width: 640px) {
+                            #newsList_style_18_1561086911503 .page {
+                                line-height: 30px;
+                                padding: 0 13px;
+                            }
+                        }
+
+                    </style>
     <section class="content" style="margin-top: 30px">
         <!-- newest video -->
         <div class="main-heading">
@@ -17,7 +193,7 @@
                 <div class="medium-8 small-8 columns">
                     <div class="head-title" style="position: relative;top: 7px;">
                         <i class="fa fa-film"></i>
-                        <h4>Newest Videos</h4>
+                        <h4>趣味视频</h4>
                     </div>
                 </div>
                 <div class="medium-4 small-4 columns pull-right">
@@ -28,7 +204,7 @@
                                     {% csrf_token %}
                                     <input class="inputSet search_input" name="pkeyword" id="pkeyword"
                                            placeholder="请输入要搜索的视频" style="text-align: center;border-color: #e6e6e6">
-                                    <button id="sousuo" type="button" class="search-btn btnaSet" onclick="search();"><i
+                                    <button id="sousuo" type="submit" class="search-btn btnaSet"><i
                                             class="glyphicon glyphicon-search"></i></button>
                                 </form>
                             </div>
@@ -40,7 +216,7 @@
         <div class="row secBg">
             <div class="large-12 columns">
                 <div class="row column head-text clearfix">
-                    <p class="pull-left">All Videos : <span>1,862 Videos posted</span></p>
+                    <p class="pull-left">以下视频来源于@<a href="https://www.bilibili.com/" target="_blank">bilibili</a>,若想观看更高清视频请前往bilibili</p>
                     <div class="grid-system pull-right show-for-large">
                         <a class="secondary-button current grid-default" href="#"><i class="glyphicon glyphicon-th"></i></a>
                         <a class="secondary-button grid-medium" href="#"><i

@@ -2,13 +2,14 @@
 # 人生苦短，我用python
 # __auther__ = 'Mr.Hu'
 
+
 class Pageinfo(object):
     #                  当前页  总数据量    每页显示数量  展现页面数量
-    def __init__(self, page, all_count, par_page, url,showpage=11):
+    def __init__(self, page, all_count, par_page, url, showpage=11):
         try:
-            self.page =int(page)
+            self.page = int(page)
         except Exception as e:
-            self.page=1
+            self.page = 1
         self.par_page = par_page
         # 计算总页码数
         a, b = divmod(all_count, par_page)
