@@ -152,7 +152,9 @@ class PasswordReset(View):
         create_time_newer = datetime.datetime.utcnow() - datetime.timedelta(minutes=30)
         password1 = request.POST.get("password1")
         password2 = request.POST.get("password2")
-        if password2 == password1:
+        if len(password1.strip()) == 0:
+            msg = "密码为空，重置失败"
+        elif password2 == password1:
             try:
                 find_password = FindPassword.objects.get(status=False, verify_code=verify_code, creat_time__gte=create_time_newer)
                 user = User.objects.get(email=find_password.email)
@@ -164,6 +166,7 @@ class PasswordReset(View):
             except Exception as ex:
                 # 记日志 ex
                 msg = "出错啦"
+
         else:
-            msg = "两次密码不一致"
+            msg = "两次密码不一致，重置失败"
         return render(request, "password_reset.html", {"msg":msg})
