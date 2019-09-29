@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -24,9 +23,10 @@ SECRET_KEY = 'jym@z-$44xd+l@da%!@9em7$#wnyz=%$_*mvr8ugbmchta8oo1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.reviews',
     'apps.search',
+    'apps.apis',
+    'apps.deliver',
     'apps',
 
 ]
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'Refuse_classification.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,13 +70,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Refuse_classification.context_processors.login_form',
+                'Refuse_classification.context_processors.register_form',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'Refuse_classification.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -85,7 +88,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -105,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -119,13 +120,175 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/allstatic/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'apps/static')
+    os.path.join(os.path.join(BASE_DIR, "static"))
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "allstatic")
+import os
+env = os.environ.get('ENV', None)
+if env == 'prod':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db_prod.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_collect")
+
+LOG_ROOT = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOG_ROOT):
+    os.mkdir(LOG_ROOT)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}
+        # 日志格式
+    },
+    'filters': {
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+        },
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_ROOT, 'all.log'),  # 日志输出文件
+            'maxBytes': 1024 * 1024 * 5,  # 文件大小
+            'backupCount': 5,  # 备份份数
+            'formatter': 'standard',  # 使用哪种formatters日志格式
+            'encoding': 'utf-8',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+        'account_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_ROOT, 'account.log'),
+            'maxBytes': 1024 * 1024 * 5,
+            'backupCount': 5,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'apis_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_ROOT, 'apis.log'),
+            'maxBytes': 1024 * 1024 * 5,
+            'backupCount': 5,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'search_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_ROOT, 'search.log'),
+            'maxBytes': 1024 * 1024 * 5,
+            'backupCount': 5,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        }
+    },
+    'loggers': {
+        # 'django': {
+        #     'handlers1': ['console'],
+        #     'level': 'DEBUG',
+        #     'propagate': False
+        # },
+        'account': {
+            'handlers': ['account_handler', 'console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'apis': {
+            'handlers': ['apis_handler', 'console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'search': {
+            'handlers': ['search_handler', 'console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+
+    }
+}
+
+AUTH_USER_MODEL = 'accounts.User'
+
+CACHES = {
+    'default': {
+        # BACKEND配置缓存后端为RedisCache
+        'BACKEND': 'django_redis.cache.RedisCache',
+        # LOCATION配置redis服务器地址
+        'LOCATION': 'redis://101.200.36.24:6379',
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "PASSWORD": "rootroot",
+        },
+    },
+}
+
+FontPath = os.path.join(BASE_DIR, 'static/fonts/')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if not os.path.exists(MEDIA_ROOT):
+    os.mkdir(MEDIA_ROOT)
+MEDIA_URL = '/media/'
+
+# 配置缩略图
+THUMBNAIL_ALIASES = {
+    # target: 'accounts.User' => 给哪个app/Model/Field配置缩略图
+    '': {
+        # avatar: 表示将来引用的名字
+        # crop: False=> 不裁剪、同比例缩小
+        'avatar': {'size': (50, 50), 'crop': True},
+    },
+
+    # 'accounts': {
+    #     'xs': {'size': (30, 30), 'crop': True},
+    #     'xs_nocorp': {'size': (30, 30), 'crop': False},
+    # },
+}
+
+SESSION_COOKIE_AGE=60*5
+
+
+
+DEFAULT_FROM_EMAIL = '1426726364@qq.com'
+
+# 163邮箱SMTP服务器地址
+EMAIL_HOST = 'smtp.qq.com'
+# 发件人的邮箱
+EMAIL_HOST_USER = '1426726364@qq.com'
+# 发件人邮箱密码
+EMAIL_HOST_PASSWORD = 'rmyeffrrhmsxjiaf'
+# tls协议，有True和False两种情况
+EMAIL_USE_TLS = True
+# 发件人的邮箱
+EMAIL_FROM = '1426726364@qq.com'
+
+
+
